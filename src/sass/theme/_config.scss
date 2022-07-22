@@ -1,0 +1,44 @@
+:root {
+	// --clr-accent-400
+	// --clr-accent-400
+
+	// --clr-primary-400
+
+	// --ff-primary
+
+	// -ff-body: var()
+	// -ff-heading:
+
+	// --fw-regular: 400;
+	// --fw-bold: 700;
+
+	// --fs-300: ;
+	// --fs-400: 1rem;
+	// --fs-500: ;
+	// --fs-600: ;
+}
+
+// Media Query Mixins
+@mixin mediaSm {
+	@media screen and (max-width: 576px) {
+		@content;
+	}
+}
+
+@mixin mediaMd {
+	@media screen and (max-width: 768px) {
+		@content;
+	}
+}
+
+@mixin mediaLg {
+	@media screen and (max-width: 992px) {
+		@content;
+	}
+}
+
+@mixin mediaXl {
+	@media screen and (max-width: 1200px) {
+		@content;
+	}
+}
