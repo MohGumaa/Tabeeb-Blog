@@ -1,3 +1,11 @@
 @import "config";
+body {
+	direction: rtl;
+	// background: $color-bg;
+	// color: $color-black;
+	// font-family: var(--ff-helvetica-Reg);
+	font-family: "Helvetica-Neue-SKY-Reg", Fallback, sans-serif;
+	line-height: 1.5;
+}
 
 @import "mobile";

@@ -17024,4 +17024,10 @@ figure.woocommerce-product-gallery__wrapper {
   clip: auto;
 }
 
+body {
+  direction: rtl;
+  font-family: "Helvetica-Neue-SKY-Reg", Fallback, sans-serif;
+  line-height: 1.5;
+}
+
 /*# sourceMappingURL=theme.css.map */
