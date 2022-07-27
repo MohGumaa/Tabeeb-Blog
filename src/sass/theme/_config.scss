@@ -1,22 +1,194 @@
 :root {
-	// --clr-accent-400
-	// --clr-accent-400
+	--clr-primary-dark-blue: #22345f;
+	--clr-theme-light-blue: #089bab;
+	--clr-dark-text: #231f20;
+	--clr-gray: #818383;
+	--clr-gray-dark: #444a58;
+	--clr-white: #ffffff;
+	--clr-lightgreen: #eefbfa;
+	--clr-background: #f7f7f7;
+	--clr-border: rgba(0, 0, 0, 0.125);
+	--clr-border-mobile: rgba(8, 155, 171, 0.2);
 
-	// --clr-primary-400
+	--ff-primary-body: "Helvetica-Neue-SKY-Reg", Fallback, sans-serif;
+	--ff-primary-heading: "Helvetica-Neue-SKY-Bd", Fallback, sans-serif;
 
-	// font-family: 'MyWebFont', Fallback, sans-serif;
-	// --ff-primary
+	--ff-body: var(--ff-primary-body);
+	--ff-heading: var(--ff-primary-heading);
 
-	// -ff-body: var()
-	// -ff-heading:
+	--fw-regular: 400;
+	--fw-bold: 700;
 
-	// --fw-regular: 400;
-	// --fw-bold: 700;
+	--fs-100: 0.625rem;
+	--fs-200: 0.75;
+	--fs-300: 0.875;
+	--fs-400: 1rem;
+	--fs-500: 1.125rem;
+	--fs-600: 1.25;
+	--fs-700: 1.375;
+	--fs-bold: 2rem;
+}
 
-	// --fs-300: ;
-	// --fs-400: 1rem;
-	// --fs-500: ;
-	// --fs-600: ;
+$transition-time: all 500ms;
+@mixin easeInOut {
+	transition: all 0.3s ease-in-out;
+}
+
+// Reset Default
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: inherit;
+}
+
+ul[role="list"],
+ol[role="list"],
+.widget {
+	list-style: none;
+}
+
+:active,
+:focus {
+	outline: none !important;
+}
+
+html:focus-within {
+	scroll-behavior: smooth;
+}
+
+html,
+body {
+	height: 100%;
+	scroll-behavior: initial !important;
+	scroll-padding-top: 1.5rem;
+}
+
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+
+img,
+picture,
+svg {
+	max-width: 100%;
+	display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+input,
+.btn,
+select {
+	border-radius: 0 !important;
+
+	&:focus,
+	&:focus,
+	&:focus,
+	&:focus:not(:focus-visible) {
+		box-shadow: none !important;
+	}
+
+	&::placeholder {
+		color: #989898;
+		font-size: 14px !important;
+	}
+}
+
+input {
+	border-top-right-radius: 0.25rem !important;
+	border-bottom-right-radius: 0.25rem !important;
+}
+
+.rounded-left {
+	border-top-left-radius: 0.25rem !important;
+	border-bottom-left-radius: 0.25rem !important;
+}
+
+ul,
+ol,
+.widget {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: var(--clr-primary-dark-blue);
+
+	&:hover,
+	&:focus {
+		color: var(--clr-theme-light-blue);
+		text-decoration: none;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--ff-heading);
+}
+
+.col-md.content-area,
+.sidebar-area {
+	overflow: hidden;
+}
+
+// Page Wrapper
+.page-wrapper {
+	padding-top: 1.5rem;
+	padding-bottom: 1.875rem;
+	min-height: 55vh;
+}
+
+// Custom Icon Tabeeb
+[class^="icon-"],
+[class*=" icon-"] {
+	font-family: "icomoon" !important;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	cursor: pointer;
+	@include easeInOut();
+}
+
+.icon-search:before {
+	content: "\e9d2";
+}
+
+.icon-chevron-left:before {
+	content: "\e934";
+	// vertical-align: middle;
+}
+
+.icon-chevron-right:before {
+	content: "\e935";
 }
 
 // Media Query Mixins

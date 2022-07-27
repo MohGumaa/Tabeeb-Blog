@@ -8,6 +8,14 @@
 
 // Tablets & Small Laptops
 @include mediaMd {
+	.header-wrapper {
+		.navbar {
+			height: 50px;
+		}
+		.navbar-brand {
+			max-width: 85px;
+		}
+	}
 }
 
 // Smartphones

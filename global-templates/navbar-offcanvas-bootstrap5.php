@@ -11,62 +11,68 @@ defined( 'ABSPATH' ) || exit;
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
-<nav id="main-nav" class="navbar navbar-expand-md navbar-dark bg-primary" aria-labelledby="main-nav-label">
+<nav id="main-nav" class="navbar navbar-expand-lg navbar-dark bg-info py-0" aria-labelledby="main-nav-label">
 
-	<h2 id="main-nav-label" class="screen-reader-text">
-		<?php esc_html_e( 'Main Navigation', 'understrap' ); ?>
-	</h2>
+	<div class="<?php echo esc_attr( $container ); ?> position-relative">
 
+		<button type="button" class="btn slide-menu__control navbar-toggler menu__toggler d-block d-lg-none" data-target="primary-menu" data-action="toggle">
+			<span></span>
+        </button>
+		
+		<?php if ( ! has_custom_logo() ) : ?>
+			<a class="navbar-brand text-white mx-0 mb-0" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="url">
+				<img width="105" src="<?php echo get_theme_file_uri( 'images/tabeeb-logo.svg' ); ?>" class="img-fluid" alt="Tabeeb Logo">
+			</a>
+		<?php else : ?>
+			<?php the_custom_logo(); ?>
+		<?php endif; ?>
 
-	<div class="<?php echo esc_attr( $container ); ?>">
+		<div class="slide-menu d-block d-lg-none" id="primary-menu">
 
-		<!-- Your site title as branding in the menu -->
-		<?php if ( ! has_custom_logo() ) { ?>
+			<?php 
+				wp_nav_menu(
+					array(
+					'theme_location' => 'mobile',
+					'container' => '',
+					'menu_class'      => 'menu',
+					'menu_id'         => 'mobile-menu',
+					)
+				);
+			?>
+		</div>
 
-			<?php if ( is_front_page() && is_home() ) : ?>
-
-				<h1 class="navbar-brand mb-0"><a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a></h1>
-
-			<?php else : ?>
-
-				<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a>
-
-			<?php endif; ?>
-
-			<?php
-		} else {
-			the_custom_logo();
-		}
-		?>
-		<!-- end custom logo -->
-
-		<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarNavOffcanvas" aria-controls="navbarNavOffcanvas" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
-			<span class="navbar-toggler-icon"></span>
+		<div class="flex-grow-1 mx-0 mx-lg-5 d-none d-lg-block">
+			<?php wp_nav_menu( array( 'theme_location' => 'desktop' ) ); ?>
+		</div>
+		
+		<i id="search-btn" class="d-none d-lg-block fs-4 icon-search icon"></i>
+		<button type="button" id="btn-mobile-menu" class="btn slide-menu__control d-block d-lg-none fs-3 p-0 text-white" data-target="primary-menu" data-action="toggle">
+			<i class="d-flex justify-content-center align-items-center fs-4 icon-search icon"></i>
 		</button>
 
-		<div class="offcanvas offcanvas-end bg-primary" tabindex="-1" id="navbarNavOffcanvas">
+		<form action="<?php echo esc_url(home_url( '/' ));?>" id="search-from" class="search-form-desktop" autocomplete="off">
+			<label class="sr-only" for="searchInput">أكتب شيء</label>
+			<div class="input-group">
+				<input 
+					type="search" 
+					class="field form-control border-0 rounded" 
+					title="أكتب شيء" id="searchInput" 
+					name="s" type="text" 
+					placeholder="أكتب شيء" 
+					value="<?php the_search_query(); ?>" 
+					onkeyup="fetchResults()"
+					oninvalid="this.setCustomValidity('من فضلك ادخل كلمة البحث')"
+        			oninput="setCustomValidity('')" 
+					required
+				>
+				<span class="input-group-append d-none">
+					<button class="btn btn-primary rounded d-flex align-items-center h-100"><i class="icon-search fs-6"></i></button>
+				</span>
+			</div>
+		</form>
 
-			<div class="offcanvas-header justify-content-end">
-				<button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-			</div><!-- .offcancas-header -->
+		<div class="d-none d-lg-block live-search-result"></div>
 
-			<!-- The WordPress Menu goes here -->
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location'  => 'primary',
-					'container_class' => 'offcanvas-body',
-					'container_id'    => '',
-					'menu_class'      => 'navbar-nav justify-content-end flex-grow-1 pe-3',
-					'fallback_cb'     => '',
-					'menu_id'         => 'main-menu',
-					'depth'           => 2,
-					'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
-				)
-			);
-			?>
-		</div><!-- .offcanvas -->
+	</div>
 
-	</div><!-- .container(-fluid) -->
-
-</nav><!-- .site-navigation -->
+</nav>
