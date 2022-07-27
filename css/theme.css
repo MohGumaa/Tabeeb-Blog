@@ -17035,6 +17035,7 @@ figure.woocommerce-product-gallery__wrapper {
   --clr-background: #f7f7f7;
   --clr-border: rgba(0, 0, 0, 0.125);
   --clr-border-mobile: rgba(8, 155, 171, 0.2);
+  --box-shadow: 0 8.05634px 22.8263px -7.38498px rgb(65 62 101 / 7%);
   --ff-primary-body: "Helvetica-Neue-SKY-Reg", Fallback, sans-serif;
   --ff-primary-heading: "Helvetica-Neue-SKY-Bd", Fallback, sans-serif;
   --ff-body: var(--ff-primary-body);
@@ -17196,6 +17197,7 @@ h5,
 h6,
 .h6 {
   font-family: var(--ff-heading);
+  letter-spacing: 0.02em;
 }
 
 .col-md.content-area,
@@ -17229,10 +17231,39 @@ h6,
 
 .icon-chevron-left:before {
   content: "\e934";
+  vertical-align: middle;
 }
 
 .icon-chevron-right:before {
   content: "\e935";
+  vertical-align: middle;
+}
+
+.page-breadcrumb {
+  margin-bottom: 1rem;
+  padding-bottom: 0.656rem;
+}
+.page-breadcrumb #breadcrumbs {
+  color: var(--clr-gray);
+  font-size: 0.875rem;
+  letter-spacing: 0;
+}
+.page-breadcrumb #breadcrumbs a {
+  color: var(--clr-gray);
+}
+.page-breadcrumb #breadcrumbs a:hover {
+  color: var(--clr-gray);
+}
+.page-breadcrumb #breadcrumbs .breadcrumb_last {
+  color: var(--clr-dark-text);
+}
+
+.box_container_white {
+  background: var(--clr-white);
+  border: 1px solid var(--clr-border);
+  box-shadow: var(--box-shadow);
+  border-radius: 0.75rem;
+  padding-top: 1.125rem;
 }
 
 body {
@@ -17241,7 +17272,6 @@ body {
   color: var(--clr-dark-text);
   font-family: var(--ff-primary-body);
   line-height: 1.5;
-  letter-spacing: 0.02em;
 }
 body::before {
   display: block;
@@ -17493,6 +17523,106 @@ body::before {
   -webkit-transform-origin: center 0 0;
   transform-origin: center 0 0;
   z-index: 1000;
+}
+
+.category-custom_page .section-a .posts {
+  display: grid;
+  grid-template-areas: "large0 regular1" "large0 regular2" "large0 regular3";
+  grid-gap: 1rem;
+  padding-bottom: 1.125rem;
+}
+.category-custom_page .section-a .posts > article:nth-of-type(1) {
+  grid-area: large0;
+}
+.category-custom_page .section-a .posts > article:nth-of-type(1) h1, .category-custom_page .section-a .posts > article:nth-of-type(1) .h1 {
+  font-size: 1.875rem;
+  margin-bottom: 1.25rem;
+  word-wrap: break-word;
+  white-space: normal;
+}
+.category-custom_page .section-a .posts > article:nth-of-type(1) p {
+  font-size: 1.063rem;
+  letter-spacing: 0.02em;
+  color: var(--clr-gray);
+}
+.category-custom_page .section-a .posts > article:nth-of-type(2) {
+  grid-area: regular1;
+}
+.category-custom_page .section-a .posts > article:nth-of-type(3) {
+  grid-area: regular2;
+}
+.category-custom_page .section-a .posts > article:nth-of-type(4) {
+  grid-area: regular3;
+}
+.category-custom_page .section-a .posts .card .card-title {
+  font-size: 1.125rem;
+}
+.category-custom_page .section-a .posts .card .card-text p {
+  font-size: 0.938rem;
+  line-height: 1.6;
+}
+
+.footer-full {
+  border-top: 5px solid var(--clr-theme-light-blue);
+  line-height: 1.8;
+  overflow-wrap: break-word;
+  overflow-x: hidden;
+}
+.footer-full h2, .footer-full .h2,
+.footer-full h3,
+.footer-full .h3 {
+  font-size: 1.375rem;
+  font-family: var(--ff-primary-body);
+}
+.footer-full .social-icons a {
+  font-size: 1.87rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.footer-full .social-icons a:last-child {
+  padding-left: 0;
+}
+.footer-full .social-icons a:first-child {
+  padding-right: 0;
+}
+.footer-full .social-icons a .fa {
+  color: var(--clr-gray-dark);
+}
+.footer-full .news-letter {
+  margin-top: 1rem;
+}
+.footer-full .news-letter p {
+  color: var(--clr-gray);
+  font-size: 1.063rem;
+}
+.footer-full .news-letter form {
+  margin-top: 2rem;
+}
+.footer-full .news-letter form input,
+.footer-full .news-letter form .btn,
+.footer-full .news-letter form .woocommerce-notices-wrapper .woocommerce-message a.button,
+.woocommerce-notices-wrapper .woocommerce-message .footer-full .news-letter form a.button,
+.footer-full .news-letter form .woocommerce-info a.button,
+.woocommerce-info .footer-full .news-letter form a.button {
+  font-size: 1.094rem;
+}
+.footer-full .textwidget {
+  height: 100%;
+}
+.footer-full .menu {
+  line-height: 3.125rem;
+}
+.footer-full .menu a {
+  font-size: 1.125rem;
+}
+.footer-full .sm-text {
+  color: var(--clr-primary-dark-blue);
+  line-height: 1.5rem;
+}
+
+.footer-wrapper {
+  background: var(--clr-gray-dark);
+  font-size: var(--fs-300);
 }
 
 @media screen and (max-width: 768px) {
