@@ -29,6 +29,7 @@ $understrap_includes = array(
 	'/deprecated.php',                      // Load deprecated functions.
 	'/live-search.php',                     // Live Search Function Form 
 	'/alphabet-generator.php',              // Generate Arabic Letter
+	'/primary-category.php',                // Primary Category
 );
 
 // Load WooCommerce functions if WooCommerce is activated.

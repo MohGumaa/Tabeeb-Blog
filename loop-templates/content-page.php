@@ -13,9 +13,9 @@ defined( 'ABSPATH' ) || exit;
 
 	<header class="entry-header">
 
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php the_title( '<h1 class="entry-title mb-3 mb-md-4">', '</h1>' ); ?>
 
-	</header><!-- .entry-header -->
+	</header>
 
 	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
 
@@ -26,12 +26,12 @@ defined( 'ABSPATH' ) || exit;
 		understrap_link_pages();
 		?>
 
-	</div><!-- .entry-content -->
+	</div>
 
 	<footer class="entry-footer">
 
 		<?php understrap_edit_post_link(); ?>
 
-	</footer><!-- .entry-footer -->
+	</footer>
 
-</article><!-- #post-## -->
+</article>

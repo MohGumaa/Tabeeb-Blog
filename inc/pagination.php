@@ -50,8 +50,8 @@ if ( ! function_exists( 'understrap_pagination' ) ) {
 			array(
 				'mid_size'           => 2,
 				'prev_next'          => true,
-				'prev_text'          => __( '&laquo;', 'understrap' ),
-				'next_text'          => __( '&raquo;', 'understrap' ),
+				'prev_text'          => __( '<i class="icon-chevron-right d-flex justify-content-center algin-items-center" aria-hidden="true"></i>', 'understrap' ),
+				'next_text'          => __( '<i class="icon-chevron-left d-flex justify-content-center algin-items-center" aria-hidden="true"></i>', 'understrap' ),
 				'type'               => 'array',
 				'current'            => max( 1, get_query_var( 'paged' ) ),
 				'screen_reader_text' => __( 'Posts navigation', 'understrap' ),
@@ -65,13 +65,13 @@ if ( ! function_exists( 'understrap_pagination' ) ) {
 
 		?>
 
-		<nav aria-labelledby="posts-nav-label">
+		<nav aria-labelledby="posts-nav-label" class="mt-5">
 
 			<h2 id="posts-nav-label" class="screen-reader-text">
 				<?php echo esc_html( $args['screen_reader_text'] ); ?>
 			</h2>
 
-			<ul class="<?php echo esc_attr( $class ); ?>">
+			<ul class="<?php echo esc_attr( $class ); ?> justify-content-center">
 
 				<?php
 				foreach ( $links as $key => $link ) {

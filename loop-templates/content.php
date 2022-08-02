@@ -9,42 +9,21 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-
-	<header class="entry-header">
-
-		<?php
-		the_title(
-			sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
-			'</a></h2>'
-		);
-		?>
-
-		<?php if ( 'post' === get_post_type() ) : ?>
-
-			<div class="entry-meta">
-				<?php understrap_posted_on(); ?>
-			</div><!-- .entry-meta -->
-
-		<?php endif; ?>
-
-	</header><!-- .entry-header -->
-
-	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
-
-	<div class="entry-content">
-
-		<?php
-		the_excerpt();
-		understrap_link_pages();
-		?>
-
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-
-		<?php understrap_entry_footer(); ?>
-
-	</footer><!-- .entry-footer -->
-
-</article><!-- #post-## -->
+<div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3 card-box card-br">
+	<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+        <div class="card h-100">
+            <a href="<?php the_permalink();?>" class="card-img-top">
+                <?php echo get_the_post_thumbnail( $post->ID, 'tabeeb-featured' ); ?>
+            </a>
+            <div class="card-body px-0 pt-2 pb-0">
+                <?php
+                    the_title(
+                        sprintf( '<h3 class="card-title"><a href="%s" rel="bookmark" class="article-title">', esc_url( get_permalink() ) ),
+                        '</a></h3>'
+                    );
+                ?>
+            </div>
+        </div>
+		<?php echo htmlspecialchars(get_primary_category());?>
+    </article>
+</div>

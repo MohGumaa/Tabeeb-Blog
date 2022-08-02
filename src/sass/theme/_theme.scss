@@ -406,6 +406,44 @@ body {
 	}
 }
 
+// Static Page
+.page-static-wrapper {
+	main {
+		background-color: var(--clr-white);
+		border: 1px solid var(--clr-border);
+		box-shadow: 0 8.05634px 22.8263px -7.38498px rgb(65 62 101 / 7%);
+		border-radius: 0.75rem;
+		padding: 1.25rem;
+
+		font-size: 1.125rem;
+		line-height: 2.2;
+		letter-spacing: 0.02em;
+		word-wrap: break-word;
+		white-space: normal;
+
+		h2,
+		h3,
+		h4 {
+			margin-bottom: 0.875rem;
+			margin-top: 2.813rem;
+		}
+
+		ul {
+			list-style: disc;
+			padding-right: 2rem;
+			margin-bottom: 1rem;
+
+			li {
+				margin-bottom: 0.5rem;
+
+				&::marker {
+					color: var(--clr-theme-light-blue);
+				}
+			}
+		}
+	}
+}
+
 .footer-full {
 	border-top: 5px solid var(--clr-theme-light-blue);
 	line-height: 1.8;

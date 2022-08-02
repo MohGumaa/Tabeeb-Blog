@@ -4,6 +4,14 @@
 
 // Disktops & Laptops
 @include mediaLg {
+	body::before {
+		height: 50px;
+	}
+
+	.page-wrapper {
+		padding-top: 1rem;
+	}
+
 	.header-wrapper {
 		.navbar {
 			height: 50px;
@@ -84,6 +92,12 @@
 
 // Smartphones
 @include mediaSm {
+	.container {
+		max-width: 550px;
+		width: calc(100vw - 40px);
+		padding: 0;
+	}
+
 	.box_container_white {
 		.section-header {
 			font-size: 0.938rem;
@@ -101,6 +115,24 @@
 	.banner-with-left-img {
 		.btn {
 			width: 100%;
+		}
+	}
+
+	.post-grid {
+		padding: 0.625rem;
+
+		img {
+			width: 100%;
+		}
+
+		.card-title {
+			font-size: 1.125rem;
+		}
+
+		p {
+			font-size: 1rem;
+			line-height: 1.4;
+			margin-bottom: 0;
 		}
 	}
 
@@ -165,6 +197,21 @@
 						padding: 0.5rem;
 					}
 				}
+			}
+		}
+	}
+
+	.page-static-wrapper {
+		main {
+			font-size: 1rem;
+			line-height: 2;
+			background: transparent;
+			border: none;
+			box-shadow: none;
+			padding: 0;
+
+			p {
+				margin-bottom: 1rem;
 			}
 		}
 	}

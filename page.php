@@ -2,11 +2,6 @@
 /**
  * The template for displaying all pages
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
- *
  * @package Understrap
  */
 
@@ -19,39 +14,36 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 ?>
 
-<div class="wrapper" id="page-wrapper">
+<div class="page-wrapper page-static-wrapper" id="static-page">
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
 		<div class="row">
 
-			<!-- Do the left sidebar check -->
-			<?php get_template_part( 'global-templates/left-sidebar-check' ); ?>
+			<div class="col-md-12 content-area" id="primary">
+				<div class="page-breadcrumb">
+                    <?php
+                        if ( function_exists('yoast_breadcrumb') ) {
+                        yoast_breadcrumb( '<span id="breadcrumbs">','</span>' );
+                        }
+                    ?>
+                </div>
+				<main class="site-main" id="main">
+					<?php 
+						while ( have_posts() ) {
+							the_post();
+							get_template_part( 'loop-templates/content', 'page' );
+						}
+					?>
+				</main>
 
-			<main class="site-main" id="main">
+			</div>
 
-				<?php
-				while ( have_posts() ) {
-					the_post();
-					get_template_part( 'loop-templates/content', 'page' );
+		</div>
 
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) {
-						comments_template();
-					}
-				}
-				?>
+	</div>
 
-			</main><!-- #main -->
-
-			<!-- Do the right sidebar check -->
-			<?php get_template_part( 'global-templates/right-sidebar-check' ); ?>
-
-		</div><!-- .row -->
-
-	</div><!-- #content -->
-
-</div><!-- #page-wrapper -->
+</div>
 
 <?php
 get_footer();
