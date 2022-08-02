@@ -4,10 +4,6 @@
 
 // Disktops & Laptops
 @include mediaLg {
-}
-
-// Tablets & Small Laptops
-@include mediaMd {
 	.header-wrapper {
 		.navbar {
 			height: 50px;
@@ -16,8 +12,160 @@
 			max-width: 85px;
 		}
 	}
+
+	.category-custom_page {
+		.section-a .posts {
+			& > article:nth-of-type(1) {
+				h1 {
+					font-size: 1.625rem;
+				}
+
+				p {
+					font-size: 1rm;
+				}
+			}
+
+			.card {
+				.card-title {
+					font-size: 1rem;
+				}
+
+				.card-text p {
+					font-size: 0.875rem;
+					overflow: hidden;
+					display: -webkit-box;
+					-webkit-line-clamp: 3;
+					-webkit-box-orient: vertical;
+					text-overflow: ellipsis;
+				}
+			}
+		}
+	}
+}
+
+// Tablets & Small Laptops
+@include mediaMd {
+	.page-wrapper {
+		min-height: fit-content;
+	}
+	.banner-with-left-img {
+		.banner-title {
+			font-size: 1.625rem;
+		}
+	}
+
+	.category-custom_page {
+		.section-a .posts {
+			& > article:nth-of-type(1) {
+				p {
+					font-size: 0.938rem;
+				}
+			}
+
+			.card {
+				.card-text p {
+					display: -webkit-box;
+					-webkit-line-clamp: 2;
+					-webkit-box-orient: vertical;
+					text-overflow: ellipsis;
+				}
+			}
+		}
+
+		.section-e {
+			.d-flex {
+				.newsletter {
+					width: 65vw;
+				}
+			}
+		}
+	}
 }
 
 // Smartphones
 @include mediaSm {
+	.box_container_white {
+		.section-header {
+			font-size: 0.938rem;
+		}
+
+		.btn {
+			font-size: 0.75rem;
+		}
+
+		.fa {
+			font-size: 0.5rem;
+		}
+	}
+
+	.banner-with-left-img {
+		.btn {
+			width: 100%;
+		}
+	}
+
+	.category-custom_page {
+		.section-a .posts {
+			grid-template-areas:
+				"large0"
+				"regular1"
+				"regular2"
+				"regular3";
+			padding: 0.669rem;
+
+			& > article:nth-of-type(1) {
+				h1 {
+					font-size: 1.25rem;
+					line-height: 1.2;
+					margin-bottom: 0.5rem;
+				}
+			}
+
+			.card {
+				.card-title {
+					font-size: 1.25rem;
+				}
+
+				.card-text p {
+					display: -webkit-box;
+					-webkit-line-clamp: 3;
+					-webkit-box-orient: vertical;
+					text-overflow: ellipsis;
+				}
+			}
+		}
+
+		.section-e {
+			.d-flex {
+				background: transparent;
+				padding: 0.669rem;
+
+				&::after {
+					background: rgba(235, 247, 248, 0.9);
+				}
+
+				.newsletter {
+					background: transparent;
+					box-shadow: none;
+					width: 100%;
+					padding: 1rem 0;
+
+					h3 {
+						line-height: 1.4;
+						padding-bottom: 0.5rem;
+					}
+
+					input,
+					.btn {
+						font-size: 1rem;
+					}
+
+					.btn {
+						height: 100%;
+						padding: 0.5rem;
+					}
+				}
+			}
+		}
+	}
 }

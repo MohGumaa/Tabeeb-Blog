@@ -452,7 +452,7 @@ progress {
   --bs-warning: #ffc107;
   --bs-danger: #dc3545;
   --bs-light: #eefbfa;
-  --bs-dark: #231f20;
+  --bs-dark: #363031;
   --bs-primary-rgb: 34, 52, 95;
   --bs-secondary-rgb: 129, 131, 131;
   --bs-success-rgb: 25, 135, 84;
@@ -460,7 +460,7 @@ progress {
   --bs-warning-rgb: 255, 193, 7;
   --bs-danger-rgb: 220, 53, 69;
   --bs-light-rgb: 238, 251, 250;
-  --bs-dark-rgb: 35, 31, 32;
+  --bs-dark-rgb: 54, 48, 49;
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 33, 37, 41;
@@ -626,15 +626,15 @@ progress {
 }
 
 .table-dark {
-  --bs-table-bg: #231f20;
-  --bs-table-striped-bg: #2e2a2b;
+  --bs-table-bg: #363031;
+  --bs-table-striped-bg: #403a3b;
   --bs-table-striped-color: #fff;
-  --bs-table-active-bg: #393536;
+  --bs-table-active-bg: #4a4546;
   --bs-table-active-color: #fff;
-  --bs-table-hover-bg: #343031;
+  --bs-table-hover-bg: #454040;
   --bs-table-hover-color: #fff;
   color: #fff;
-  border-color: #393536;
+  border-color: #4a4546;
 }
 
 .table-responsive {
@@ -1013,12 +1013,12 @@ progress {
 
 .has-dark-color,
 .has-dark-color:visited {
-  color: #231f20;
+  color: #363031;
 }
 
 .has-dark-background-color {
-  background-color: #231f20;
-  border-color: #231f20;
+  background-color: #363031;
+  border-color: #363031;
 }
 
 figure.wp-block-image {

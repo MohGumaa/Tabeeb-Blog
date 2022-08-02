@@ -1,7 +1,7 @@
 :root {
 	--clr-primary-dark-blue: #22345f;
 	--clr-theme-light-blue: #089bab;
-	--clr-dark-text: #231f20;
+	--clr-dark-text: #363031;
 	--clr-gray: #818383;
 	--clr-gray-dark: #444a58;
 	--clr-white: #ffffff;
@@ -10,6 +10,12 @@
 	--clr-border: rgba(0, 0, 0, 0.125);
 	--clr-border-mobile: rgba(8, 155, 171, 0.2);
 	--box-shadow: 0 8.05634px 22.8263px -7.38498px rgb(65 62 101 / 7%);
+	--bg-light-blue: linear-gradient(
+		169.04deg,
+		#e9f6f7 8.11%,
+		rgba(183, 242, 246, 0.53125) 72.82%,
+		rgba(183, 238, 242, 0) 102.02%
+	);
 
 	--ff-primary-body: "Helvetica-Neue-SKY-Reg", Fallback, sans-serif;
 	--ff-primary-heading: "Helvetica-Neue-SKY-Bd", Fallback, sans-serif;
@@ -20,14 +26,7 @@
 	--fw-regular: 400;
 	--fw-bold: 700;
 
-	--fs-100: 0.625rem;
-	--fs-200: 0.75;
-	--fs-300: 0.875;
-	--fs-400: 1rem;
-	--fs-500: 1.125rem;
-	--fs-600: 1.25;
-	--fs-700: 1.375;
-	--fs-bold: 2rem;
+	--br-size: 0.25rem;
 }
 
 $transition-time: all 500ms;
@@ -99,8 +98,6 @@ svg {
 input,
 .btn,
 select {
-	border-radius: 0 !important;
-
 	&:focus,
 	&:focus,
 	&:focus,
@@ -114,14 +111,18 @@ select {
 	}
 }
 
-input {
+.rounded-right {
+	border-top-left-radius: 0 !important;
 	border-top-right-radius: 0.25rem !important;
+	border-bottom-left-radius: 0 !important;
 	border-bottom-right-radius: 0.25rem !important;
 }
 
 .rounded-left {
 	border-top-left-radius: 0.25rem !important;
+	border-top-right-radius: 0 !important;
 	border-bottom-left-radius: 0.25rem !important;
+	border-bottom-right-radius: 0 !important;
 }
 
 ul,
@@ -225,6 +226,71 @@ h6 {
 	box-shadow: var(--box-shadow);
 	border-radius: 0.75rem;
 	padding-top: 1.125rem;
+
+	.section-header {
+		font-size: 1.125rem;
+	}
+
+	.box-title-with-link {
+		margin-bottom: 1rem;
+		padding-bottom: 0.656rem;
+	}
+
+	.fa {
+		font-size: 0.75rem;
+	}
+}
+
+// Skeleton placeholder image
+.wp-post-image {
+	animation: skeleton-loading 1s linear infinite alternate;
+	border-radius: var(--br-size);
+}
+
+// Article Card Box
+.card-box {
+	position: relative;
+	height: 100%;
+
+	.card-title {
+		font-size: 1rem;
+		line-height: 1.4;
+	}
+}
+
+.card-list {
+	.card-title {
+		font-size: 1.25rem;
+	}
+	p {
+		font-size: 0.938rem;
+	}
+}
+
+@keyframes skeleton-loading {
+	0% {
+		background-color: hsl(200, 20%, 70%);
+	}
+	100% {
+		background-color: hsl(200, 20%, 95%);
+	}
+}
+
+// Banner With Left Image
+.banner-with-left-img {
+	.bg-light-blue {
+		background: var(--bg-light-blue);
+	}
+
+	.banner-title {
+		font-size: 2rem;
+		margin-bottom: 1rem;
+		line-height: 1.4;
+	}
+
+	.btn {
+		font-size: 1.125rem;
+	}
 }
 
 // Media Query Mixins

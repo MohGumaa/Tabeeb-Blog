@@ -22,7 +22,7 @@ if ( isset( $args['aria_label'] ) && ! empty( $args['aria_label'] ) ) {
 	<div class="input-group">
 		<input 
 			type="search" 
-			class="field search-field form-control" 
+			class="field search-field form-control rounded-right" 
 			id="<?php echo $uid; ?>" name="s" value="<?php the_search_query(); ?>"
 			placeholder="<?php echo esc_attr_x( 'ابحث في الموقع', 'placeholder', 'understrap' ); ?>"
 			value="<?php the_search_query(); ?>"

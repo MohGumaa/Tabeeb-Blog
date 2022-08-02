@@ -2,8 +2,6 @@
 /**
  * The template part for displaying a message that posts cannot be found
  *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
  * @package Understrap
  */
 
@@ -13,42 +11,36 @@ defined( 'ABSPATH' ) || exit;
 
 <section class="no-results not-found">
 
-	<header class="page-header">
+	<?php if (!is_author()) : ?>
+		<div class="page-breadcrumb">
+			<?php
+				if ( function_exists('yoast_breadcrumb') ) {
+				yoast_breadcrumb( '<span id="breadcrumbs">','</span>' );
+				}
+			?>
+		</div>
+	<?php endif; ?>
 
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'understrap' ); ?></h1>
+	<h1 class="page-title mb-3 mb-md-4 pe-1"><?php esc_html_e( 'لم يتم العثور على شيء', 'understrap' ); ?></h1>
 
-	</header><!-- .page-header -->
-
-	<div class="page-content">
-
-		<?php
-		if ( is_home() && current_user_can( 'publish_posts' ) ) :
-
-			$kses = array( 'a' => array( 'href' => array() ) );
+	<div class="page-content mb-5 mb-md-3 pe-1">
+		<?php if ( is_search() ) : ?>
+			<?php 
+				printf(
+					'<p class="text-secondary mb-3 mb-md-4">%s<p>',
+					esc_html__( 'آسف, ولكن لا شيء يطابق مصطلحات البحث الخاصة بك. يرجى المحاولة مرة أخرى مع بعض الكلمات الرئيسية المختلفة.', 'understrap' )
+				);	
+			?>
+		<?php else :?>
+			<?php 
 			printf(
-				/* translators: 1: Link to WP admin new post page. */
-				'<p>' . wp_kses( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'understrap' ), $kses ) . '</p>',
-				esc_url( admin_url( 'post-new.php' ) )
+				'<p class="text-secondary mb-3 mb-md-4">%s<p>',
+				esc_html__('عذراً، لم يتم العثور على نتائج بخصوص الأرشيف المطلوب، ربما يساعدك البحث في العثور على نتائج مناسبة.', 'understrap' )
 			);
+			?>
+		<?php endif; ?>
 
-		elseif ( is_search() ) :
+		<?php get_search_form(); ?>
+	</div>
 
-			printf(
-				'<p>%s<p>',
-				esc_html__( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'understrap' )
-			);
-			get_search_form();
-
-		else :
-
-			printf(
-				'<p>%s<p>',
-				esc_html__( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'understrap' )
-			);
-			get_search_form();
-
-		endif;
-		?>
-	</div><!-- .page-content -->
-
-</section><!-- .no-results -->
+</section>
