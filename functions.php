@@ -27,6 +27,7 @@ $understrap_includes = array(
 	'/editor.php',                          // Load Editor functions.
 	'/block-editor.php',                    // Load Block Editor functions.
 	'/deprecated.php',                      // Load deprecated functions.
+	'/tabeeb-custom-post.php',              // Video Post 
 	'/live-search.php',                     // Live Search Function Form 
 	'/alphabet-generator.php',              // Generate Arabic Letter
 	'/primary-category.php',                // Primary Category

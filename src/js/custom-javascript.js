@@ -31,4 +31,7 @@
 		// bodyPage.toggleClass("overflow-hidden").toggleClass("overlay");
 		bodyPage.toggleClass("overflow-hidden");
 	});
+
+	// Remove Icon on Breadcrumb before last
+	$(".single-post .breadcrumb_last").prev().css("display", "none");
 })(jQuery);
