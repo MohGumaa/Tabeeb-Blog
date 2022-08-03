@@ -499,7 +499,7 @@ div.wpforms-container-full {
 		transform: translate(-50%, -50%);
 		border: 3px solid var(--clr-white);
 		border-radius: 50%;
-		opacity: 1;
+		opacity: 0;
 		z-index: 2;
 		@include easeInOut();
 	}
@@ -511,7 +511,7 @@ div.wpforms-container-full {
 			opacity: 0.3;
 		}
 		.play-button {
-			opacity: 0.5;
+			opacity: 1;
 		}
 	}
 

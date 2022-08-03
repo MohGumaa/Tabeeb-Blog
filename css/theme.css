@@ -16428,7 +16428,7 @@ div.wpforms-container-full .wpforms-form button[type=submit].btn-success:hover {
   transform: translate(-50%, -50%);
   border: 3px solid var(--clr-white);
   border-radius: 50%;
-  opacity: 1;
+  opacity: 0;
   z-index: 2;
   transition: all 0.3s ease-in-out;
 }
@@ -16439,7 +16439,7 @@ div.wpforms-container-full .wpforms-form button[type=submit].btn-success:hover {
   opacity: 0.3;
 }
 .video-card:hover .play-button {
-  opacity: 0.5;
+  opacity: 1;
 }
 .video-card .card-title {
   letter-spacing: 0;
