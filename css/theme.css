@@ -16445,14 +16445,14 @@ div.wpforms-container-full .wpforms-form button[type=submit].btn-success:hover {
   letter-spacing: 0;
 }
 
-.section-header {
+.section-box-header {
   border: 1px solid var(--clr-border);
   box-shadow: var(--box-shadow);
   border-radius: 0.75rem;
   margin-bottom: 1rem;
   padding: 0.656rem 0.938rem;
 }
-.section-header .section-title {
+.section-box-header .section-title {
   font-size: 1.125rem;
 }
 

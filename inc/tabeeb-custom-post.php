@@ -97,7 +97,7 @@ function related_post_videos() {
             
             <div class="related-article py-4">
 
-                <div class="section-header">
+                <div class="    section-box-header">
                     <h2 class="text-info mb-0 section-title"><?php echo esc_html_e( 'فيديوهات ذات صلة', 'understrap' ); ?></h2>
                 </div>
 
@@ -109,7 +109,7 @@ function related_post_videos() {
                             <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
                                 <div class="card h-100 video-card">
                                     <a href="<?php the_permalink();?>" class="card-img-top position-relative">
-                                        <?php echo get_the_post_thumbnail( $post->ID, 'tabeeb-featured' ); ?>
+                                        <?php echo get_the_post_thumbnail( get_the_ID(), 'tabeeb-featured' ); ?>
                                         <span class="d-flex justify-content-center align-items-center play-button">
                                             <i class="fa fa-play fs-2 text-white" aria-hidden="true"></i>
                                         </span>
@@ -126,7 +126,7 @@ function related_post_videos() {
                                 <?php echo htmlspecialchars(get_primary_category());?>
                             </article>
                         </div>
-
+                    
                     <?php endwhile; ?>
 
                 </div>
