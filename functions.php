@@ -107,10 +107,20 @@ add_filter( 'style_loader_src', 'tabeeb_cleanup_query_string', 15, 1 );
 
 // Add form to mobile menu
 function qode_adding_a_search_form_to_the_mobile_menu( $items, $args ) {
-    if ( 'mobile' === $args->theme_location ) {
-		$start_menu_item = '<li class="menu-item custom-item">' .get_search_form(false). '</li>';
-        $items = $start_menu_item . $items;
-    }
-    return $items;
-    }
-    add_filter( 'wp_nav_menu_items', 'qode_adding_a_search_form_to_the_mobile_menu', 10, 2 );
+if ( 'mobile' === $args->theme_location ) {
+	$start_menu_item = '<li class="menu-item custom-item">' .get_search_form(false). '</li>';
+	$items = $start_menu_item . $items;
+}
+return $items;
+}
+add_filter( 'wp_nav_menu_items', 'qode_adding_a_search_form_to_the_mobile_menu', 10, 2 );
+
+// Exclude 
+function exclude_category_from_search($query) {
+	if ($query->is_search) {
+		$cat_id = get_cat_ID('politics');
+		$query->set('cat', '-92');
+	}
+	return $query;
+}
+add_filter('pre_get_posts','exclude_category_from_search');

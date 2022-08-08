@@ -30,7 +30,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 					?>
 				</div>
 
-				<div class="row">
+				<div class="row gx-3">
 
 					<?php while ( have_posts() ): 
 						the_post();

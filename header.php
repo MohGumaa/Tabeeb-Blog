@@ -92,23 +92,23 @@ $navbar_type       = get_theme_mod( 'understrap_navbar_type', 'collapse' );
 		}
 
 		@media screen and (max-width: 991px) {
-			.slide-menu .tabeeb-icon:nth-of-type(2) > a::before, .slide-menu .tabeeb-icon:nth-of-type(1) > .sub-menu .slide-menu__backlink::before {
+			.slide-menu .tabeeb-icon:nth-of-type(2) > a::before, .slide-menu .tabeeb-icon:nth-of-type(2) > .sub-menu .slide-menu__backlink::before {
 				background: url('<?php echo get_theme_file_uri( 'images/kit-medical-blue.svg' ); ?>') no-repeat center center/contain;
 			} 
 			
-			.slide-menu .tabeeb-icon:nth-of-type(3) > a::before, .slide-menu .tabeeb-icon:nth-of-type(2) > .sub-menu .slide-menu__backlink::before {
+			.slide-menu .tabeeb-icon:nth-of-type(3) > a::before, .slide-menu .tabeeb-icon:nth-of-type(3) > .sub-menu .slide-menu__backlink::before {
 				background: url('<?php echo get_theme_file_uri( 'images/head-side-medical-blue.svg' ); ?>') no-repeat center center/contain;
 			}
 
-			.slide-menu .tabeeb-icon:nth-of-type(4) > a::before, .slide-menu .tabeeb-icon:nth-of-type(3) > .sub-menu .slide-menu__backlink::before {
+			.slide-menu .tabeeb-icon:nth-of-type(4) > a::before, .slide-menu .tabeeb-icon:nth-of-type(4) > .sub-menu .slide-menu__backlink::before {
 				background: url('<?php echo get_theme_file_uri( 'images/baby-tabeeb-blue.svg' ); ?>') no-repeat center center/contain;
 			}
 
-			.slide-menu .tabeeb-icon:nth-of-type(5) > a::before, .slide-menu .tabeeb-icon:nth-of-type(4) > .sub-menu .slide-menu__backlink::before {
+			.slide-menu .tabeeb-icon:nth-of-type(5) > a::before, .slide-menu .tabeeb-icon:nth-of-type(5) > .sub-menu .slide-menu__backlink::before {
 				background: url('<?php echo get_theme_file_uri( 'images/hands-holding-heart-blue.svg' ); ?>') no-repeat center center/contain;
 			}
 
-			.slide-menu .tabeeb-icon:nth-of-type(6) > a::before, .slide-menu .tabeeb-icon:nth-of-type(5) > .sub-menu .slide-menu__backlink::before {
+			.slide-menu .tabeeb-icon:nth-of-type(6) > a::before, .slide-menu .tabeeb-icon:nth-of-type(6) > .sub-menu .slide-menu__backlink::before {
 				background: url('<?php echo get_theme_file_uri( 'images/ballot-check-blue.svg' ); ?>') no-repeat center center/contain;
 			}	
 		}

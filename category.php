@@ -128,7 +128,7 @@ $show_section = false;
                         </div>
                         <div class="row">
                             <?php while ( $tabeeb_disease_posts->have_posts() ) : $tabeeb_disease_posts->the_post();?>
-                                <div class="col-lg-3 col-md-4 col-12 mb-3 mb-md-0 <?php echo ++$loop_disease == 4 ? 'd-block d-md-none d-lg-block' : '' ; ?>  card-box">
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3 mb-md-0 <?php echo ++$loop_disease == 4 ? 'd-block d-md-none d-lg-block' : '' ; ?>  card-box">
                                     <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
                                         <div class="card border-0 h-100">
                                             <a href="<?php the_permalink();?>" class="card-img-top">
