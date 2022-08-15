@@ -55,6 +55,7 @@ function custom_post_taxonomy() {
         'public'            => true,
         'hierarchical'      => true,
         'show_ui'           => true,
+        'show_in_rest'       => true,
         'show_admin_column' => true,
         'query_var'         => true,
     );
@@ -109,7 +110,7 @@ function related_post_videos() {
                             <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
                                 <div class="card h-100 video-card">
                                     <a href="<?php the_permalink();?>" class="card-img-top position-relative">
-                                        <?php echo get_the_post_thumbnail( get_the_ID(), 'tabeeb-featured' ); ?>
+                                        <?php echo get_the_post_thumbnail( get_the_ID(), 'tabeeb-large' ); ?>
                                         <span class="d-flex justify-content-center align-items-center play-button">
                                             <i class="fa fa-play fs-2 text-white" aria-hidden="true"></i>
                                         </span>

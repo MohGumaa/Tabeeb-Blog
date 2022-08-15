@@ -15,19 +15,19 @@ $container = get_theme_mod( 'understrap_container_type' );
 <div class="bg-white page-wrapper single-post" id="single-wrapper">
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
+		<div class="page-breadcrumb">
+			<?php
+				if ( function_exists('yoast_breadcrumb') ) {
+				yoast_breadcrumb( '<span id="breadcrumbs">','</span>' );
+				}
+			?>
+		</div>
 
 		<div class="row">
 
 			<?php get_template_part( 'global-templates/left-sidebar-check' ); ?>
 
 			<main class="site-main" id="main">
-				<div class="page-breadcrumb">
-                    <?php
-                        if ( function_exists('yoast_breadcrumb') ) {
-                        yoast_breadcrumb( '<span id="breadcrumbs">','</span>' );
-                        }
-                    ?>
-                </div>
 
 				<?php
 				while ( have_posts() ) {

@@ -107,7 +107,7 @@ select {
 	}
 
 	&::placeholder {
-		color: #989898;
+		color: var(--clr-gray);
 		font-size: 14px !important;
 	}
 }
@@ -468,10 +468,10 @@ div.wpforms-container-full {
 }
 
 // Doctor Qualification
-.doctor-qual {
-	border: 1px solid #e3e3e3;
+.doctor-qualifications {
+	border: 1px solid var(--clr-border);
 	border-radius: 0.25rem;
-	color: #919191;
+	color: var(--clr-gray);
 	font-size: 0.625rem;
 	padding: 0.25rem 0.25rem 0;
 }

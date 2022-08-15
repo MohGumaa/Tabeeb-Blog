@@ -213,7 +213,7 @@ body {
 						font-family: "HelveticaReg", Arial, sans-serif !important;
 						font-size: 0.875rem !important;
 						margin: 0rem 0 0 1.25rem !important;
-						color: #089bab !important;
+						color: var(--clr-theme-light-blue) !important;
 						cursor: pointer;
 						position: absolute;
 						left: 20px;
@@ -312,7 +312,7 @@ body {
 			grid-area: large0;
 
 			h1 {
-				font-size: 1.875rem;
+				font-size: 1.75rem;
 				margin-bottom: 1.25rem;
 				word-wrap: break-word;
 				white-space: normal;

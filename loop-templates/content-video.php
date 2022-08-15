@@ -41,7 +41,7 @@ $video_link = get_field('video_link');
                                 $doctor_user = $coauthor; 
                                 if ( ! empty( $doctor_qualifications )  ) : 
                             ?>
-                                <span class="doctor-qual me-1"><?php echo $doctor_qualifications; ?></span>
+                                <span class="doctor-qualifications me-1"><?php echo $doctor_qualifications; ?></span>
                             <?php endif; ?>
                         </div>
                     <?php else :?>

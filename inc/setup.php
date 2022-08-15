@@ -74,9 +74,10 @@ if ( ! function_exists( 'understrap_setup' ) ) {
 		add_theme_support( 'post-thumbnails' );
 
 		// Custom image size
-		add_image_size( 'tabeeb-featured', 374, 264, true ); // 2 Col Grid
-		add_image_size( 'tabeeb-related-widgetfull', 340, 209, true ); // Widget Full Width thumbs & Related Posts
-		add_image_size( 'tabeeb-featuredlist', 236, 157, true ); // List Feature 
+		add_image_size( 'tabeeb-small', 340, 209, true );  // Grid Post
+		// add_image_size( 'tabeeb-medium', 374, 264, true ); 
+		add_image_size( 'tabeeb-large', 350, 214, true ); // Box Post
+		add_image_size( 'tabeeb-post', 780, 470, true ); 
 
 		/*
 		 * Adding support for Widget edit icons in customizer

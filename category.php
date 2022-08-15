@@ -52,7 +52,7 @@ $show_section = false;
                                 <a href="<?php the_permalink();?>" class="d-block img-fluid">
                                     <?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
                                 </a>
-                                <div class="article-body py-3">
+                                <div class="article-body pt-3">
                                     <?php
                                         the_title(
                                             sprintf( '<h1><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
@@ -70,11 +70,11 @@ $show_section = false;
                                     <div class="row g-0">
                                         <div class="col-md-5">
                                             <a href="<?php the_permalink();?>" class="d-block img-fluid">
-                                                <?php echo get_the_post_thumbnail( $post->ID, 'tabeeb-featured' ); ?>
+                                                <?php echo get_the_post_thumbnail( $post->ID, 'tabeeb-large' ); ?>
                                             </a>
                                         </div>
                                         <div class="col-md-7">
-                                            <div class="card-body d-flex flex-column justify-content-evenly h-100 py-3 py-md-1 px-1 px-md-3">
+                                            <div class="card-body d-flex flex-column justify-content-evenly h-100 py-1 px-3">
                                                 <?php
                                                     the_title(
                                                         sprintf( '<h3 class="card-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
@@ -132,7 +132,7 @@ $show_section = false;
                                     <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
                                         <div class="card border-0 h-100">
                                             <a href="<?php the_permalink();?>" class="card-img-top">
-                                                <?php echo get_the_post_thumbnail( $post->ID, 'tabeeb-featured' ); ?>
+                                                <?php echo get_the_post_thumbnail( $post->ID, 'tabeeb-large' ); ?>
                                             </a>
                                             <div class="card-body px-0 pb-0">
                                                 <?php
@@ -182,13 +182,13 @@ $show_section = false;
                                     <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
                                         <div class="card border-0 px-2 px-md-0 card-list">
                                             <div class="row g-0">
-                                                <div class="col-md-4">
+                                                <div class="col-md-4 col-sm-5 col-12">
                                                     <a href="<?php the_permalink();?>" class="d-block img-fluid rounded-start">
-                                                        <?php echo get_the_post_thumbnail( $post->ID, 'tabeeb-featured' ); ?>
+                                                        <?php echo get_the_post_thumbnail( $post->ID, 'tabeeb-large' ); ?>
                                                     </a>
                                                 </div>
-                                                <div class="col-md-8">
-                                                    <div class="card-body h-100 py-3 py-md-1 px-1 px-md-3">
+                                                <div class="col-md-8 col-sm-7 col-12">
+                                                    <div class="card-body h-100 py-3 py-sm-1 px-1 px-sm-3">
                                                         <?php
                                                             the_title(
                                                                 sprintf( '<h3 class="card-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),

@@ -15,7 +15,7 @@ defined( 'ABSPATH' ) || exit;
 			<div class="col-md-4 col-sm-5 col-12">
 				<a href="<?php the_permalink();?>" class="img-fluid rounded-start">
 					<?php if(has_post_thumbnail()) :?>
-						<?php echo get_the_post_thumbnail( $post->ID, 'tabeeb-related-widgetfull' ); ?>
+						<?php echo get_the_post_thumbnail( $post->ID, 'tabeeb-small' ); ?>
 					<?php else: ?>
 						<img src="<?php echo get_theme_file_uri( 'images/tabeeb-img.jpg' ); ?>" alt="<?php the_title(); ?>" width="340" height="209" class="wp-post-image">
 					<?php endif; ?>

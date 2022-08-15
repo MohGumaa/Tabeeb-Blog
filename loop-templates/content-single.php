@@ -40,7 +40,7 @@ $medicine_category = has_category('92', $post->ID);
 								$doctor_user = $coauthor; 
 								if ( ! empty( $doctor_qualifications )  ) : 
 							?>
-								<span class="doctor-qual me-1"><?php echo $doctor_qualifications; ?></span>
+								<span class="doctor-qualifications me-1"><?php echo $doctor_qualifications; ?></span>
 							<?php endif; ?>
 						</div>
 					<?php else :?>

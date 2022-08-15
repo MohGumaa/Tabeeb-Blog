@@ -14,7 +14,7 @@ $tabeeb_cat_video = get_post_type( get_the_ID() ) ;
 	<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
         <div class="card h-100 <?php echo $tabeeb_cat_video == 'videos' ? 'video-card' : NULL; ?>">
             <a href="<?php the_permalink();?>" class="card-img-top position-relative">
-                <?php echo get_the_post_thumbnail( $post->ID, 'tabeeb-featured' ); ?>
+                <?php echo get_the_post_thumbnail( $post->ID, 'tabeeb-large' ); ?>
                 <?php if ( $tabeeb_cat_video == 'videos' ) : ?>
                     <span class="d-flex justify-content-center align-items-center play-button">
                         <i class="fa fa-play fs-2 text-white" aria-hidden="true"></i>
