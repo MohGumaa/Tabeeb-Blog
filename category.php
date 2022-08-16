@@ -118,7 +118,7 @@ $show_section = false;
                             <h2 class="text-info section-header mb-0">
                             انواع امراض <?php echo $category->name; ?>
                             </h2>
-                            <form action="<?php echo esc_url( home_url( '/condition' ) ); ?>" method="post">
+                            <form action="<?php echo esc_url( home_url( '/condition' ) ); ?>" method="get">
                                 <input type="hidden" name="case" value="<?php echo $category->term_id; ?>">
                                 <input type="hidden" name="disease" value="disease">
                                 <button class="btn btn-transparent d-block text-secondary ps-0">
@@ -169,7 +169,7 @@ $show_section = false;
                     <div class="container box_container_white">
                         <div class="d-flex justify-content-between align-items-center box-title-with-link">
                             <h2 class="text-info section-header mb-0">أﺧﺮ اﻟﻤﻘﺎﻟﺎت المتعلقة</h2>
-                            <form action="<?php echo esc_url( home_url( '/condition' ) ); ?>" method="post">
+                            <form action="<?php echo esc_url( home_url( '/condition' ) ); ?>" method="get">
                                 <input type="hidden" name="case" value="<?php echo $category->term_id; ?>">
                                 <button class="btn btn-transparent d-block text-secondary ps-0">
                                     كافة اﻟﻤﻘﺎﻟﺎت<i class="fa fa-chevron-left me-1 me-md-2" aria-hidden="true"></i>

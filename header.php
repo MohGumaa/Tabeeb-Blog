@@ -116,13 +116,13 @@ $navbar_type       = get_theme_mod( 'understrap_navbar_type', 'collapse' );
 	</style>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-40938740-7"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-237183386-1"></script>
 	<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
 
-	gtag('config', 'UA-40938740-7');
+	  gtag('config', 'UA-237183386-1');
 	</script>
 
 	<?php wp_head(); ?>

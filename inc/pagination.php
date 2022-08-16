@@ -76,7 +76,7 @@ if ( ! function_exists( 'understrap_pagination' ) ) {
 				<?php
 				foreach ( $links as $key => $link ) {
 					?>
-					<li class="page-item <?php echo strpos( $link, 'current' ) ? 'active' : ''; ?>">
+					<li class="page-item mx-2 <?php echo strpos( $link, 'current' ) ? 'active' : ''; ?>">
 						<?php echo str_replace( 'page-numbers', 'page-link', $link ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					</li>
 					<?php

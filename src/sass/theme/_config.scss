@@ -425,31 +425,28 @@ div.wpforms-container-full {
 }
 
 // Pagination Page
-.pagination {
-	.page-item {
-		margin: 0 0.5rem;
-		.page-link {
-			border: none;
-			background-color: transparent;
-			display: inline-block;
-			color: var(--clr-theme-light-blue);
-			font-size: 1.125rem;
-			text-align: center;
-			height: 2rem;
-			padding: 0.25rem;
-			&:focus {
-				box-shadow: none;
-			}
+.pagination,
+.pagination-custom {
+	.page-link,
+	.page-numbers {
+		border: none;
+		background-color: transparent;
+		display: inline-block;
+		color: var(--clr-theme-light-blue);
+		font-size: 1.125rem;
+		text-align: center;
+		height: 2rem;
+		padding: 0.25rem;
+		&:focus {
+			box-shadow: none;
 		}
 
-		.current {
+		&.current {
 			border: 1px solid var(--clr-theme-light-blue);
 			border-radius: 50%;
 			background: var(--clr-theme-light-blue);
 			color: var(--clr-white);
-			font-family: var(--ff-heading);
 			min-width: 2rem;
-			margin: 0;
 			cursor: default;
 			@include easeInOut();
 
@@ -458,11 +455,20 @@ div.wpforms-container-full {
 				color: var(--clr-gray);
 			}
 		}
+	}
 
-		.icon-chevron-right,
-		.icon-chevron-left {
-			font-size: 1.25rem;
-			padding-top: 1px;
+	.page-numbers {
+		margin-left: 0.5rem;
+		margin-right: 0.5rem;
+	}
+
+	.icon-chevron-left,
+	.icon-chevron-right {
+		font-size: 1.25rem;
+		padding-top: 1px;
+
+		&:hover {
+			color: var(--clr-gray);
 		}
 	}
 }
@@ -530,6 +536,23 @@ div.wpforms-container-full {
 
 	.section-title {
 		font-size: 1.125rem;
+	}
+}
+
+// Custom Search Form
+.case-search-form {
+	background: rgba(129, 131, 131, 0.6);
+	box-shadow: 0 12px 34px -11px rgb(65 62 101 / 7%);
+	border-radius: 0.75rem;
+	padding: 1.125rem;
+
+	.search-field {
+		background-clip: border-box;
+		border-top-right-radius: 0.5rem !important;
+		border-bottom-right-radius: 0.5rem !important;
+		border-color: var(--clr-lightgreen);
+		padding-top: 0.75rem;
+		padding-bottom: 0.75rem;
 	}
 }
 

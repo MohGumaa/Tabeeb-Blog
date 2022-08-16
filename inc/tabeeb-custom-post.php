@@ -98,7 +98,7 @@ function related_post_videos() {
             
             <div class="related-article py-4">
 
-                <div class="    section-box-header">
+                <div class="section-box-header">
                     <h2 class="text-info mb-0 section-title"><?php echo esc_html_e( 'فيديوهات ذات صلة', 'understrap' ); ?></h2>
                 </div>
 

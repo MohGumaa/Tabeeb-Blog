@@ -65,6 +65,15 @@
 		min-height: fit-content;
 	}
 
+	.case-search-form {
+		padding: 0.75rem;
+
+		.search-field {
+			padding-left: 0.5rem;
+			padding-right: 0.5rem;
+		}
+	}
+
 	.banner-with-left-img {
 		.banner-title {
 			font-size: 1.625rem;

@@ -16361,10 +16361,10 @@ div.wpforms-container-full .wpforms-form button[type=submit].btn-success:hover {
   color: var(--clr-white);
 }
 
-.pagination .page-item {
-  margin: 0 0.5rem;
-}
-.pagination .page-item .page-link {
+.pagination .page-link,
+.pagination .page-numbers,
+.pagination-custom .page-link,
+.pagination-custom .page-numbers {
   border: none;
   background-color: transparent;
   display: inline-block;
@@ -16374,28 +16374,48 @@ div.wpforms-container-full .wpforms-form button[type=submit].btn-success:hover {
   height: 2rem;
   padding: 0.25rem;
 }
-.pagination .page-item .page-link:focus {
+.pagination .page-link:focus,
+.pagination .page-numbers:focus,
+.pagination-custom .page-link:focus,
+.pagination-custom .page-numbers:focus {
   box-shadow: none;
 }
-.pagination .page-item .current {
+.pagination .page-link.current,
+.pagination .page-numbers.current,
+.pagination-custom .page-link.current,
+.pagination-custom .page-numbers.current {
   border: 1px solid var(--clr-theme-light-blue);
   border-radius: 50%;
   background: var(--clr-theme-light-blue);
   color: var(--clr-white);
-  font-family: var(--ff-heading);
   min-width: 2rem;
-  margin: 0;
   cursor: default;
   transition: all 0.3s ease-in-out;
 }
-.pagination .page-item .current:hover {
+.pagination .page-link.current:hover,
+.pagination .page-numbers.current:hover,
+.pagination-custom .page-link.current:hover,
+.pagination-custom .page-numbers.current:hover {
   background: var(--clr-white);
   color: var(--clr-gray);
 }
-.pagination .page-item .icon-chevron-right,
-.pagination .page-item .icon-chevron-left {
+.pagination .page-numbers,
+.pagination-custom .page-numbers {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+.pagination .icon-chevron-left,
+.pagination .icon-chevron-right,
+.pagination-custom .icon-chevron-left,
+.pagination-custom .icon-chevron-right {
   font-size: 1.25rem;
   padding-top: 1px;
+}
+.pagination .icon-chevron-left:hover,
+.pagination .icon-chevron-right:hover,
+.pagination-custom .icon-chevron-left:hover,
+.pagination-custom .icon-chevron-right:hover {
+  color: var(--clr-gray);
 }
 
 .doctor-qualifications {
@@ -16454,6 +16474,21 @@ div.wpforms-container-full .wpforms-form button[type=submit].btn-success:hover {
 }
 .section-box-header .section-title {
   font-size: 1.125rem;
+}
+
+.case-search-form {
+  background: rgba(129, 131, 131, 0.6);
+  box-shadow: 0 12px 34px -11px rgba(65, 62, 101, 0.07);
+  border-radius: 0.75rem;
+  padding: 1.125rem;
+}
+.case-search-form .search-field {
+  background-clip: border-box;
+  border-top-right-radius: 0.5rem !important;
+  border-bottom-right-radius: 0.5rem !important;
+  border-color: var(--clr-lightgreen);
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 body {
@@ -17141,6 +17176,14 @@ body::before {
     min-height: -webkit-fit-content;
     min-height: -moz-fit-content;
     min-height: fit-content;
+  }
+
+  .case-search-form {
+    padding: 0.75rem;
+  }
+  .case-search-form .search-field {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 
   .banner-with-left-img .banner-title {

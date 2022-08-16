@@ -115,7 +115,7 @@ return $items;
 }
 add_filter( 'wp_nav_menu_items', 'qode_adding_a_search_form_to_the_mobile_menu', 10, 2 );
 
-// Exclude 
+// Exclude Category From Search
 function exclude_category_from_search($query) {
 	if ($query->is_search) {
 		$cat_id = get_cat_ID('politics');

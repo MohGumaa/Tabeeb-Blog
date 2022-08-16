@@ -8,21 +8,17 @@
 	display: none;
 	overflow: hidden;
 	box-sizing: border-box;
-	-webkit-transform: translateX(100%);
 	transform: translateX(100%);
 	overflow-y: auto;
 	z-index: 1000;
 }
 .slide-menu,
 .slide-menu .slide-menu__slider {
-	transition: -webkit-transform 0.3s ease-in-out;
 	transition: transform 0.3s ease-in-out;
-	transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
 	will-change: transform;
 }
 .slide-menu .slide-menu__slider {
 	width: 100%;
-	-webkit-transform: translateX(0);
 	transform: translateX(0);
 }
 .slide-menu ul {
@@ -44,4 +40,3 @@
 .slide-menu a {
 	cursor: pointer;
 }
-/*# sourceMappingURL=slide-menu.css.map */
