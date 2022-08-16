@@ -34,4 +34,8 @@
 
 	// Remove Icon on Breadcrumb before last
 	$(".single-post .breadcrumb_last").prev().css("display", "none");
+
+	// Like & Dislike Button
+	$(".fa-thumbs-up").attr("class", "icon-thumbs-up");
+	$(".fa-thumbs-down").attr("class", "icon-thumbs-down");
 })(jQuery);
