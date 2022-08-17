@@ -537,8 +537,14 @@ body {
 			margin-bottom: 1.25rem;
 		}
 
+		strong {
+			position: relative;
+		}
+
+
 		a {
 			color: var(--clr-theme-light-blue);
+			font-weight: 400;
 			&:hover {
 				color: var(--clr-primary-dark-blue);
 			}
@@ -646,21 +652,20 @@ body {
 				-webkit-font-smoothing: antialiased;
 			}
 
-			& + .disclaimer-text {
-				display: none;
-				color: var(--clr-gray);
-				font-size: 0.813rem !important;
-				margin-top: 1.625rem;
-				margin-bottom: 1.625rem;
-			}
-
 			& ~ ol,
 			& ~ ul {
 				list-style: disc;
 				display: none;
 				color: var(--clr-gray) !important;
-				font-size: 0.813rem !important;
-				margin-bottom: 3rem !important;
+				font-size: 0.813rem;
+				line-height: 1.7;
+				margin-top: 1.25rem;
+				margin-bottom: 2rem;
+
+				&::before {
+					content: "يتبع طبيب.كوم معايير صارمة بخصوص مصادر المعلومات والتي تعتمد على الأبحاث الأكاديمية و الدراسات الطبية و الجمعيات الطبية المرموقة، كما نتجنب استخدام المصادر من الدرجة الثالثة.";
+				}
+
 				li {
 					margin-bottom: 1rem;
 					line-height: 18px;
@@ -668,8 +673,13 @@ body {
 						font-size: inherit;
 						color: var(--clr-gray);
 					}
+
+					&:nth-child(1) {
+						margin-top: 1.25rem;
+					}
 				}
 				a {
+					font-size: 0.813rem !important;
 					color: var(--clr-gray) !important;
 					&:hover {
 						color: var(--clr-theme-light-blue);

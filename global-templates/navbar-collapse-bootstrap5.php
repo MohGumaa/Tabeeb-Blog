@@ -11,55 +11,72 @@ defined( 'ABSPATH' ) || exit;
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
-<nav id="main-nav" class="navbar navbar-expand-md navbar-dark bg-primary" aria-labelledby="main-nav-label">
+<nav id="main-nav" class="navbar navbar-expand-md navbar-dark bg-info py-0" aria-labelledby="main-nav-label">
 
 	<h2 id="main-nav-label" class="screen-reader-text">
 		<?php esc_html_e( 'Main Navigation', 'understrap' ); ?>
 	</h2>
 
+	<div class="<?php echo esc_attr( $container ); ?> position-relative">
 
-	<div class="<?php echo esc_attr( $container ); ?>">
+		<button type="button" class="btn slide-menu__control navbar-toggler menu__toggler d-block d-lg-none" data-target="primary-menu" data-action="toggle">
+			<span></span>
+        </button>
 
-		<!-- Your site title as branding in the menu -->
-		<?php if ( ! has_custom_logo() ) { ?>
+		<?php if ( ! has_custom_logo() ) : ?>
+			<a class="navbar-brand text-white mx-0 mb-0" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="url">
+				<img width="105" src="<?php echo get_theme_file_uri( 'images/tabeeb-logo.svg' ); ?>" class="img-fluid" alt="Tabeeb Logo">
+			</a>
+		<?php else : ?>
+			<?php the_custom_logo(); ?>
+		<?php endif; ?>
 
-			<?php if ( is_front_page() && is_home() ) : ?>
+		<div class="slide-menu d-block d-lg-none" id="primary-menu">
+			<?php 
+				wp_nav_menu(
+					array(
+					'theme_location' => 'mobile',
+					'container' => '',
+					'menu_class'      => 'menu',
+					'menu_id'         => 'mobile-menu',
+					)
+				);
+			?>
+		</div>
 
-				<h1 class="navbar-brand mb-0"><a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a></h1>
+		<div class="flex-grow-1 mx-0 mx-lg-5 d-none d-lg-block">
+			<?php wp_nav_menu( array( 'theme_location' => 'desktop' ) ); ?>
+		</div>
 
-			<?php else : ?>
-
-				<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a>
-
-			<?php endif; ?>
-
-			<?php
-		} else {
-			the_custom_logo();
-		}
-		?>
-		<!-- end custom logo -->
-
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
-			<span class="navbar-toggler-icon"></span>
+		<i id="search-btn" class="d-none d-lg-block fs-4 icon-search icon"></i>
+		<button type="button" id="btn-mobile-menu" class="btn slide-menu__control d-block d-lg-none fs-3 p-0 text-white" data-target="primary-menu" data-action="toggle">
+			<i class="d-flex justify-content-center align-items-center fs-4 icon-search icon"></i>
 		</button>
 
-		<!-- The WordPress Menu goes here -->
-		<?php
-		wp_nav_menu(
-			array(
-				'theme_location'  => 'primary',
-				'container_class' => 'collapse navbar-collapse',
-				'container_id'    => 'navbarNavDropdown',
-				'menu_class'      => 'navbar-nav ms-auto',
-				'fallback_cb'     => '',
-				'menu_id'         => 'main-menu',
-				'depth'           => 2,
-				'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
-			)
-		);
-		?>
+		
+		<form action="<?php echo esc_url(home_url( '/' ));?>" id="search-from" class="search-form-desktop" autocomplete="off">
+			<label class="sr-only" for="searchInput">أكتب شيء</label>
+			<div class="input-group">
+				<input 
+					type="search" 
+					class="field form-control border-0 rounded" 
+					title="أكتب شيء" id="searchInput" 
+					name="s" type="text" 
+					placeholder="أكتب شيء" 
+					value="<?php the_search_query(); ?>" 
+					onkeyup="fetchResults()"
+					oninvalid="this.setCustomValidity('من فضلك ادخل كلمة البحث')"
+        			oninput="setCustomValidity('')" 
+					required
+				>
+				<span class="input-group-append d-none">
+					<button class="btn btn-primary rounded d-flex align-items-center h-100"><i class="icon-search fs-6"></i></button>
+				</span>
+			</div>
+		</form>
 
-	</div><!-- .container(-fluid) -->
+		<div class="d-none d-lg-block live-search-result"></div>
+	
+	</div>
 
-</nav><!-- .site-navigation -->
+</nav>

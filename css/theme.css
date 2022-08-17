@@ -17045,8 +17045,12 @@ body::before {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
 }
+.single-post .article-content strong {
+  position: relative;
+}
 .single-post .article-content a {
   color: var(--clr-theme-light-blue);
+  font-weight: 400;
 }
 .single-post .article-content a:hover {
   color: var(--clr-primary-dark-blue);
@@ -17147,19 +17151,17 @@ body::before {
   margin-right: 0.5rem;
   -webkit-font-smoothing: antialiased;
 }
-.single-post .article-content .source-links + .disclaimer-text {
-  display: none;
-  color: var(--clr-gray);
-  font-size: 0.813rem !important;
-  margin-top: 1.625rem;
-  margin-bottom: 1.625rem;
-}
 .single-post .article-content .source-links ~ ol, .single-post .article-content .source-links ~ ul {
   list-style: disc;
   display: none;
   color: var(--clr-gray) !important;
-  font-size: 0.813rem !important;
-  margin-bottom: 3rem !important;
+  font-size: 0.813rem;
+  line-height: 1.7;
+  margin-top: 1.25rem;
+  margin-bottom: 2rem;
+}
+.single-post .article-content .source-links ~ ol::before, .single-post .article-content .source-links ~ ul::before {
+  content: "يتبع طبيب.كوم معايير صارمة بخصوص مصادر المعلومات والتي تعتمد على الأبحاث الأكاديمية و الدراسات الطبية و الجمعيات الطبية المرموقة، كما نتجنب استخدام المصادر من الدرجة الثالثة.";
 }
 .single-post .article-content .source-links ~ ol li, .single-post .article-content .source-links ~ ul li {
   margin-bottom: 1rem;
@@ -17169,7 +17171,11 @@ body::before {
   font-size: inherit;
   color: var(--clr-gray);
 }
+.single-post .article-content .source-links ~ ol li:nth-child(1), .single-post .article-content .source-links ~ ul li:nth-child(1) {
+  margin-top: 1.25rem;
+}
 .single-post .article-content .source-links ~ ol a, .single-post .article-content .source-links ~ ul a {
+  font-size: 0.813rem !important;
   color: var(--clr-gray) !important;
 }
 .single-post .article-content .source-links ~ ol a:hover, .single-post .article-content .source-links ~ ul a:hover {

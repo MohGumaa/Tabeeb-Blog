@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 	const menuRightElem = document.getElementById("primary-menu");
 	const searchResult = document.querySelectorAll(".live-search-result");
+	const trustLinks = document.querySelectorAll("strong > a");
 
 	const allEvents = [
 		"sm.back",
@@ -80,4 +81,57 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		window.addEventListener("scroll", checkScroll);
 	})();
+
+	// Trust Link Feature
+	trustLinks.forEach((link) => {
+		const linkSrc = link.getAttribute("href");
+		const url = new URL(linkSrc);
+		const domainSrc = url.origin;
+		const sourceName = url.hostname
+			.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "")
+			.split("/")[0];
+		const parentContainer = link.parentElement;
+
+		// Create Icon For Link
+		const iconElement = document.createElement("i");
+		iconElement.className = "icon-check-circle";
+		link.appendChild(iconElement);
+
+		const div = document.createElement("div");
+		div.className = "hoverDetail";
+
+		let output = `
+			<div class="d-flex flex-column justify-content-between align-items-conter">
+				<a href="${domainSrc}" target="_blank" class="source-text-sm"><i class='fas fa-check-double text-success fa-sm ms-2'></i>مصدر موثوق</a> 
+				<span class="text-dark fw-bold">المصدر : <span class="text-secondary fw-normal text-lowercase small">${sourceName}</span></span>
+				<a href="${linkSrc}" target="_blank">التوجه إلى رابط المصدر</a> 
+			</div> 
+		`;
+
+		div.innerHTML = output;
+		parentContainer.appendChild(div);
+		const screenHeight = window.innerHeight / 2;
+		const screenWidth = window.innerWidth / 2;
+
+		link.addEventListener("mouseover", () => {
+			const parentContainer = link.parentElement;
+			const topPos = link.getBoundingClientRect().top;
+			const leftpost = link.getBoundingClientRect().left;
+			if (topPos > 158) {
+				div.classList.remove("top-pos");
+				div.classList.add("bottom-pos");
+			} else {
+				div.classList.remove("bottom-pos");
+				div.classList.add("top-pos");
+			}
+
+			if (leftpost < screenWidth) {
+				div.classList.remove("right-pos");
+				div.classList.add("left-pos");
+			} else {
+				div.classList.remove("left-pos");
+				div.classList.add("right-pos");
+			}
+		});
+	});
 });

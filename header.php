@@ -115,14 +115,17 @@ $navbar_type       = get_theme_mod( 'understrap_navbar_type', 'collapse' );
 		
 	</style>
 
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-237183386-1"></script>
+	<script> window._izq = window._izq || []; window._izq.push(["init" ]); </script>
+    <script src="https://cdn.izooto.com/scripts/fe5a9407d2f874871ab6502742cc1d3634228319.js"></script>
+	
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-S8SBYDE84L"></script>
 	<script>
 	  window.dataLayer = window.dataLayer || [];
 	  function gtag(){dataLayer.push(arguments);}
 	  gtag('js', new Date());
 
-	  gtag('config', 'UA-237183386-1');
+	  gtag('config', 'G-S8SBYDE84L');
 	</script>
 
 	<?php wp_head(); ?>
