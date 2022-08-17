@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		let output = `
 			<div class="d-flex flex-column justify-content-between align-items-conter">
-				<a href="${domainSrc}" target="_blank" class="source-text-sm"><i class='fas fa-check-double text-success fa-sm ms-2'></i>مصدر موثوق</a> 
+				<a href="${domainSrc}" target="_blank" class="small"><i class='fas fa-check-double text-success fa-sm ms-2 text-info'></i>مصدر موثوق</a> 
 				<span class="text-dark fw-bold">المصدر : <span class="text-secondary fw-normal text-lowercase small">${sourceName}</span></span>
 				<a href="${linkSrc}" target="_blank">التوجه إلى رابط المصدر</a> 
 			</div> 

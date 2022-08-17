@@ -537,14 +537,8 @@ body {
 			margin-bottom: 1.25rem;
 		}
 
-		strong {
-			position: relative;
-		}
-
-
 		a {
 			color: var(--clr-theme-light-blue);
-			font-weight: 400;
 			&:hover {
 				color: var(--clr-primary-dark-blue);
 			}
