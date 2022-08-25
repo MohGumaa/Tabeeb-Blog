@@ -15969,7 +15969,7 @@ body.understrap-no-sidebar .wp-block-cover.alignwide {
   --clr-background: #f7f7f7;
   --clr-bg-image: #f4f4f4;
   --clr-border: rgba(0, 0, 0, 0.125);
-  --clr-border-mobile: rgba(8, 155, 171, 0.2);
+  --clr-border-green: rgba(8, 155, 171, 0.5);
   --box-shadow: 0 8.05634px 22.8263px -7.38498px rgb(65 62 101 / 7%);
   --bg-light-blue: linear-gradient(
   	169.04deg,
@@ -16162,6 +16162,11 @@ h6,
   vertical-align: middle;
 }
 
+.chevron-left-fs::before {
+  font-size: 0.688rem;
+  vertical-align: text-bottom;
+}
+
 .icon-chevron-right:before {
   content: "\e935";
   vertical-align: middle;
@@ -16237,6 +16242,9 @@ h6,
   font-size: 1rem;
   line-height: 1.4;
 }
+.card-box.card-br .border-green {
+  border-color: var(--clr-border-green);
+}
 .card-box.card-br article {
   position: relative;
   height: 100%;
@@ -16247,7 +16255,7 @@ h6,
 }
 
 .card-list .card-title {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
 }
 .card-list p {
   font-size: 0.938rem;
@@ -16578,6 +16586,17 @@ div.wpforms-container-full .wpforms-form button[type=submit].btn-success:hover {
 }
 .share-social .share-link:last-child {
   margin-left: 0;
+}
+
+.banner-section {
+  background: var(--bg-light-blue);
+}
+.banner-section .btn {
+  font-family: var(--ff-heading);
+  letter-spacing: 0.02em;
+}
+.banner-section .btn-white {
+  background: var(--clr-white);
 }
 
 body {
@@ -17290,6 +17309,10 @@ body::before {
     height: 50px;
   }
 
+  .card-list .card-title {
+    font-size: 1.25rem;
+  }
+
   .page-wrapper {
     padding-top: 1rem;
   }
@@ -17381,6 +17404,10 @@ body::before {
     padding-left: var(--bs-gutter-x, 0.938rem);
   }
 
+  .box_container_white {
+    padding-right: var(--bs-gutter-x, 0.75rem);
+    padding-left: var(--bs-gutter-x, 0.75rem);
+  }
   .box_container_white .section-header {
     font-size: 0.938rem;
   }
@@ -17408,6 +17435,10 @@ body::before {
     font-size: 1rem;
     line-height: 1.4;
     margin-bottom: 0;
+  }
+
+  .banner-section .btn {
+    width: 100%;
   }
 
   .category-custom_page .section-a .posts {

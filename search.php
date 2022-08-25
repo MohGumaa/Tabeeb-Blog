@@ -7,16 +7,12 @@
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
-
 get_header();
-
-$container = get_theme_mod( 'understrap_container_type' );
-
 ?>
 
 <div class="page-wrapper" id="search-wrapper">
 
-	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
+	<div class="container" id="content" tabindex="-1">
 
 		<main class="site-main" id="main">
 

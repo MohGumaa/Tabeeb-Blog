@@ -10,13 +10,12 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-$container = get_theme_mod( 'understrap_container_type' );
 ?>
 
 <?php get_template_part( 'sidebar-templates/sidebar', 'footerfull' ); ?>
 
 <footer class="text-center text-light py-2 footer-wrapper">
-	<div class="<?php echo esc_attr( $container ); ?> small">
+	<div class="container small">
 		<?php understrap_site_info(); ?>
 	</div>
 </footer>

@@ -1,6 +1,7 @@
 (function ($) {
 	const ScrWindow = $(window);
 	const bodyPage = $("body");
+	const breadcrumbLast = $(".single-post .breadcrumb_last");
 	const searchBtn = $("#search-btn");
 	const searchForm = $("#search-from");
 	const menuToggler = $(".menu__toggler");
@@ -35,7 +36,7 @@
 	});
 
 	// Remove Icon on Breadcrumb before last
-	$(".single-post .breadcrumb_last").prev().css("display", "none");
+	breadcrumbLast.prev().css("display", "none");
 
 	// Like & Dislike Button
 	$(".fa-thumbs-up").attr("class", "icon-thumbs-up");

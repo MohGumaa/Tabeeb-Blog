@@ -7,6 +7,11 @@
 	body::before {
 		height: 50px;
 	}
+	.card-list {
+		.card-title {
+			font-size: 1.25rem;
+		}
+	}
 
 	.page-wrapper {
 		padding-top: 1rem;
@@ -136,6 +141,8 @@
 	}
 
 	.box_container_white {
+		padding-right: var(--bs-gutter-x, 0.75rem);
+		padding-left: var(--bs-gutter-x, 0.75rem);
 		.section-header {
 			font-size: 0.938rem;
 		}
@@ -170,6 +177,12 @@
 			font-size: 1rem;
 			line-height: 1.4;
 			margin-bottom: 0;
+		}
+	}
+
+	.banner-section {
+		.btn {
+			width: 100%;
 		}
 	}
 

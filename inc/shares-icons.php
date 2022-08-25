@@ -19,9 +19,6 @@ function post_social_sharing_buttons($content) {
 		$postTitle = htmlspecialchars(urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8');
 		$postTitle = str_replace( ' ', '%20', get_the_title());
 		
-        // Get Post Thumbnail for pinterest
-		// $postThumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
- 
 		// Construct sharing URL without using any script
 		$facebookURL = 'https://www.facebook.com/sharer/sharer.php?u='.$postURL;
         $twitterURL = 'https://twitter.com/intent/tweet?text='.$postTitle.'&amp;url='.$postURL.'&amp;via=tabeeb.com';

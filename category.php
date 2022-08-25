@@ -7,10 +7,8 @@
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
-
 get_header();
 
-$container = get_theme_mod( 'understrap_container_type' );
 $category = get_queried_object();
 $item_not_to_show = [];
 $show_section = false;
@@ -18,7 +16,7 @@ $show_section = false;
 
 <div class="page-wrapper category-custom_page" id="category-wrapper">
 
-	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
+	<div class="container" id="content" tabindex="-1">
         <main class="site-main" id="main">
 
             <?php 
@@ -180,7 +178,7 @@ $show_section = false;
                             <?php while ( $tabeeb_latest_post->have_posts() ) : $tabeeb_latest_post->the_post();?>
                                 <div class="col-lg-6 col-md-12 mb-3">
                                     <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-                                        <div class="card border-0 px-2 px-md-0 card-list">
+                                        <div class="card border-0 card-list">
                                             <div class="row g-0">
                                                 <div class="col-md-4 col-sm-5 col-12">
                                                     <a href="<?php the_permalink();?>" class="d-block img-fluid rounded-start">

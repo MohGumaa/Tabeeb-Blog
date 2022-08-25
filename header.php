@@ -112,10 +112,6 @@ $navbar_type       = get_theme_mod( 'understrap_navbar_type', 'collapse' );
 				background: url('<?php echo get_theme_file_uri( 'images/ballot-check-blue.svg' ); ?>') no-repeat center center/contain;
 			}	
 		}
-
-		.article-content strong > a::after {
-			content: url('<?php echo get_theme_file_uri( 'images/icon-check.svg' ); ?>');
-		}
 		
 	</style>
 

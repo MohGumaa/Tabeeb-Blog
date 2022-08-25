@@ -22,7 +22,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<div class="container">
 <?php endif; ?>
 
-		<!-- Your site title as branding in the menu -->
 		<?php if ( ! has_custom_logo() ) { ?>
 
 			<?php if ( is_front_page() && is_home() ) : ?>
@@ -40,13 +39,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 			the_custom_logo();
 		}
 		?>
-		<!-- end custom logo -->
 
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
-		<!-- The WordPress Menu goes here -->
 		<?php
 		wp_nav_menu(
 			array(
@@ -63,7 +60,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 		?>
 
 <?php if ( 'container' === $container ) : ?>
-	</div><!-- .container -->
+	</div>
 <?php endif; ?>
 
-</nav><!-- .site-navigation -->
+</nav>
