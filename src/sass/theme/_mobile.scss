@@ -162,6 +162,23 @@
 		}
 	}
 
+	.card-box {
+		&.card-br {
+			.border-green {
+				padding: 0.25rem 0.25rem 0;
+
+				img {
+					border-radius: 0.5rem;
+				}
+
+				.card-title {
+					font-size: 0.875rem;
+					line-height: 1;
+				}
+			}
+		}
+	}
+
 	.post-grid {
 		padding: 0.625rem;
 

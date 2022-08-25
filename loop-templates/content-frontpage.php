@@ -13,6 +13,8 @@ $selected_sections_image = get_field('صور_اقسام_مختارة');
 $tabeeb_special_posts    = get_field('مواضيع_مميزة');
 $tabeeb_articles_link    = get_field('أﺧﺮاﻟﻤﻘﺎﻟﺎت');
 $banner_one              = get_field('banner_one_section');
+$banner_two              = get_field('banner_two_section');
+$app_doctor_register     = get_field('app_links');
 
 $image1 = $selected_sections_image['الصور_الاول'];
 $image2 = $selected_sections_image['الصور_الثانية'];
@@ -22,7 +24,7 @@ $image4 = $selected_sections_image['الصور_الرابعة'];
 ?>
 
 <!-- Change tabeeb-featured -->
-<section class="section section-a wrapper">
+<section class="section section-a pt-3 pb-0 pb-md-4">
     <div class="row gx-3">
         <div class="col-md-3 col-sm-6 col-6 mb-3 mb-md-0 card-box card-br">
             <article>
@@ -108,7 +110,7 @@ $image4 = $selected_sections_image['الصور_الرابعة'];
         $special_loop = 1;
 ?>
 
-    <section class="section section-b pt-3">
+    <section class="section section-b wrapper">
         <div class="section-box-header bg-white">
             <h2 class="text-info mb-0 section-title"><?php echo $tabeeb_special_posts['العنوان']; ?></h2>
         </div>
@@ -211,6 +213,70 @@ $image4 = $selected_sections_image['الصور_الرابعة'];
             </div>
             <div class="col-lg col-md-5 d-none d-md-block">
                 <img width="390" height="424" src="<?php echo get_theme_file_uri( 'images/doctors.png' ); ?>" class="img-fluid d-block me-auto" alt="doctor">
+            </div>
+        </div>
+    </section>
+<?php endif; ?>
+
+<!-- Section E -->
+<?php 
+    $args = array( 
+        'posts_per_page' => 4,
+        'post_status'    => 'publish',
+        'category_name'  => 'sponsored',
+    );
+    $tabeeb_sponsor_posts = new WP_Query( $args ); 
+
+    if ( $tabeeb_sponsor_posts->have_posts() ) :
+        $tabeeb_sponsor_loop = 0;
+?>
+    <section class="section-e wrapper">
+        <div class="d-flex justify-content-between align-items-center section-box-header bg-white">
+            <h2 class="text-info mb-0 section-title">مقالات برعاية</h2>
+            <a href="<?php echo get_category_link(130); ?>" class="text-secondary small">
+            عرض المزيد<i class="fa fa-chevron-left me-1 chevron-left-fs" aria-hidden="true"></i>
+            </a>
+        </div>
+
+        <div class="row gx-3">
+            <?php while ( $tabeeb_sponsor_posts->have_posts() ) : $tabeeb_sponsor_posts->the_post();?>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-3 <?php echo ++$tabeeb_sponsor_loop == 4 ? 'd-block d-md-none d-lg-block' : '' ; ?> card-box card-br">
+                    <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+                        <div class="card h-100">
+                            <a href="<?php the_permalink();?>" class="card-img-top">
+                                <?php echo get_the_post_thumbnail( $post->ID, 'tabeeb-large' ); ?>
+                            </a>
+                            <div class="card-body px-0 pb-0">
+                                <?php
+                                    the_title(
+                                        sprintf( '<h3 class="card-title mb-0"><a href="%s" rel="bookmark" class="article-title">', esc_url( get_permalink() ) ),
+                                        '</a></h3>'
+                                    );
+                                ?>
+                            </div>
+                        </div>
+                        <?php echo htmlspecialchars(get_primary_category());?>
+                    </article>
+                </div>
+            <?php endwhile; ?>
+        </div>
+
+    </section>
+<?php endif; wp_reset_postdata(); ?>
+
+<?php if ( $banner_two ) :?>
+    <section class="section-d my-4 rounded text-center text-md-end banner-section">
+        <div class="row align-items-center justify-content-between">
+            <div class="col-md-6 pe-4 pe-md-4 pe-lg-5 ps-4 ps-lg-0 py-5 py-lg-0">
+                <h2 class="mb-3"><?php echo $banner_two['banner_two_title']; ?></h2>
+                <p class="fs-4 text-secondary"><?php echo $banner_two['banner_two_text']; ?> </p>
+                <a href="<?php echo $app_doctor_register['doctor_registration_link'] ?>"class="btn btn-info text-white">
+                    <?php echo esc_html_e( 'ﺳﺠﻞ ﻛﻄﺒﻴﺐ', 'understrap' ); ?>
+                </a>
+
+            </div>
+            <div class="col-md-6">
+                <img width="546" height="362" src="<?php echo get_theme_file_uri( 'images/doctorsGroup.png' ); ?>" class="img-fluid d-block me-auto" alt="doctor">
             </div>
         </div>
     </section>

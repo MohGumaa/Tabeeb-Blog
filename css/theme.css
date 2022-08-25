@@ -17422,6 +17422,17 @@ body::before {
     width: 100%;
   }
 
+  .card-box.card-br .border-green {
+    padding: 0.25rem 0.25rem 0;
+  }
+  .card-box.card-br .border-green img {
+    border-radius: 0.5rem;
+  }
+  .card-box.card-br .border-green .card-title {
+    font-size: 0.875rem;
+    line-height: 1;
+  }
+
   .post-grid {
     padding: 0.625rem;
   }
