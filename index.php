@@ -17,7 +17,20 @@ get_header();
 
 		<main class="site-main" id="main">
 
-			<?php if ( have_posts() ) : ?>
+			<?php 
+				$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+				$args = array( 
+					'paged' => $paged,
+					'post_type' => 'post',
+					'posts_per_page'   => 12,
+					'post_status'      => 'publish',
+					'category__not_in' => array(92),
+				); 
+
+				$tabeeb_latest_topics = new WP_Query( $args );
+
+				if ( $tabeeb_latest_topics->have_posts() ) : 
+			?>
 
 				<div class="page-breadcrumb">
 					<?php
@@ -27,10 +40,10 @@ get_header();
 					?>
 				</div>
 
-				<div class="row">
+				<div class="row gx-3">
 
-					<?php while ( have_posts() ): 
-						the_post();
+					<?php while ( $tabeeb_latest_topics->have_posts() ): 
+						$tabeeb_latest_topics->the_post();
 
 						get_template_part( 'loop-templates/content', get_post_format() );
 
@@ -42,7 +55,7 @@ get_header();
 
 				</div>
 
-			<?php endif; ?>
+			<?php endif; wp_reset_postdata();?>
 
 		</main>
 
