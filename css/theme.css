@@ -15962,6 +15962,7 @@ body.understrap-no-sidebar .wp-block-cover.alignwide {
   --clr-theme-light-blue: #089bab;
   --clr-dark-text: #363031;
   --clr-gray: #818383;
+  --clr-gray-br: #c9e0de;
   --clr-gray-light: #919191;
   --clr-gray-dark: #444a58;
   --clr-white: #ffffff;
@@ -16939,6 +16940,110 @@ body::before {
   padding: 0.5rem 0.5rem 1rem;
 }
 
+.alphabetical-page .hero-section {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 350px;
+  position: relative;
+}
+.alphabetical-page .hero-section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(8, 155, 171, 0.5), rgba(8, 155, 171, 0.5));
+}
+.alphabetical-page .hero-section .hero-content {
+  position: relative;
+  letter-spacing: 0.02em;
+  z-index: 2;
+}
+.alphabetical-page .hero-section .hero-content .hero-title {
+  font-family: var(--ff-body);
+}
+.alphabetical-page .hero-section .hero-content .alphabetical-letters {
+  background: var(--clr-lightgreen);
+  box-shadow: var(--box-shadow);
+  border-radius: 0.75rem;
+  width: 100%;
+  max-width: 800px;
+  padding: 2rem 1rem;
+}
+.alphabetical-page .hero-section .hero-content .alphabetical-letters input,
+.alphabetical-page .hero-section .hero-content .alphabetical-letters .icon-search {
+  border: none;
+  outline: none;
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+}
+.alphabetical-page .hero-section .hero-content .alphabetical-letters input {
+  border-top-right-radius: 0.5rem !important;
+  border-bottom-right-radius: 0.5rem !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+.alphabetical-page .hero-section .hero-content .alphabetical-letters .icon-search {
+  border-top-left-radius: 0.5rem !important;
+  border-bottom-left-radius: 0.5rem !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+.alphabetical-page .hero-section .hero-content .alphabetical-letters .title-with-bottom-br {
+  border-bottom: 1px solid var(--clr-gray-br);
+  color: var(--clr-theme-light-blue);
+  position: relative;
+}
+.alphabetical-page .hero-section .hero-content .alphabetical-letters .title-with-bottom-br::after {
+  content: "";
+  width: 96px;
+  height: 3px;
+  background: var(--clr-theme-light-blue);
+  display: block;
+  position: relative;
+  bottom: -2px;
+  right: 0;
+}
+.alphabetical-page .hero-section .hero-content .alphabeta {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(35px, 1fr));
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  grid-gap: 1.25rem;
+  padding: 0.5rem 0;
+}
+.alphabetical-page .hero-section .hero-content .alphabeta a {
+  background: var(--clr-white);
+  border: 1.32613px solid #e7e7e9;
+  box-shadow: 0px 5px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 0.625rem;
+  color: var(--clr-primary-dark-blue);
+  font-size: 0.875rem;
+  font-family: var(--ff-heading);
+  padding: 0.375rem;
+  outline: none;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+}
+.alphabetical-page .hero-section .hero-content .alphabeta a:hover {
+  background: #faf9f6;
+}
+.alphabetical-page .hero-section .hero-content .alphabeta a:active, .alphabetical-page .hero-section .hero-content .alphabeta a:focus {
+  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.2);
+  -webkit-transform: translateY(2px);
+  transform: translateY(2px);
+}
+.alphabetical-page main {
+  min-height: 25vw;
+}
+
 .single-post #breadcrumbs .breadcrumb_last {
   display: none;
 }
@@ -17397,6 +17502,17 @@ body::before {
   .category-custom_page .section-e .d-flex .newsletter {
     width: 65vw;
   }
+
+  .alphabetical-page .hero-section {
+    height: 260px;
+  }
+  .alphabetical-page .hero-section .hero-content .alphabetical-letters {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+  .alphabetical-page .hero-section .hero-content .alphabeta {
+    grid-gap: 0.875rem;
+  }
 }
 @media screen and (max-width: 576px) {
   .container {
@@ -17500,6 +17616,21 @@ body::before {
   .category-custom_page .section-e .d-flex .newsletter .btn {
     height: 100%;
     padding: 0.5rem;
+  }
+
+  .alphabetical-page .hero-section .hero-content .alphabetical-letters .fs-5 {
+    font-size: 1rem !important;
+  }
+  .alphabetical-page .hero-section .hero-content .alphabetical-letters .title-with-bottom-br {
+    font-size: 0.938rem;
+  }
+  .alphabetical-page .hero-section .hero-content .alphabetical-letters .alphabeta {
+    grid-template-columns: repeat(auto-fill, minmax(24px, 1fr));
+  }
+  .alphabetical-page .hero-section .hero-content .alphabetical-letters .alphabeta a {
+    font-size: 0.75rem;
+    padding: 0.25rem;
+    border-radius: 8px;
   }
 
   .page-static-wrapper main {

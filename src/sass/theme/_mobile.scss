@@ -131,6 +131,23 @@
 			}
 		}
 	}
+
+	.alphabetical-page {
+		.hero-section {
+			height: 260px;
+
+			.hero-content {
+				.alphabetical-letters {
+					padding-top: 1.25rem;
+					padding-bottom: 1.25rem;
+				}
+
+				.alphabeta {
+					grid-gap: 0.875rem;
+				}
+			}
+		}
+	}
 }
 
 // Smartphones
@@ -264,6 +281,31 @@
 					.btn {
 						height: 100%;
 						padding: 0.5rem;
+					}
+				}
+			}
+		}
+	}
+
+	.alphabetical-page {
+		.hero-section {
+			.hero-content {
+				.alphabetical-letters {
+					.fs-5 {
+						font-size: 1rem !important;
+					}
+					.title-with-bottom-br {
+						font-size: 0.938rem;
+					}
+
+					.alphabeta {
+						grid-template-columns: repeat(auto-fill, minmax(24px, 1fr));
+
+						a {
+							font-size: 0.75rem;
+							padding: 0.25rem;
+							border-radius: 8px;
+						}
 					}
 				}
 			}
