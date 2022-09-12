@@ -77,7 +77,7 @@ get_header();
                     foreach ( $arabic_alpha as $letter) :
             ?>
 
-                <div class="tabeeb-cases empty" id="<?php echo $letter; ?>">
+                <section class="tabeeb-cases empty" id="<?php echo $letter; ?>">
                     <h2>(<?php echo $letter;?>)</h2>
                     <div class="cases">
                         <?php
@@ -96,7 +96,7 @@ get_header();
                             }
                         ?>
                     </div>
-                </div>
+                </section>
 
             <?php endforeach; endif; ?>
 

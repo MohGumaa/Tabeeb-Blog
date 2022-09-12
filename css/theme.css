@@ -16277,6 +16277,17 @@ h6,
   border-radius: 0.75rem;
   padding: 0.625rem;
 }
+.card-box.card-br .large-box .card-title {
+  font-size: 1.375rem;
+  font-family: var(--ff-body);
+  line-height: 2;
+}
+.card-box.card-br .large-box .card-title a:hover {
+  color: var(--clr-primary-dark-blue) !important;
+}
+.card-box.card-br .large-box .card-footer a {
+  font-family: var(--ff-heading);
+}
 
 .card-list .card-title {
   font-size: 1.125rem;

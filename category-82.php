@@ -62,44 +62,110 @@ get_header();
     <main class="site-main pt-5" id="main">
         <div class="container pt-5">
             <?php 
-                // $medical_cases = get_terms( $term->taxonomy, array(
-                //     'parent'    => $term->term_id,
-                //     'hide_empty' => false
-                // ) );
-
-                $medical_cases = get_term_children( $term->term_id, $term->taxonomy_name );
+  
+                $medical_cases = get_terms( $term->taxonomy, array(
+                    'parent'    => $term->term_id,
+                    'hide_empty' => false
+                ) );
 
                 if ( $medical_cases ) :
                     $arabic_alpha = array("ا", "ب", "ت", "ث", "ج", "ح", "خ", "د", "ذ", "ر", "ز", "س", "ش", "ص", "ض", "ط", "ظ", "ع", "غ", "ف", "ق", "ك", "ل", "م", "ن", "ه", "و", "ي");
                     foreach ( $arabic_alpha as $letter) :
             ?>  
-                <section class="cases-container">
-                    <h2 class="d-non"><?php echo  $letter; ?></h2>
 
+                <section class="tabeeb-cases empty" id="<?php echo $letter; ?>">
+                    <h2>(<?php echo $letter;?>)</h2>
                     <div class="cases">
                         <?php
                             foreach ($medical_cases as $index => $item ) {
                                 $caseName = get_field('label_name', $item);
-                                
-                                if ( empty($caseName) ) {
+
+                                if(empty($caseName)) {
                                     $caseName = $item->name;
                                 }
 
                                 if (mb_substr($caseName, 0, 1, 'utf8') == $letter) {
-                                    echo '<h3 class="case-item"><a href="' . esc_url( get_permalink($item->ID) )  . '">' . $item->name . '</a></h3>';
+                                    echo '<h3 class="tabeeb-case"><a href="' . esc_url(get_term_link($item, $item->taxonomy)) . '" data-index="'.$caseName.'">' . $item->name . '</a></h3>';
                                     unset($medical_cases[$index]); 
                                 }
-
                             }
                         ?>
                     </div>
-
                 </section>
+
             <?php endforeach; endif;?>
         </div>
     </main>
 
 </div>
+
+<script>
+    const tabeebCase = document.querySelectorAll('.tabeeb-case');
+    const alphabetaLinks = document.querySelectorAll('.alphabeta a');
+    let filterInput = document.querySelector('#filterInput');
+
+    tabeebCase.forEach(item => {
+        item.parentElement.parentElement.classList.remove('empty');
+    });
+
+    const tabeebCaseEmpty = document.querySelectorAll('.tabeeb-cases.empty');
+    tabeebCaseEmpty.forEach(CaseEmpty => {
+        CaseEmpty.remove();
+    });
+
+    alphabetaLinks.forEach(letter => {
+        letter.addEventListener('click', ()=> {
+            tabeebCase.forEach(link => {
+                link.classList.remove('show-off');
+                link.style.display = '';
+                link.parentElement.parentElement.style.display = '';
+            });
+            filterInput.value = '';
+        });
+    });
+
+    // Event Listener 
+    filterInput.addEventListener('keyup', filterNames);
+
+    function filterNames() {
+        let filterValue = filterInput.value.toUpperCase();
+
+        tabeebCase.forEach((link, index) => {
+            let a = link.querySelector('a');
+            let valueMatch;
+
+            if ( isArabic(filterValue) ) {
+                valueMatch = a.innerHTML.trim();
+            } else {
+                valueMatch = a.dataset.index.toUpperCase();
+            }
+
+            function isArabic(text) {
+                var arabic = /[\u0600-\u06FF]/;
+                result = arabic.test(text);
+                return result;
+            }
+
+            if ( valueMatch.indexOf(filterValue) > -1 ) {
+                link.style.display = '';
+                link.parentElement.parentElement.style.display = '';
+                link.classList.remove('show-off');
+            } else {
+                link.style.display = 'none';
+                link.classList.add('show-off');
+
+                const showOffLinks = link.parentElement.parentElement.querySelectorAll('h3:not(.show-off');
+
+                if ( showOffLinks.length == 0 || showOffLinks.length < 1 ) {
+                    link.parentElement.parentElement.style.display = 'none';
+                }
+            }
+
+        });
+    }
+
+
+</script>
 
 <?php
 get_footer();
