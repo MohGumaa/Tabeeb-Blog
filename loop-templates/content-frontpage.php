@@ -12,9 +12,6 @@ $selected_sections       = get_field('أقسام_مختارة');
 $selected_sections_image = get_field('صور_اقسام_مختارة');
 $tabeeb_special_posts    = get_field('مواضيع_مميزة');
 $tabeeb_articles_link    = get_field('أﺧﺮاﻟﻤﻘﺎﻟﺎت');
-$banner_one              = get_field('banner_one_section');
-$banner_two              = get_field('banner_two_section');
-$app_doctor_register     = get_field('app_links');
 
 $image1 = $selected_sections_image['الصور_الاول'];
 $image2 = $selected_sections_image['الصور_الثانية'];
@@ -134,7 +131,6 @@ $image4 = $selected_sections_image['الصور_الرابعة'];
                         <?php echo htmlspecialchars(get_primary_category());?>
                     </article>
                 </div>
-
             <?php $special_loop++; endwhile; ?>
         </div>
     </section>
@@ -198,25 +194,57 @@ $image4 = $selected_sections_image['الصور_الرابعة'];
 
 <?php endif; wp_reset_postdata(); ?>
 
-<?php if ( $banner_one ) :?>
-    <section class="section-d my-4 rounded text-center text-md-end banner-section">
-        <div class="row align-items-center justify-content-between">
-            <div class="col-lg col-md-7 pe-4 pe-md-4 pe-lg-5 ps-4 ps-lg-0 py-5 py-lg-0">
-                <h2 class="mb-3"><?php echo $banner_one['banner_one_main_title']; ?></h2>
-                <p class="fs-4 text-secondary"><?php echo $banner_one['banner_one_text']; ?> </p>
-                <a href="#" class="btn btn-info text-white">
-                    <?php echo esc_html_e( 'ﺗﺤﺪث ﻣﻊ ﻃﺒﻴﺐ', 'understrap' ); ?>
-                </a>
-                <a href="#" class="btn btn-white text-info me-0 me-md-2 mt-3 mt-lg-0">
-                    <?php echo esc_html_e( 'اﻧﺘﻘﻞ إﻟﻰ اﻟﺤﺎﺳﺒﺎت اﻟﻄﺒﻴﺔ', 'understrap' ); ?>
-                </a>
-            </div>
-            <div class="col-lg col-md-5 d-none d-md-block">
-                <img width="390" height="424" src="<?php echo get_theme_file_uri( 'images/doctors.png' ); ?>" class="img-fluid d-block me-auto" alt="doctor">
-            </div>
+<?php 
+    $children = get_terms( 'category', array(
+        'parent'    => '82',
+        'orderby' => 'id',
+        'order' => 'ASC',
+        'include'   => array('87', '204', '250', '321', '323', '317', '352', '353'),
+        'hide_empty' => false
+    ) );
+
+    if ( $children ) :
+?>
+
+    <section class="wrapper section-d mt-3">
+        <div class="d-flex justify-content-between align-items-center section-box-header bg-white">
+            <h2 class="text-info mb-0 section-title"><?php echo esc_html_e( 'الحالات الأكثر شيوعاً', 'understrap' ); ?></h2>
+            <a href="<?php echo esc_url( home_url( '/الأكثر-بحثاً' ) ); ?>" class="text-secondary small">
+                <?php echo esc_html_e( 'عرض المزيد', 'understrap' ); ?> <i class="fa fa-chevron-left me-1 chevron-left-fs" aria-hidden="true"></i>
+            </a>
         </div>
+
+        <div class="row gx-3">
+
+            <?php foreach( $children as $subcat ) : ?>
+                <div class="col-md-3 col-sm-6 col-12 mb-3 card-box card-br">
+                    <article>
+                        <div class="card h-100">
+                            <?php $image = get_field('cat_picture', $subcat);  ?>
+                            <a href="<?php echo esc_url(get_term_link($subcat, $subcat->taxonomy)); ?>" class="card-img-top">
+                                
+                                <?php if ( $image ) : ?>
+                                    <img width="348" height="214" src="<?php echo $image['sizes']['tabeeb-large'];?>" class="wp-post-image" alt="<?php echo $subcat->name ?>">
+                                <?php else : ?>
+                                    <img width="348" height="214" src="<?php echo get_theme_file_uri( 'images/Empty-image.jpg' ); ?>" class="wp-post-image" alt="tabeeb-image">
+                                <?php endif; ?>
+
+                            </a>
+                            <div class="card-body px-0 pb-0">
+                                <h3 class="card-title text-center mb-0">
+                                    <a href="<?php echo esc_url(get_term_link($subcat, $subcat->taxonomy)); ?>"><?php echo $subcat->name ?></a>
+                                </h3>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            <?php endforeach ?>
+
+        </div>
+
     </section>
-<?php endif; ?>
+
+<?php endif; wp_reset_postdata();?>
 
 <!-- Section E -->
 <?php 
@@ -263,21 +291,3 @@ $image4 = $selected_sections_image['الصور_الرابعة'];
 
     </section>
 <?php endif; wp_reset_postdata(); ?>
-
-<?php if ( $banner_two ) :?>
-    <section class="section-d my-4 rounded text-center text-md-end banner-section">
-        <div class="row align-items-center justify-content-between">
-            <div class="col-md-6 pe-4 pe-md-4 pe-lg-5 ps-4 ps-lg-0 py-5 py-lg-0">
-                <h2 class="mb-3"><?php echo $banner_two['banner_two_title']; ?></h2>
-                <p class="fs-4 text-secondary"><?php echo $banner_two['banner_two_text']; ?> </p>
-                <a href="<?php echo $app_doctor_register['doctor_registration_link'] ?>"class="btn btn-info text-white">
-                    <?php echo esc_html_e( 'ﺳﺠﻞ ﻛﻄﺒﻴﺐ', 'understrap' ); ?>
-                </a>
-
-            </div>
-            <div class="col-md-6">
-                <img width="546" height="362" src="<?php echo get_theme_file_uri( 'images/doctorsGroup.png' ); ?>" class="img-fluid d-block me-auto" alt="doctor">
-            </div>
-        </div>
-    </section>
-<?php endif; ?>

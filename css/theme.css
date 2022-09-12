@@ -16183,7 +16183,6 @@ h6,
 
 .page-breadcrumb {
   margin-bottom: 1rem;
-  padding-top: 0.656rem;
   padding-bottom: 0.656rem;
 }
 .page-breadcrumb #breadcrumbs {
@@ -16199,6 +16198,30 @@ h6,
 }
 .page-breadcrumb #breadcrumbs .breadcrumb_last {
   color: var(--clr-dark-text);
+}
+.page-breadcrumb #breadcrumbs a::before,
+.page-breadcrumb #breadcrumbs .breadcrumb_last::before {
+  content: "\e934";
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  color: var(--clr-gray);
+  font-family: icomoon !important;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  vertical-align: middle;
+  margin-top: 1px;
+  margin-left: 3px;
+}
+.page-breadcrumb #breadcrumbs > span > span > a:first-child::before {
+  display: none;
 }
 
 .box_container_white {

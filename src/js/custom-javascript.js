@@ -36,7 +36,7 @@
 	});
 
 	// Remove Icon on Breadcrumb before last
-	breadcrumbLast.prev().css("display", "none");
+	// breadcrumbLast.prev().css("display", "none");
 
 	// Like & Dislike Button
 	$(".fa-thumbs-up").attr("class", "icon-thumbs-up");
