@@ -148,6 +148,13 @@
 			}
 		}
 	}
+
+	.sidebar-area {
+		.sidebar-container {
+			width: 100%;
+			margin-left: auto;
+		}
+	}
 }
 
 // Smartphones
@@ -181,7 +188,8 @@
 
 	.card-box {
 		&.card-br {
-			.border-green {
+			.border-green,
+			.most-search {
 				padding: 0.25rem 0.25rem 0;
 
 				img {
@@ -299,7 +307,7 @@
 					}
 
 					.alphabeta {
-						grid-template-columns: repeat(auto-fill, minmax(24px, 1fr));
+						grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
 
 						a {
 							font-size: 0.75rem;
@@ -309,6 +317,10 @@
 					}
 				}
 			}
+		}
+
+		main {
+			margin-top: 13rem;
 		}
 	}
 

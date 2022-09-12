@@ -9,9 +9,7 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 get_header();
-
 ?>
-
 <div class="page-wrapper" id="archive-wrapper">
 
 	<div class="container" id="content" tabindex="-1">
@@ -52,6 +50,5 @@ get_header();
 	</div>
 
 </div>
-
 <?php
 get_footer();

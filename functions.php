@@ -32,6 +32,7 @@ $understrap_includes = array(
 	'/alphabet-generator.php',              // Generate Arabic Letter
 	'/primary-category.php',                // Primary Category
 	'/shares-icons.php',                    // Share Icons
+	'/recent-posts-thumbnail.php',          // Recent Post Thumbnail
 );
 
 // Load WooCommerce functions if WooCommerce is activated.

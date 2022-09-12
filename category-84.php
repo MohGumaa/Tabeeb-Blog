@@ -8,7 +8,6 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 get_header();
-
 ?>
 
 <div class="page-wrapper parent-category" id="parent-category-wrapper">
@@ -46,7 +45,7 @@ get_header();
                                             $image = get_field('cat_picture', $subcat); 
                                             if ( $image ) : 
                                         ?>
-                                            <img width="348" height="214" src="<?php echo $image['sizes']['large'];?>" class="wp-post-image" alt="<?php echo $subcat->name ?>">
+                                            <img width="348" height="214" src="<?php echo $image['sizes']['tabeeb-large'];?>" class="wp-post-image" alt="<?php echo $subcat->name ?>">
                                         <?php else : ?>
                                             <img width="348" height="214" src="<?php echo get_theme_file_uri( 'images/Empty-image.jpg' ); ?>" class="wp-post-image" alt="tabeeb-image">
                                         <?php endif; ?>

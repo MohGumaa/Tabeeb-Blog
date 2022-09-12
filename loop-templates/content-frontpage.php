@@ -28,7 +28,7 @@ $image4 = $selected_sections_image['الصور_الرابعة'];
                 <div class="card h-100 bg-light pb-0 border-green">
                     <?php if ( $selected_sections['الرابط_الاول'] ) : ?>
                         <a href="<?php echo $selected_sections['الرابط_الاول']; ?>" class="card-img-top">
-                            <img width="348" height="214" src="<?php echo $image1['sizes']['large']; ?>" class="wp-post-image" alt="<?php the_title();?>">
+                            <img width="348" height="214" src="<?php echo $image1['sizes']['tabeeb-large']; ?>" class="wp-post-image" alt="<?php the_title();?>">
                         </a>
                         <div class="card-body px-0 pb-0">
                 
@@ -45,7 +45,7 @@ $image4 = $selected_sections_image['الصور_الرابعة'];
                 <div class="card h-100 bg-light pb-0 border-green">
                     <?php if ( $selected_sections['الرابط_الثاني'] ) : ?>
                         <a href="<?php echo $selected_sections['الرابط_الثاني']; ?>" class="card-img-top">
-                            <img width="348" height="214" src="<?php echo $image2['sizes']['large']; ?>" class="wp-post-image" alt="<?php the_title();?>">
+                            <img width="348" height="214" src="<?php echo $image2['sizes']['tabeeb-large']; ?>" class="wp-post-image" alt="<?php the_title();?>">
                         </a>
                         <div class="card-body px-0 pb-0">
                 
@@ -62,7 +62,7 @@ $image4 = $selected_sections_image['الصور_الرابعة'];
                 <div class="card h-100 bg-light pb-0 border-green">
                     <?php if ( $selected_sections['الرابط_الثالث'] ) : ?>
                         <a href="<?php echo $selected_sections['الرابط_الثالث']; ?>" class="card-img-top">
-                            <img width="348" height="214" src="<?php echo $image3['sizes']['large']; ?>" class="wp-post-image" alt="<?php the_title();?>">
+                            <img width="348" height="214" src="<?php echo $image3['sizes']['tabeeb-large']; ?>" class="wp-post-image" alt="<?php the_title();?>">
                         </a>
                         <div class="card-body px-0 pb-0">
                 
@@ -79,7 +79,7 @@ $image4 = $selected_sections_image['الصور_الرابعة'];
                 <div class="card h-100 bg-light pb-1 border-green">
                     <?php if ( $selected_sections['الرابط_الرابع'] ) : ?>
                         <a href="<?php echo $selected_sections['الرابط_الرابع']; ?>" class="card-img-top">
-                            <img width="348" height="214" src="<?php echo $image4['sizes']['large']; ?>" class="wp-post-image" alt="<?php the_title();?>">
+                            <img width="348" height="214" src="<?php echo $image4['sizes']['tabeeb-large']; ?>" class="wp-post-image" alt="<?php the_title();?>">
                         </a>
                         <div class="card-body px-0 pb-0">
                 
@@ -217,9 +217,9 @@ $image4 = $selected_sections_image['الصور_الرابعة'];
         <div class="row gx-3">
 
             <?php foreach( $children as $subcat ) : ?>
-                <div class="col-md-3 col-sm-6 col-12 mb-3 card-box card-br">
+                <div class="col-md-3 col-sm-6 col-6 mb-3 card-box card-br">
                     <article>
-                        <div class="card h-100">
+                        <div class="card h-100 pb-0 most-search">
                             <?php $image = get_field('cat_picture', $subcat);  ?>
                             <a href="<?php echo esc_url(get_term_link($subcat, $subcat->taxonomy)); ?>" class="card-img-top">
                                 
@@ -231,8 +231,8 @@ $image4 = $selected_sections_image['الصور_الرابعة'];
 
                             </a>
                             <div class="card-body px-0 pb-0">
-                                <h3 class="card-title text-center mb-0">
-                                    <a href="<?php echo esc_url(get_term_link($subcat, $subcat->taxonomy)); ?>"><?php echo $subcat->name ?></a>
+                                <h3 class="card-title text-center">
+                                    <a href="<?php echo esc_url(get_term_link($subcat, $subcat->taxonomy)); ?>" rel="bookmark" class="article-title"><?php echo $subcat->name ?></a>
                                 </h3>
                             </div>
                         </div>

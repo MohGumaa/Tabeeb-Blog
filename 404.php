@@ -9,9 +9,7 @@
 defined( 'ABSPATH' ) || exit;
 
 get_header();
-
 ?>
-
 <div class="page-wrapper" id="error-404-wrapper">
 
 	<div class="container" id="content" tabindex="-1">

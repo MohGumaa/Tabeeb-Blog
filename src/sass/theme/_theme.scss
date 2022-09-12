@@ -458,6 +458,9 @@ body {
 					border-bottom-right-radius: 0.5rem !important;
 					border-top-left-radius: 0 !important;
 					border-bottom-left-radius: 0 !important;
+					font-size: 1rem;
+					letter-spacing: 0.02em;
+					color: var(--clr-gray);
 				}
 
 				.icon-search {
@@ -523,6 +526,50 @@ body {
 
 	main {
 		min-height: 25vw;
+		margin-top: 8.5rem;
+
+		.tabeeb-cases {
+			background: var(--clr-white);
+			border: var(--clr-border);
+			box-shadow: var(--box-shadow);
+			border-radius: 0.75rem;
+			padding: 1rem;
+			margin-bottom: 1.5rem;
+			overflow: hidden;
+
+			h2 {
+				display: flex;
+				color: var(--clr-theme-light-blue);
+				flex-direction: row;
+				font-size: 1.375rem;
+				font-family: var(--ff-body);
+				letter-spacing: 0.02em;
+				margin-bottom: 1rem;
+
+				&::after {
+					content: "";
+					flex: 1 1;
+					border-bottom: 1px solid var(--clr-gray-br);
+					margin: auto 0.5rem auto 0;
+				}
+			}
+
+			.cases {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+				grid-gap: 1.25rem;
+
+				.tabeeb-case {
+					font-size: 1rem;
+					font-family: var(--ff-body);
+					line-height: 1.5;
+				}
+			}
+		}
+
+		:target {
+			border: 2px solid var(--clr-theme-light-blue);
+		}
 	}
 }
 
@@ -837,6 +884,42 @@ body {
 				&::marker {
 					color: var(--clr-theme-light-blue);
 				}
+			}
+		}
+	}
+}
+
+.sidebar-area {
+	.sidebar-container {
+		width: 300px;
+		margin-right: auto;
+
+		.widget-title {
+			background: var(--clr-white);
+			box-shadow: var(--box-shadow);
+			border-radius: 0.75rem;
+			border: 1px solid var(--clr-border);
+			color: var(--clr-theme-light-blue);
+			font-size: 1.063rem;
+			line-height: 1.4;
+			margin-bottom: 1rem;
+			padding: 0.625rem 0.938rem;
+		}
+
+		aside:nth-child(2) {
+			background: var(--clr-white);
+			box-shadow: var(--box-shadow);
+			border-radius: 0.75rem;
+			border: 1px solid var(--clr-border);
+			margin-top: 3rem;
+			padding: 0.938rem;
+
+			.widget-title {
+				box-shadow: none;
+				border: 0;
+				border-radius: 0;
+				margin-bottom: 0.5rem;
+				padding: 0;
 			}
 		}
 	}

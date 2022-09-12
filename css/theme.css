@@ -17007,6 +17007,9 @@ body::before {
   border-bottom-right-radius: 0.5rem !important;
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  color: var(--clr-gray);
 }
 .alphabetical-page .hero-section .hero-content .alphabetical-letters .icon-search {
   border-top-left-radius: 0.5rem !important;
@@ -17065,6 +17068,50 @@ body::before {
 }
 .alphabetical-page main {
   min-height: 25vw;
+  margin-top: 8.5rem;
+}
+.alphabetical-page main .tabeeb-cases {
+  background: var(--clr-white);
+  border: var(--clr-border);
+  box-shadow: var(--box-shadow);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+.alphabetical-page main .tabeeb-cases h2, .alphabetical-page main .tabeeb-cases .h2 {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: var(--clr-theme-light-blue);
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  font-size: 1.375rem;
+  font-family: var(--ff-body);
+  letter-spacing: 0.02em;
+  margin-bottom: 1rem;
+}
+.alphabetical-page main .tabeeb-cases h2::after, .alphabetical-page main .tabeeb-cases .h2::after {
+  content: "";
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  border-bottom: 1px solid var(--clr-gray-br);
+  margin: auto 0.5rem auto 0;
+}
+.alphabetical-page main .tabeeb-cases .cases {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+  grid-gap: 1.25rem;
+}
+.alphabetical-page main .tabeeb-cases .cases .tabeeb-case {
+  font-size: 1rem;
+  font-family: var(--ff-body);
+  line-height: 1.5;
+}
+.alphabetical-page main :target {
+  border: 2px solid var(--clr-theme-light-blue);
 }
 
 .single-post #breadcrumbs .breadcrumb_last {
@@ -17357,6 +17404,37 @@ body::before {
   color: var(--clr-theme-light-blue);
 }
 
+.sidebar-area .sidebar-container {
+  width: 300px;
+  margin-right: auto;
+}
+.sidebar-area .sidebar-container .widget-title {
+  background: var(--clr-white);
+  box-shadow: var(--box-shadow);
+  border-radius: 0.75rem;
+  border: 1px solid var(--clr-border);
+  color: var(--clr-theme-light-blue);
+  font-size: 1.063rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  padding: 0.625rem 0.938rem;
+}
+.sidebar-area .sidebar-container aside:nth-child(2) {
+  background: var(--clr-white);
+  box-shadow: var(--box-shadow);
+  border-radius: 0.75rem;
+  border: 1px solid var(--clr-border);
+  margin-top: 3rem;
+  padding: 0.938rem;
+}
+.sidebar-area .sidebar-container aside:nth-child(2) .widget-title {
+  box-shadow: none;
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 0.5rem;
+  padding: 0;
+}
+
 .footer-full {
   border-top: 5px solid var(--clr-theme-light-blue);
   line-height: 1.8;
@@ -17536,6 +17614,11 @@ body::before {
   .alphabetical-page .hero-section .hero-content .alphabeta {
     grid-gap: 0.875rem;
   }
+
+  .sidebar-area .sidebar-container {
+    width: 100%;
+    margin-left: auto;
+  }
 }
 @media screen and (max-width: 576px) {
   .container {
@@ -17561,13 +17644,16 @@ body::before {
     width: 100%;
   }
 
-  .card-box.card-br .border-green {
+  .card-box.card-br .border-green,
+.card-box.card-br .most-search {
     padding: 0.25rem 0.25rem 0;
   }
-  .card-box.card-br .border-green img {
+  .card-box.card-br .border-green img,
+.card-box.card-br .most-search img {
     border-radius: 0.5rem;
   }
-  .card-box.card-br .border-green .card-title {
+  .card-box.card-br .border-green .card-title,
+.card-box.card-br .most-search .card-title {
     font-size: 0.875rem;
     line-height: 1;
   }
@@ -17648,12 +17734,15 @@ body::before {
     font-size: 0.938rem;
   }
   .alphabetical-page .hero-section .hero-content .alphabetical-letters .alphabeta {
-    grid-template-columns: repeat(auto-fill, minmax(24px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
   }
   .alphabetical-page .hero-section .hero-content .alphabetical-letters .alphabeta a {
     font-size: 0.75rem;
     padding: 0.25rem;
     border-radius: 8px;
+  }
+  .alphabetical-page main {
+    margin-top: 13rem;
   }
 
   .page-static-wrapper main {

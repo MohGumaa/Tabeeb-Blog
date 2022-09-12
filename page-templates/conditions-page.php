@@ -11,20 +11,18 @@
 defined( 'ABSPATH' ) || exit;
 
 get_header();
-$container = get_theme_mod( 'understrap_container_type' );
 $is_search = count( $_GET );
 ?>
 
 <div class="page-wrapper condition-page" id="condition-page-wrapper">
 
-	<div class="<?php echo esc_attr( $container ); ?>" id="content">
+	<div class="container" id="content">
 
 		<div class="page-breadcrumb">
 			<span id="breadcrumbs">
 				<span>
 					<span>
 						<a href="<?php echo get_home_url(); ?>">الرئيسية</a>
-						<span class="icon-chevron-left"></span>
 						<span>
 
 							<?php if ( $is_search ) :?>
