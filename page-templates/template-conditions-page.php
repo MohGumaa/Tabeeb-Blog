@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Condition Page
+ * Template Name: Tabeeb Case Layout
  *
  * Template for displaying a page search of case
  *

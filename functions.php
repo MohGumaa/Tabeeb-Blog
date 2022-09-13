@@ -33,6 +33,7 @@ $understrap_includes = array(
 	'/primary-category.php',                // Primary Category
 	'/shares-icons.php',                    // Share Icons
 	'/recent-posts-thumbnail.php',          // Recent Post Thumbnail
+	'/tabeeb-users.php',                    // Search For Users
 );
 
 // Load WooCommerce functions if WooCommerce is activated.

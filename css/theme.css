@@ -15962,6 +15962,7 @@ body.understrap-no-sidebar .wp-block-cover.alignwide {
   --clr-theme-light-blue: #089bab;
   --clr-dark-text: #363031;
   --clr-gray: #818383;
+  --clr-gray-hover: #faf9f6;
   --clr-gray-br: #c9e0de;
   --clr-gray-light: #919191;
   --clr-gray-dark: #444a58;
@@ -17070,7 +17071,7 @@ body::before {
   cursor: pointer;
 }
 .alphabetical-page .hero-section .hero-content .alphabeta a:hover {
-  background: #faf9f6;
+  background: var(--clr-gray-hover);
 }
 .alphabetical-page .hero-section .hero-content .alphabeta a:active, .alphabetical-page .hero-section .hero-content .alphabeta a:focus {
   box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.2);
@@ -17390,7 +17391,7 @@ body::before {
   border-radius: 0.75rem;
   padding: 1.25rem;
   font-size: 1.125rem;
-  line-height: 2.2;
+  line-height: 2;
   letter-spacing: 0.02em;
   word-wrap: break-word;
   white-space: normal;
@@ -17413,6 +17414,57 @@ body::before {
 }
 .page-static-wrapper main ul li::marker {
   color: var(--clr-theme-light-blue);
+}
+
+.tabeeb-users-page main {
+  background-color: var(--clr-white);
+  border: 1px solid var(--clr-border);
+  box-shadow: var(--box-shadow);
+  border-radius: 0.75rem;
+  padding: 1.25rem 0.75rem 0;
+}
+.tabeeb-users-page .tabeeb-user {
+  border-radius: 0.75rem;
+  padding: 15px;
+  transition: all 0.1s ease-in-out;
+}
+.tabeeb-users-page .tabeeb-user:hover {
+  border: 2px solid var(--clr-theme-light-blue);
+  padding: 14px;
+}
+.tabeeb-users-page .tabeeb-user .card-img-top {
+  box-shadow: var(--box-shadow);
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.tabeeb-users-page .tabeeb-user .card-img-top img {
+  border-radius: 50%;
+}
+.tabeeb-users-page .tabeeb-user .card-title {
+  font-size: 1rem;
+  font-family: var(--ff-body);
+}
+.tabeeb-users-page .tabeeb-user .card-text {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+.tabeeb-users-page .tabeeb-user .nav-link {
+  border: 1px solid var(--clr-border);
+  box-shadow: var(--box-shadow);
+  border-radius: 0.375rem;
+  width: 28.14px;
+  height: 32px;
+  cursor: pointer;
+  margin-left: 0.875rem;
+}
+.tabeeb-users-page .tabeeb-user .nav-link:hover {
+  background-color: var(--clr-gray-hover);
 }
 
 .sidebar-area .sidebar-container {
@@ -17637,6 +17689,11 @@ body::before {
     padding-left: var(--bs-gutter-x, 0.938rem);
   }
 
+  .section-box-header {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
   .box_container_white {
     padding-right: var(--bs-gutter-x, 0.75rem);
     padding-left: var(--bs-gutter-x, 0.75rem);
@@ -17766,6 +17823,13 @@ body::before {
   }
   .page-static-wrapper main p {
     margin-bottom: 1rem;
+  }
+
+  .tabeeb-users-page main {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
   }
 }
 

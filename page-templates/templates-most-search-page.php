@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Most Search Page
+ * Template Name: Most Search Layout
  *
  * Template for displaying a page most search
  *
