@@ -48,11 +48,11 @@ Class My_Recent_Posts_Widget extends WP_Widget_Recent_Posts {
 			echo $args['before_title'] . $title . $args['after_title'];
 		} ?>
 
-		<div class="tabeeb-recent-posts">
+		<div class="row tabeeb-recent-posts">
 
             <?php while ( $tabeeb_recent_posts->have_posts() ) : $tabeeb_recent_posts->the_post(); ?>
             
-                <div class="mb-4 card-box card-br">
+                <div class="col-lg-12 col-md-6 col-sm-6 col-12 mb-4 card-box card-br">
                     <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
                         <div class="card h-100">
                             <a href="<?php the_permalink();?>" class="card-img-top">

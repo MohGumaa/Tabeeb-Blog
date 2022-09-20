@@ -777,7 +777,7 @@ div.wpforms-container-full {
 			#fc0 var(--percent),
 			#d0d8e0 var(--percent)
 		);
-		-webkit-background-clip: text;
+		background-clip: text;
 		-webkit-text-fill-color: transparent;
 	}
 }

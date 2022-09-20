@@ -16681,6 +16681,7 @@ div.wpforms-container-full .wpforms-form button[type=submit].btn-success:hover {
   letter-spacing: 4px;
   background: linear-gradient(90deg, #fc0 var(--percent), #d0d8e0 var(--percent));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -17178,7 +17179,7 @@ body::before {
 .single-post #breadcrumbs .breadcrumb_last {
   display: none;
 }
-.single-post .article-title {
+.single-post .article-title-main {
   line-height: 1.4;
 }
 .single-post .author-meta {
@@ -17310,6 +17311,9 @@ body::before {
   margin-top: 1.625rem;
   margin-bottom: 1.625rem;
 }
+.single-post .article-content figure img {
+  margin-bottom: 0;
+}
 .single-post .article-content figcaption {
   background-color: var(--clr-bg-image);
   font-size: 0.875rem;
@@ -17373,6 +17377,24 @@ body::before {
 .single-post .article-content .schema-faq-section {
   display: none;
 }
+.single-post .article-content .wp-block-yoast-seo-related-links {
+  background: var(--clr-white);
+  border: 1px solid var(--clr-border);
+  box-shadow: var(--box-shadow);
+  border-radius: 0.75rem;
+  padding: 0.625rem 2.8rem 0.625rem 1.125rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.single-post .article-content .wp-block-yoast-seo-related-links::before {
+  content: "إقرأ أيضاً:";
+  font-size: 1.25rem;
+  font-family: var(--ff-heading);
+  margin-right: -2rem;
+}
+.single-post .article-content .wp-block-yoast-seo-related-links li:first-child {
+  margin-top: 0.25rem;
+}
 .single-post .article-content .source-links {
   cursor: pointer;
   color: #b90000;
@@ -17406,17 +17428,17 @@ body::before {
   list-style: disc;
   display: none;
   color: var(--clr-gray) !important;
-  font-size: 0.813rem;
-  line-height: 1.7;
-  margin-top: 1.25rem;
-  margin-bottom: 2rem;
+  font-size: 0.813rem !important;
+  line-height: 1.7 !important;
+  margin-top: 1.25rem !important;
+  margin-bottom: 2rem !important;
 }
 .single-post .article-content .source-links ~ ol::before, .single-post .article-content .source-links ~ ul::before {
   content: "يتبع طبيب.كوم معايير صارمة بخصوص مصادر المعلومات والتي تعتمد على الأبحاث الأكاديمية و الدراسات الطبية و الجمعيات الطبية المرموقة، كما نتجنب استخدام المصادر من الدرجة الثالثة.";
 }
 .single-post .article-content .source-links ~ ol li, .single-post .article-content .source-links ~ ul li {
-  margin-bottom: 1rem;
-  line-height: 18px;
+  margin-bottom: 1rem !important;
+  line-height: 20px !important;
 }
 .single-post .article-content .source-links ~ ol li::marker, .single-post .article-content .source-links ~ ul li::marker {
   font-size: inherit;
@@ -17427,9 +17449,15 @@ body::before {
 }
 .single-post .article-content .source-links ~ ol a, .single-post .article-content .source-links ~ ul a {
   font-size: 0.813rem !important;
-  color: var(--clr-gray) !important;
+  color: var(--clr-theme-light-blue) !important;
 }
 .single-post .article-content .source-links ~ ol a:hover, .single-post .article-content .source-links ~ ul a:hover {
+  color: var(--clr-primary-dark-blue);
+}
+.single-post .article-content .sl-button {
+  color: var(--clr-gray);
+}
+.single-post .article-content .sl-button:hover {
   color: var(--clr-theme-light-blue);
 }
 
@@ -17628,6 +17656,73 @@ body::before {
   font-size: var(--fs-300);
 }
 
+.sl-button {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: 1px solid var(--clr-border);
+  box-shadow: var(--box-shadow);
+  border-radius: 0.375rem;
+  padding: 8px 0.219rem 4px;
+  width: 90px;
+  height: 38px;
+  cursor: pointer;
+  outline: none;
+  margin-left: 1rem !important;
+}
+.sl-button:hover {
+  color: var(--clr-gray);
+}
+.sl-button .icon-thumbs-up {
+  display: inline-block;
+  font: normal normal normal 16px/1 FontAwesome !important;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+.sl-button .icon-thumbs-up::before {
+  content: "\f164";
+}
+.sl-button .fa {
+  font-size: 1rem;
+}
+
+.sl-count {
+  margin-left: 0.25rem;
+}
+
+.sl-button.liked {
+  background: var(--clr-lightgreen);
+  color: var(--clr-theme-light-blue) !important;
+}
+
+.liked-rotate {
+  -webkit-animation: routateAni 500ms ease;
+  animation: routateAni 500ms ease;
+}
+
+@-webkit-keyframes routateAni {
+  100% {
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+  }
+}
+
+@keyframes routateAni {
+  100% {
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+  }
+}
 @media screen and (max-width: 992px) {
   body::before {
     height: 50px;
@@ -17664,6 +17759,15 @@ body::before {
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
+  }
+
+  .single-post .author-meta .avatar {
+    width: 50px;
+    height: 50px;
+    margin-left: 0.625rem;
+  }
+  .single-post .article-content div#ez-toc-container ul a {
+    font-size: 1rem;
   }
 }
 @media screen and (max-width: 768px) {
@@ -17866,6 +17970,51 @@ body::before {
   }
   .alphabetical-page main {
     margin-top: 13rem;
+  }
+
+  .single-post .article-title-main {
+    font-size: 1.563rem;
+  }
+  .single-post .article-img .d-flex {
+    font-size: 0.75rem;
+    line-height: 25px;
+  }
+  .single-post .article-content {
+    font-size: 1.094rem;
+    letter-spacing: 0;
+  }
+  .single-post .article-content div#ez-toc-container ul a {
+    border-width: 1px;
+  }
+  .single-post .article-content h2, .single-post .article-content .h2,
+.single-post .article-content h3,
+.single-post .article-content .h3,
+.single-post .article-content h4,
+.single-post .article-content .h4,
+.single-post .article-content h5,
+.single-post .article-content .h5 {
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+  }
+  .single-post .article-content h2, .single-post .article-content .h2 {
+    font-size: 1.188rem;
+  }
+  .single-post .article-content h3, .single-post .article-content .h3 {
+    font-size: 1.25rem;
+  }
+  .single-post .article-content h4, .single-post .article-content .h4 {
+    font-size: 1.125rem;
+  }
+  .single-post .article-content h5, .single-post .article-content .h5 {
+    font-size: 1.063rem;
+  }
+  .single-post .article-content p {
+    margin-top: 1.125rem;
+    margin-bottom: 1.125rem;
+  }
+  .single-post .article-content figcaption {
+    font-size: 0.75rem;
+    line-height: 25px;
   }
 
   .page-static-wrapper main {

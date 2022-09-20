@@ -34,14 +34,6 @@ get_header();
 				}
 				?>
 
-				<div class="d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center section-box-header like-section mt-3 mb-4">
-					<?php echo do_shortcode("[social]"); ?>
-					<div class="d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-						<h4 class="text-primary section-title my-3 my-md-0 ms-0 ms-md-4"><?php echo esc_html_e( 'هل أعجبك هذا المقال', 'understrap' ); ?></h4>
-						<?php echo do_shortcode('[posts_like_dislike]');?>
-					</div>
-				</div>
-
 				<?php get_template_part('loop-templates/content', 'relatedposts'); ?>
 
 			</main>

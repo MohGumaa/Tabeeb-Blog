@@ -31,10 +31,11 @@ $understrap_includes = array(
 	'/live-search.php',                     // Live Search Function Form 
 	'/alphabet-generator.php',              // Generate Arabic Letter
 	'/primary-category.php',                // Primary Category
-	'/shares-icons.php',                    // Share Icons
+	'/likes-shares-icons.php',              // Like & Share Icons
 	'/recent-posts-thumbnail.php',          // Recent Post Thumbnail
 	'/tabeeb-users.php',                    // Search For Users
-	'/load-more-posts.php'                  // Load More Post
+	'/load-more-posts.php',                 // Load More Post
+	'/post-like.php',                       // Post Like
 );
 
 // Load WooCommerce functions if WooCommerce is activated.

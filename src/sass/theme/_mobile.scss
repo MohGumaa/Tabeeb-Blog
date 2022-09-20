@@ -54,6 +54,20 @@
 			}
 		}
 	}
+
+	.single-post {
+		.author-meta .avatar {
+			width: 50px;
+			height: 50px;
+			margin-left: 0.625rem;
+		}
+
+		.article-content {
+			div#ez-toc-container ul a {
+				font-size: 1rem;
+			}
+		}
+	}
 }
 
 // Tablets & Small Laptops
@@ -326,6 +340,61 @@
 
 		main {
 			margin-top: 13rem;
+		}
+	}
+
+	.single-post {
+		.article-title-main {
+			font-size: 1.563rem;
+		}
+
+		.article-img {
+			.d-flex {
+				font-size: 0.75rem;
+				line-height: 25px;
+			}
+		}
+
+		.article-content {
+			font-size: 1.094rem;
+			letter-spacing: 0;
+
+			div#ez-toc-container ul a {
+				border-width: 1px;
+			}
+
+			h2,
+			h3,
+			h4,
+			h5 {
+				line-height: 1.5;
+				letter-spacing: 0.01em;
+			}
+			h2 {
+				font-size: 1.188rem;
+			}
+
+			h3 {
+				font-size: 1.25rem;
+			}
+
+			h4 {
+				font-size: 1.125rem;
+			}
+
+			h5 {
+				font-size: 1.063rem;
+			}
+
+			p {
+				margin-top: 1.125rem;
+				margin-bottom: 1.125rem;
+			}
+
+			figcaption {
+				font-size: 0.75rem;
+				line-height: 25px;
+			}
 		}
 	}
 

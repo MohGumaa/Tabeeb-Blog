@@ -12,7 +12,7 @@ $medicine_category = has_category('92', $post->ID);
 ?>
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-	<?php the_title( '<h1 class="text-primary article-title">', '</h1>' ); ?>
+	<?php the_title( '<h1 class="text-primary article-title-main">', '</h1>' ); ?>
 
 	<div class="d-flex align-items-center mb-3 author-meta">
 
@@ -27,7 +27,9 @@ $medicine_category = has_category('92', $post->ID);
 					if ( count($coauthors) > 1 ) : 
 				?>
 					<?php foreach ($coauthors as $coauthor) : if ($author_loop == 1) : ?>
-						<?php echo get_avatar($coauthor->ID, 65); ?>
+						<a href="<?php echo get_author_posts_url( $coauthor->ID); ?>" title="<?php echo $coauthor->display_name; ?>" class="author url fn" rel="author">
+							<?php echo get_avatar($coauthor->ID, 60); ?>
+						</a>
 					<?php endif; $author_loop++; endforeach ; ?>
 
 					<div class="flex-grow-1 author-info">
@@ -43,7 +45,7 @@ $medicine_category = has_category('92', $post->ID);
 									$doctor_user = $coauthor; 
 									if ( ! empty( $doctor_qualifications )  ) : 
 								?>
-									<span class="doctor-qualifications me-1"><?php echo $doctor_qualifications; ?></span>
+									<span class="author-badge me-1"><?php echo $doctor_qualifications; ?></span>
 								<?php endif; ?>
 							</div>
 						<?php else :?>
@@ -60,7 +62,9 @@ $medicine_category = has_category('92', $post->ID);
 					</div>
 
 				<?php else: ?>
-					<?php echo get_avatar( get_the_author_meta( 'ID' ), 65 ); ?>
+					<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo esc_attr( get_the_author() ); ?>">
+						<?php echo get_avatar( get_the_author_meta( 'ID' ), 60 ); ?>
+					</a>
 					<div class="author-info">
 						<span class="ms-1">الكاتب -</span>
 						<?php the_author_posts_link(); ?>
@@ -124,3 +128,7 @@ $medicine_category = has_category('92', $post->ID);
 	</div>
 
 </article>
+
+<div id="Sureview64"> 
+	<script type="text/javascript" data-cfasyn="false" async="true" src="https://app.sureview.tv/api/get-ads/64"></script>
+</div>

@@ -581,7 +581,7 @@ body {
 		}
 	}
 
-	.article-title {
+	.article-title-main {
 		line-height: 1.4;
 	}
 
@@ -714,6 +714,10 @@ body {
 		figure {
 			margin-top: 1.625rem;
 			margin-bottom: 1.625rem;
+
+			img {
+				margin-bottom: 0;
+			}
 		}
 		figcaption {
 			background-color: var(--clr-bg-image);
@@ -785,6 +789,27 @@ body {
 			display: none;
 		}
 
+		.wp-block-yoast-seo-related-links {
+			background: var(--clr-white);
+			border: 1px solid var(--clr-border);
+			box-shadow: var(--box-shadow);
+			border-radius: 0.75rem;
+			padding: 0.625rem 2.8rem 0.625rem 1.125rem;
+			margin-top: 1.25rem;
+			margin-bottom: 1.25rem;
+
+			&::before {
+				content: "إقرأ أيضاً:";
+				font-size: 1.25rem;
+				font-family: var(--ff-heading);
+				margin-right: -2rem;
+			}
+
+			li:first-child {
+				margin-top: 0.25rem;
+			}
+		}
+
 		.source-links {
 			cursor: pointer;
 			color: #b90000;
@@ -818,18 +843,18 @@ body {
 				list-style: disc;
 				display: none;
 				color: var(--clr-gray) !important;
-				font-size: 0.813rem;
-				line-height: 1.7;
-				margin-top: 1.25rem;
-				margin-bottom: 2rem;
+				font-size: 0.813rem !important;
+				line-height: 1.7 !important;
+				margin-top: 1.25rem !important;
+				margin-bottom: 2rem !important;
 
 				&::before {
 					content: "يتبع طبيب.كوم معايير صارمة بخصوص مصادر المعلومات والتي تعتمد على الأبحاث الأكاديمية و الدراسات الطبية و الجمعيات الطبية المرموقة، كما نتجنب استخدام المصادر من الدرجة الثالثة.";
 				}
 
 				li {
-					margin-bottom: 1rem;
-					line-height: 18px;
+					margin-bottom: 1rem !important;
+					line-height: 20px !important;
 					&::marker {
 						font-size: inherit;
 						color: var(--clr-gray);
@@ -841,11 +866,19 @@ body {
 				}
 				a {
 					font-size: 0.813rem !important;
-					color: var(--clr-gray) !important;
+					color: var(--clr-theme-light-blue) !important;
 					&:hover {
-						color: var(--clr-theme-light-blue);
+						color: var(--clr-primary-dark-blue);
 					}
 				}
+			}
+		}
+
+		.sl-button {
+			color: var(--clr-gray);
+
+			&:hover {
+				color: var(--clr-theme-light-blue);
 			}
 		}
 	}
@@ -1061,4 +1094,5 @@ body {
 	font-size: var(--fs-300);
 }
 
+@import "likes-post";
 @import "mobile";

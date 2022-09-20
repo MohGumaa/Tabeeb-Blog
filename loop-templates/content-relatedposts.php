@@ -15,7 +15,7 @@ defined( 'ABSPATH' ) || exit;
   $args=array(
     'tag__in'        => $tag_ids,
     'post__not_in'        => array($post->ID),
-    'posts_per_page'      => 3,
+    'posts_per_page'      => 6,
     'category__not_in' => array(92), 
     'ignore_sticky_posts' => 1
   );
@@ -30,7 +30,7 @@ defined( 'ABSPATH' ) || exit;
     </div>
     <div class="row gx-3">
         <?php while ($tabeeb_related_post->have_posts()) : $tabeeb_related_post->the_post(); ?>
-            <div class="col-md-4 col-sm-6 col-12 mb-3 card-box card-br">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12 mb-3 card-box card-br">
                 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
                     <div class="card h-100">
                         <a href="<?php the_permalink();?>" class="card-img-top">

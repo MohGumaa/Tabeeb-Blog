@@ -25,14 +25,13 @@ function post_social_sharing_buttons($content) {
 		$whatsappURL = 'https://api.whatsapp.com/send?text='.urldecode($postURL);
 		$linkedInURL = 'https://www.linkedin.com/shareArticle?mini=true&url='.$postURL.'&amp;title='.$postTitle;
 
- 
-		// Add sharing button at the end ofcontent
-        $content .= '<div class="share-buttons d-flex justify-content-between align-items-center share-social d-none">';
-        $content .= '<a class="share-link share-whatsapp" href="'.$whatsappURL.'" target="_blank" title="share on whatsapp"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>';
+		$content .= '<div class="d-flex justify-content-between justify-content-md-start align-items-center mt-4 share-social section-box-header">';
+		$content .= get_simple_likes_button( get_the_ID() );
+		$content .= '<a class="share-link share-whatsapp me-0 me-md-auto" href="'.$whatsappURL.'" target="_blank" title="share on whatsapp"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>';
         $content .= '<a class="share-link share-linkedin" href="'.$linkedInURL.'" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>';
         $content .= '<a class="share-link share-twitter" href="'. $twitterURL .'" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>';
         $content .= '<a class="share-link share-facebook" href="'.$facebookURL.'" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>';
-        $content .=  '</div>';
+		$content .=  '</div>';
 		
 		return $content;
 	}else{
