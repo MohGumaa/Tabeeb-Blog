@@ -16182,8 +16182,17 @@ h6,
   content: "\e9f1";
 }
 
+.fa-google {
+  background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
 .page-breadcrumb {
   margin-bottom: 1rem;
+  padding-top: 0.656rem;
   padding-bottom: 0.656rem;
 }
 .page-breadcrumb #breadcrumbs {
@@ -16281,7 +16290,7 @@ h6,
 .card-box.card-br .large-box .card-title {
   font-size: 1.375rem;
   font-family: var(--ff-body);
-  line-height: 2;
+  line-height: 1.7;
 }
 .card-box.card-br .large-box .card-title a:hover {
   color: var(--clr-primary-dark-blue) !important;
@@ -16529,6 +16538,9 @@ div.wpforms-container-full .wpforms-form button[type=submit].btn-success:hover {
 .section-box-header .section-title {
   font-size: 1.125rem;
 }
+.section-box-header p.section-title {
+  letter-spacing: 0.02em;
+}
 
 .case-search-form {
   background: rgba(129, 131, 131, 0.6);
@@ -16633,6 +16645,43 @@ div.wpforms-container-full .wpforms-form button[type=submit].btn-success:hover {
 }
 .banner-section .btn-white {
   background: var(--clr-white);
+}
+
+.author-socials .nav-link {
+  border: 1px solid var(--clr-border);
+  box-shadow: var(--box-shadow);
+  border-radius: 0.375rem;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  margin-left: 0.75rem;
+  padding: 0;
+}
+.author-socials .nav-link:hover {
+  background-color: var(--clr-gray-hover);
+}
+.author-socials .nav-link .fa::before {
+  font-size: 0.875rem;
+}
+
+.author-badge {
+  border: 1px solid var(--clr-border);
+  border-radius: 0.25rem;
+  color: var(--clr-gray-light);
+  font-size: 0.625rem;
+  padding: 0.25rem 0.25rem 1px;
+}
+
+.stars {
+  --percent: calc(var(--rating) / 5.1 * 100%);
+  display: inline-block;
+}
+.stars::before {
+  content: "\f005\f005\f005\f005\f005";
+  letter-spacing: 4px;
+  background: linear-gradient(90deg, #fc0 var(--percent), #d0d8e0 var(--percent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 body {
@@ -17391,7 +17440,7 @@ body::before {
   border-radius: 0.75rem;
   padding: 1.25rem;
   font-size: 1.125rem;
-  line-height: 2;
+  line-height: 2.2;
   letter-spacing: 0.02em;
   word-wrap: break-word;
   white-space: normal;
@@ -17403,6 +17452,9 @@ body::before {
 .page-static-wrapper main .h4 {
   margin-bottom: 0.875rem;
   margin-top: 2.813rem;
+}
+.page-static-wrapper main p {
+  margin-bottom: 1.625rem;
 }
 .page-static-wrapper main ul {
   list-style: disc;
@@ -17421,7 +17473,7 @@ body::before {
   border: 1px solid var(--clr-border);
   box-shadow: var(--box-shadow);
   border-radius: 0.75rem;
-  padding: 1.25rem 0.75rem 0;
+  padding: 1.25rem 0.75rem;
 }
 .tabeeb-users-page .tabeeb-user {
   border-radius: 0.75rem;
@@ -17454,17 +17506,20 @@ body::before {
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
 }
-.tabeeb-users-page .tabeeb-user .nav-link {
-  border: 1px solid var(--clr-border);
-  box-shadow: var(--box-shadow);
-  border-radius: 0.375rem;
-  width: 28.14px;
-  height: 32px;
-  cursor: pointer;
-  margin-left: 0.875rem;
+.tabeeb-users-page .tabeeb-user .specialty {
+  font-family: var(--ff-heading);
 }
-.tabeeb-users-page .tabeeb-user .nav-link:hover {
-  background-color: var(--clr-gray-hover);
+.tabeeb-users-page .tabeeb-user .number-posts {
+  font-size: 0.813rem;
+}
+
+.author-page .section-box-header img {
+  border-radius: 50%;
+  max-width: 195px;
+}
+.author-page .section-box-header .author-name {
+  font-family: var(--ff-heading);
+  line-height: 1.2;
 }
 
 .sidebar-area .sidebar-container {

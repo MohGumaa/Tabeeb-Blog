@@ -34,6 +34,7 @@ $understrap_includes = array(
 	'/shares-icons.php',                    // Share Icons
 	'/recent-posts-thumbnail.php',          // Recent Post Thumbnail
 	'/tabeeb-users.php',                    // Search For Users
+	'/load-more-posts.php'                  // Load More Post
 );
 
 // Load WooCommerce functions if WooCommerce is activated.
@@ -127,3 +128,7 @@ function exclude_category_from_search($query) {
 	return $query;
 }
 add_filter('pre_get_posts','exclude_category_from_search');
+
+// Disable curly smart quotes in post content, comment and title.
+remove_filter('the_title', 'wptexturize');
+remove_filter('the_content', 'wptexturize');

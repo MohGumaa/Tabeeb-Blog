@@ -27,5 +27,9 @@ get_header();
 
 </div>
 
+<div id="Sureview67"> 
+	<script type="text/javascript" data-cfasyn="false" async="true" src="https://app.sureview.tv/api/get-ads/67"></script>
+</div>
+
 <?php
 get_footer();

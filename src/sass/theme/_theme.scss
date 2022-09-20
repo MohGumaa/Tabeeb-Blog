@@ -860,7 +860,7 @@ body {
 		border-radius: 0.75rem;
 		padding: 1.25rem;
 		font-size: 1.125rem;
-		line-height: 2;
+		line-height: 2.2;
 		letter-spacing: 0.02em;
 		word-wrap: break-word;
 		white-space: normal;
@@ -870,6 +870,10 @@ body {
 		h4 {
 			margin-bottom: 0.875rem;
 			margin-top: 2.813rem;
+		}
+
+		p {
+			margin-bottom: 1.625rem;
 		}
 
 		ul {
@@ -894,7 +898,7 @@ body {
 		border: 1px solid var(--clr-border);
 		box-shadow: var(--box-shadow);
 		border-radius: 0.75rem;
-		padding: 1.25rem 0.75rem 0;
+		padding: 1.25rem 0.75rem;
 	}
 
 	.tabeeb-user {
@@ -933,18 +937,26 @@ body {
 			text-overflow: ellipsis;
 		}
 
-		.nav-link {
-			border: 1px solid var(--clr-border);
-			box-shadow: var(--box-shadow);
-			border-radius: 0.375rem;
-			width: 28.14px;
-			height: 32px;
-			cursor: pointer;
-			margin-left: 0.875rem;
+		.specialty {
+			font-family: var(--ff-heading);
+		}
 
-			&:hover {
-				background-color: var(--clr-gray-hover);
-			}
+		.number-posts {
+			font-size: 00.813rem;
+		}
+	}
+}
+
+.author-page {
+	.section-box-header {
+		img {
+			border-radius: 50%;
+			max-width: 195px;
+		}
+
+		.author-name {
+			font-family: var(--ff-heading);
+			line-height: 1.2;
 		}
 	}
 }

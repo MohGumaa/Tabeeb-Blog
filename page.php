@@ -11,11 +11,8 @@ get_header();
 ?>
 
 <div class="page-wrapper page-static-wrapper" id="static-page">
-
 	<div class="container" id="content" tabindex="-1">
-
 		<div class="row">
-
 			<div class="col-md-12 content-area" id="primary">
 				<div class="page-breadcrumb">
                     <?php
@@ -32,13 +29,9 @@ get_header();
 						}
 					?>
 				</main>
-
 			</div>
-
 		</div>
-
 	</div>
-
 </div>
 
 <?php

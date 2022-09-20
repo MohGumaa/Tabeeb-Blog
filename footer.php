@@ -21,6 +21,9 @@ defined( 'ABSPATH' ) || exit;
 </footer>
 
 </div>
+<!-- Exit Ads Jubna -->
+<div class="JC-WIDGET-DMROOT" data-widget-id="4b64dd833c594558f19c7e9005ec308f"></div>
+<script type="text/javascript" async="async" src="https://static.jubnaadserve.com/api/widget.js"></script>
 
 <?php wp_footer(); ?>
 
