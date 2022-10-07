@@ -16084,6 +16084,23 @@ select::placeholder {
   font-size: 14px !important;
 }
 
+.form-select {
+  background-position: left 0.75rem center;
+  padding-right: 0.75rem;
+  padding-left: 3rem;
+  color: var(--clr-gray);
+}
+
+.form-check-input:checked {
+  background-color: var(--clr-theme-light-blue);
+  border-color: var(--clr-theme-light-blue);
+}
+
+select:required:invalid {
+  color: var(--clr-gray);
+  font-size: 14px !important;
+}
+
 .rounded-right {
   border-top-left-radius: 0 !important;
   border-top-right-radius: 0.25rem !important;
@@ -16355,6 +16372,23 @@ h6,
 }
 .banner-with-left-img .btn {
   font-size: 1.125rem;
+}
+
+.filter-form {
+  border-radius: 0.75rem;
+}
+.filter-form input,
+.filter-form select {
+  border: 1px solid var(--clr-border);
+  box-shadow: var(--box-shadow);
+  font-size: 0.875rem;
+  color: var(--clr-gray);
+  letter-spacing: 0.02em;
+}
+.filter-form .btn {
+  border-radius: 0.25rem !important;
+  font-family: var(--ff-heading);
+  letter-spacing: 0.02em;
 }
 
 div.wpforms-container-full {
@@ -17537,8 +17571,10 @@ body::before {
 .tabeeb-users-page .tabeeb-user .specialty {
   font-family: var(--ff-heading);
 }
-.tabeeb-users-page .tabeeb-user .number-posts {
+.tabeeb-users-page .tabeeb-user .badge-number-posts {
   font-size: 0.813rem;
+  height: 28px;
+  line-height: 28px;
 }
 
 .author-page .section-box-header img {

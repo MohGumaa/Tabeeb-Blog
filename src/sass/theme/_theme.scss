@@ -974,8 +974,10 @@ body {
 			font-family: var(--ff-heading);
 		}
 
-		.number-posts {
+		.badge-number-posts {
 			font-size: 00.813rem;
+			height: 28px;
+			line-height: 28px;
 		}
 	}
 }

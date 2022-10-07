@@ -11,9 +11,10 @@ defined( 'ABSPATH' ) || exit;
 $tabeeb_user_role    = ['Author',];
 $tabeeb_user_exclude = ['36',];
 
-[$tabeeb_user_result, $tabeeb_user_query_total, $tabeeb_user_result_total, $total_pages] = tabeeb_users($tabeeb_user_role, $tabeeb_user_exclude);
+[$tabeeb_user_query, $tabeeb_user_query_total, $tabeeb_user_loop, $tabeeb_user_loop_total, $total_pages, $tabeeb_query_all_user] = tabeeb_users($tabeeb_user_role, $tabeeb_user_exclude);
 
 get_header();
+
 ?>
 
 <div class="page-wrapper tabeeb-users-page">
@@ -24,11 +25,11 @@ get_header();
             <?php the_title( '<h1 class="text-info mb-0 section-title">', '</h1>' ); ?>
         </div>
 
-        <?php if ( $tabeeb_user_result ) : ?>
+        <?php if ( $tabeeb_user_loop ) : ?>
             <main class="site-main" id="main" role="main">
 
                 <div class="row gx-3">
-                    <?php foreach ( $tabeeb_user_result as $writer ) : ?>
+                    <?php foreach ( $tabeeb_user_loop as $writer ) : ?>
                         <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
                             <div class="card h-100 tabeeb-user">
                                 <a href="<?php echo get_author_posts_url($writer->ID);?>" class="card-img-top">
@@ -46,7 +47,7 @@ get_header();
                                     </p>
                                 </div>
 
-                                <div class="d-flex flex-wrap justify-content-between align-items-center">
+                                <div class="d-flex flex-wrap align-items-center">
                                     <?php 
                                         $linkedin  = get_the_author_meta('linkedin', $writer->ID);
                                         $facebook  = get_the_author_meta('facebook', $writer->ID);
@@ -56,19 +57,19 @@ get_header();
                                         $contentSocail = '';
                                         
                                         if ($linkedin) {
-                                        $contentSocail .= '<li class="nav-item mt-2"><a class="nav-link d-flex justify-content-center align-items-center" href="'.$linkedin.'" target="_blank"><i class="fa fa-linkedin text-info"></i></a></li>';
+                                        $contentSocail .= '<li class="nav-item"><a class="nav-link d-flex justify-content-center align-items-center" href="'.$linkedin.'" target="_blank"><i class="fa fa-linkedin text-info"></i></a></li>';
                                         }
                                         
                                         if ($twitter) {
-                                        $contentSocail .= '<li class="nav-item mt-2"><a class="nav-link d-flex justify-content-center align-items-center" href="'.$twitter.'" target="_blank"><i class="fa fa-twitter text-info"></i></a></li>';
+                                        $contentSocail .= '<li class="nav-item"><a class="nav-link d-flex justify-content-center align-items-center" href="'.$twitter.'" target="_blank"><i class="fa fa-twitter text-info"></i></a></li>';
                                         }
                                         
                                         if ($instagram) {
-                                        $contentSocail .= '<li class="nav-item mt-2"><a class="nav-link d-flex justify-content-center align-items-center" href="'.$instagram.'" target="_blank"><i class="fa fa-instagram text-info"></i></a></li>';
+                                        $contentSocail .= '<li class="nav-item"><a class="nav-link d-flex justify-content-center align-items-center" href="'.$instagram.'" target="_blank"><i class="fa fa-instagram text-info"></i></a></li>';
                                         }
                                     
                                         if ($facebook) {
-                                        $contentSocail .= '<li class="nav-item mt-2"><a class="nav-link d-flex justify-content-center align-items-center" href="'.$facebook.'" target="_blank"><i class="fa fa-facebook text-info"></i></a></li>';
+                                        $contentSocail .= '<li class="nav-item"><a class="nav-link d-flex justify-content-center align-items-center" href="'.$facebook.'" target="_blank"><i class="fa fa-facebook text-info"></i></a></li>';
                                         }
 
                                         if ( $contentSocail ) {
@@ -79,7 +80,7 @@ get_header();
                                         
                                     ?>
                            
-                                    <span class="text-secondary number-posts mt-2">
+                                    <span class="d-block me-auto text-secondary badge-number-posts">
                                         <?php esc_html_e( 'المقالات', 'understrap' ); ?> : <?php echo count_user_posts( $writer->ID ); ?>
                                     </span>
                                 </div>
@@ -91,8 +92,8 @@ get_header();
                 </div>
 
                 <?php 
-                   if ( $tabeeb_user_query_total > $tabeeb_user_result_total ) {
-                    echo '<nav aria-labelledby="posts-nav-label" class="d-flex justify-content-center mt-5 mb-4 pagination-custom">';
+                   if ( $tabeeb_user_query_total > $tabeeb_user_loop_total ) {
+                    echo '<nav aria-labelledby="posts-nav-label" class="d-flex justify-content-center mt-3 pagination-custom">';
                     echo paginate_links(array(
                         'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
                         'total'        => $total_pages,

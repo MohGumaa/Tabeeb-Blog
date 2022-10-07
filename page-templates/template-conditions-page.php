@@ -41,7 +41,7 @@ $is_search = count( $_GET );
 			</span>
 		</div>
 
-		<form action="<?php echo esc_url( home_url( '/condition' ) ); ?>" class="mb-3 case-search-form">
+		<form action="<?php echo esc_url( get_page_link( 3715 ) ); ?>" class="mb-3 case-search-form">
 			<label class="screen-reader-text" for="disease"><?php echo esc_html_x( 'ابحث في الأمراض :', 'label', 'understrap' ); ?></label>
 			<div class="input-group">
 				<input type="search" 

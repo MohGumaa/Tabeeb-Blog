@@ -40,6 +40,39 @@ function custom_post_event() {
     );
 
     register_post_type('videos', $args1);
+
+    // Medical Calculator
+    $labels2 = array( 
+        'name'					=> 	__( 'اﻟﺤﺎﺳﺒﺎت اﻟﻄﺒﻴﺔ' ),
+        'singular_name' 		=>	__( 'حاسبة طبية' ),
+        'add_new' 				=>	__( 'حاسبة جديده' ),
+        'add_new_item' 			=> 	__( 'اضف حاسبة جديده' ),
+        'edit_item' 			=> 	__( 'تعديل حاسبة' ),
+        'new_item' 				=> 	__( 'حاسبة جديده' ),
+        'view_item' 			=> 	__( 'عرض حاسبة' ),
+        'search_items' 			=> 	__( 'بحث عن حاسبة' ),
+        'not_found' 			=>  __( 'لم يتم العثور علي حاسبة' ),
+        'not_found_in_trash' 	=> 	__( 'لم يتم العثور علي حاسبة في سلة المهملات' ),
+    );
+
+    $args2 = array(
+        'labels'             => $labels2,
+        'hierarchical'       => true,
+        'public'             => true,
+        'has_archive'        => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'show_in_nav_menus'  => true,
+        'show_in_admin_bar'  => true,
+        'show_in_rest'       => true,
+        'supports'           => array('title', 'editor', 'thumbnail', 'revisions', 'author', 'custom-fields', 'page-attributes'),
+        'publicly_queryable' => true,
+        'menu_icon'          => 'dashicons-calculator',
+        'menu_position'      => 6,
+        'can_export'          => true,
+    );
+
+    register_post_type('calculator', $args2);
 }
 
 add_action('init', 'custom_post_event');
