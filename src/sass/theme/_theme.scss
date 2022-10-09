@@ -983,16 +983,201 @@ body {
 }
 
 .author-page {
-	.section-box-header {
+	.user-info {
 		img {
-			border-radius: 50%;
+			border: 1px solid var(--clr-gray-br);
+			border-radius: 0.875rem;
 			max-width: 195px;
+			object-fit: cover;
+		}
+
+		.doctor-profile .author-socials {
+			display: none !important;
+			margin-top: 0 !important;
 		}
 
 		.author-name {
-			font-family: var(--ff-heading);
-			line-height: 1.2;
+			font-size: 1.5rem;
 		}
+
+		.user-meta {
+			p {
+				color: var(--clr-gray);
+				margin-bottom: 0.75rem;
+			}
+		}
+
+		.author-socials .nav-link {
+			border: none;
+			width: 37px;
+			height: 37px;
+			background-color: #c7c7c7;
+			padding: 0.25rem;
+
+			.fa {
+				color: var(--clr-white);
+
+				&::before {
+					font-size: 1.25rem;
+				}
+			}
+		}
+
+		.btn-outline-info:hover,
+		.btn-outline-info:hover .fa-whatsapp {
+			color: var(--clr-white) !important;
+		}
+	}
+
+	.user-tabs-info {
+		background: rgba(237, 237, 237, 0.7);
+
+		.nav-link {
+			border: 0;
+			border-left: 1px solid #d6d6d6;
+			border-radius: 0;
+			padding: 0.5rem 4rem;
+			font-size: 1.25rem;
+			color: var(--clr-gray-light);
+			letter-spacing: 0.02em;
+
+			&.active {
+				color: var(--clr-theme-light-blue);
+			}
+		}
+	}
+
+	.user-tabs-content {
+		background: var(--clr-white);
+		border-width: 0px 1px 1px 1px;
+		border-style: solid;
+		border-color: #e8e8e8;
+		box-shadow: var(--box-shadow);
+		border-radius: 0px 0px 0.75rem 0.75rem;
+		font-size: 1.075rem;
+		padding: 1.563rem 1.188rem 0.25rem;
+		letter-spacing: 0.02em;
+		text-align: right;
+		word-wrap: break-word;
+		white-space: normal;
+
+		h4,
+		h5,
+		h6 {
+			color: var(--clr-primary-dark-blue);
+			margin-bottom: 1.5rem;
+		}
+
+		h4 {
+			font-size: 1.25rem;
+		}
+
+		h5 {
+			font-size: 1.25rem;
+		}
+
+		p {
+			margin-bottom: 1.125rem;
+		}
+
+		a {
+			color: var(--clr-gray);
+
+			&:hover {
+				color: var(--clr-theme-light-blue);
+			}
+
+			&.tabeeb-marker::before {
+				display: inline-block;
+				font: normal normal normal 16px/1 FontAwesome;
+				text-rendering: auto;
+				-webkit-font-smoothing: antialiased;
+				margin-left: 0.5rem;
+			}
+
+			&.map-marker::before {
+				content: "\f041";
+			}
+
+			&.tel-marker::after {
+				display: inline-block;
+				font: normal normal normal 16px/1 FontAwesome;
+				text-rendering: auto;
+				-webkit-font-smoothing: antialiased;
+				margin-left: 0.5rem;
+				content: "\f095";
+			}
+		}
+
+		.phone {
+			direction: ltr;
+			font-family: var(--ff-body);
+		}
+
+		ul,
+		ol {
+			list-style: disc;
+			margin-bottom: 1.5rem;
+			padding-right: 2rem;
+
+			li {
+				line-height: 2;
+
+				&::marker {
+					color: var(--clr-theme-light-blue);
+					font-size: 1.125rem;
+				}
+			}
+
+			a {
+				color: var(--clr-theme-light-blue) !important;
+				font-size: 14px !important;
+				&:hover {
+					color: var(--clr-theme-dark-blue);
+				}
+			}
+		}
+
+		ol {
+			list-style: circle;
+		}
+
+		table {
+			font-size: 1rem;
+			margin-bottom: 1rem;
+
+			td,
+			th {
+				padding: 0.5rem 0 0.5rem 0.625rem;
+			}
+
+			td:nth-child(2) {
+				color: var(--clr-theme-dark-blue);
+			}
+
+			strong {
+				color: #f84343;
+				font-weight: 400;
+			}
+		}
+
+		.list-with-br {
+			ol,
+			ul {
+				border-bottom: 1px solid #e8e8e8;
+				padding-bottom: 1.5rem;
+			}
+
+			ol:last-child,
+			ul:last-child {
+				border-bottom: 0;
+				padding-bottom: 0;
+			}
+		}
+	}
+
+	.mfp-close {
+		cursor: pointer !important;
 	}
 }
 

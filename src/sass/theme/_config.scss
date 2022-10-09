@@ -175,6 +175,11 @@ h6 {
 	letter-spacing: 0.02em;
 }
 
+// Custom Font
+.fs-17 {
+	font-size: 1.063rem;
+}
+
 .col-md.content-area,
 .sidebar-area {
 	overflow: hidden;
@@ -227,6 +232,14 @@ h6 {
 
 .icon-thumbs-down:before {
 	content: "\e9f1";
+}
+
+.icon-image:before {
+	content: "\e980";
+}
+
+.icon-video:before {
+	content: "\ea0d";
 }
 
 .fa-google {
@@ -389,7 +402,8 @@ h6 {
 }
 
 // Skeleton placeholder image
-.wp-post-image {
+.wp-post-image,
+.avatar {
 	animation: skeleton-loading 1s linear infinite alternate;
 	border-radius: var(--br-size);
 }
@@ -817,6 +831,52 @@ div.wpforms-container-full {
 		background-clip: text;
 		-webkit-text-fill-color: transparent;
 	}
+}
+
+// Load Btn
+.btn-load {
+	cursor: pointer;
+
+	&.disabled {
+		cursor: wait;
+		pointer-events: initial;
+	}
+}
+
+.rounded-8 {
+	border-radius: 0.5rem;
+}
+
+.thumbnails-img {
+	position: relative;
+
+	img {
+		cursor: pointer;
+		transition: 0.3s;
+
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+
+	.icon-image,
+	.icon-video {
+		position: absolute;
+		background: var(--clr-theme-light-blue);
+		border-bottom-right-radius: 0.5rem;
+		bottom: 0;
+		width: 34px;
+		height: 32px;
+		z-index: 1;
+	}
+}
+
+.mfp-counter {
+	display: none;
+}
+
+.mfp-container {
+	cursor: default;
 }
 
 // Media Query Mixins

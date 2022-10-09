@@ -36,6 +36,7 @@ $understrap_includes = array(
 	'/tabeeb-users.php',                    // Search For Users
 	'/load-more-posts.php',                 // Load More Post
 	'/post-like.php',                       // Post Like
+	'/author-social.php',                   // Author Social Icon
 );
 
 // Load WooCommerce functions if WooCommerce is activated.
@@ -133,3 +134,10 @@ add_filter('pre_get_posts','exclude_category_from_search');
 // Disable curly smart quotes in post content, comment and title.
 remove_filter('the_title', 'wptexturize');
 remove_filter('the_content', 'wptexturize');
+
+// ACF Map
+function my_acf_google_map_api( $api ){
+    $api['key'] = 'AIzaSyCrxRhBDWJOIp525SyQC841g9OlmHaceE4';
+    return $api;
+}
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');

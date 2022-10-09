@@ -120,14 +120,14 @@ $navbar_type       = get_theme_mod( 'understrap_navbar_type', 'collapse' );
     <script src="https://cdn.izooto.com/scripts/fe5a9407d2f874871ab6502742cc1d3634228319.js"></script>
 	
 	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-S8SBYDE84L"></script>
+	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-S8SBYDE84L"></script>
 	<script>
 	  window.dataLayer = window.dataLayer || [];
 	  function gtag(){dataLayer.push(arguments);}
 	  gtag('js', new Date());
 
 	  gtag('config', 'G-S8SBYDE84L');
-	</script>
+	</script> -->
 
 	<!-- Meta Pixel Code -->
 	<script>

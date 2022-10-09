@@ -74,8 +74,8 @@ if ( ! function_exists( 'understrap_setup' ) ) {
 		add_theme_support( 'post-thumbnails' );
 
 		// Custom image size
+		add_image_size( 'tabeeb-album', 175, 130, true ); // Album Image
 		add_image_size( 'tabeeb-small', 340, 209, true );  // Grid Post
-		// add_image_size( 'tabeeb-medium', 374, 264, true ); 
 		add_image_size( 'tabeeb-large', 350, 214, true ); // Box Post
 		add_image_size( 'tabeeb-post', 780, 470, true ); 
 
