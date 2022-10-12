@@ -16091,6 +16091,21 @@ select::placeholder {
   padding-left: 0.25rem;
   color: var(--clr-gray);
 }
+.form-select::-webkit-scrollbar {
+  width: 20px;
+}
+.form-select::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.form-select::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+.form-select::-webkit-scrollbar-thumb:hover {
+  background-color: #d6dee1;
+}
 
 .form-check-input:checked {
   background-color: var(--clr-theme-light-blue);
@@ -16099,7 +16114,8 @@ select::placeholder {
 
 select:required:invalid {
   color: var(--clr-gray);
-  font-size: 14px !important;
+  font-size: 0.875rem !important;
+  letter-spacing: 0.02em;
 }
 
 .rounded-right {
@@ -16405,17 +16421,6 @@ h6,
   padding-top: 5.5px;
   padding-bottom: 5.5px;
 }
-.filter-form input::after {
-  font-family: "icomoon" !important;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: "\e9d2";
-}
 .filter-form .btn {
   border-radius: 0.25rem !important;
   font-family: var(--ff-heading);
@@ -16434,6 +16439,21 @@ div.wpforms-container-full .country-list .choices[data-type*=select-one]:after,
 div.wpforms-container-full .wpforms-datepicker-clear {
   right: auto !important;
   left: 11.5px;
+}
+div.wpforms-container-full select::-webkit-scrollbar {
+  width: 20px;
+}
+div.wpforms-container-full select::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+div.wpforms-container-full select::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+div.wpforms-container-full select::-webkit-scrollbar-thumb:hover {
+  background-color: #d6dee1;
 }
 div.wpforms-container-full .choices[data-type*=select-one] .choices__button {
   margin-right: 0.25rem !important;
@@ -16789,6 +16809,40 @@ div.wpforms-container-full .wpforms-form button[type=submit].btn-success:hover {
 
 .mfp-container {
   cursor: default;
+}
+
+.calculator-container .calculator-form input,
+.calculator-container .calculator-form select {
+  border: 1px solid var(--clr-theme-light-blue);
+  box-shadow: var(--box-shadow);
+  font-size: 0.875rem;
+  color: var(--clr-gray);
+  letter-spacing: 0.02em;
+}
+.calculator-container .calculator-result {
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+.calculator-container .calculator-result span {
+  font-size: 1.063rem;
+  font-family: var(--ff-heading);
+}
+.calculator-container .related-dates .date-box {
+  width: 148px;
+}
+.calculator-container .related-dates .text-wrap {
+  position: relative;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+}
+.calculator-container .related-dates .text {
+  position: absolute;
+  right: 0;
+  padding: 0 0.4rem;
+  font-size: 1.188rem;
+  line-height: 1.5;
+  top: 46px;
+  text-align: center;
 }
 
 body {
@@ -17563,6 +17617,10 @@ body::before {
 }
 .single-post .article-content .sl-button:hover {
   color: var(--clr-theme-light-blue);
+}
+
+.single-calculator .article-feature-image img {
+  border-radius: 0.5rem;
 }
 
 .page-static-wrapper main {

@@ -141,3 +141,18 @@ function my_acf_google_map_api( $api ){
     return $api;
 }
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
+
+// Tabeeb Calculator
+function my_shortcode($atts, $content = null, $tag = '')
+{
+
+	ob_start();
+
+	set_query_var('attributes', $atts);
+
+	get_template_part('inc/calculator', 'formula');
+
+	return ob_get_clean();
+
+}
+add_shortcode('medical_calculator', 'my_shortcode');

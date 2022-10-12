@@ -121,6 +121,25 @@ select {
 	padding-right: 0.75rem;
 	padding-left: 0.25rem;
 	color: var(--clr-gray);
+
+	&::-webkit-scrollbar {
+		width: 20px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background-color: transparent;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: #d6dee1;
+		border-radius: 20px;
+		border: 6px solid transparent;
+		background-clip: content-box;
+	}
+
+	&::-webkit-scrollbar-thumb:hover {
+		background-color: #d6dee1;
+	}
 }
 
 .form-check-input:checked {
@@ -130,7 +149,8 @@ select {
 
 select:required:invalid {
 	color: var(--clr-gray);
-	font-size: 14px !important;
+	font-size: 0.875rem !important;
+	letter-spacing: 0.02em;
 }
 
 .rounded-right {
@@ -471,18 +491,6 @@ h6 {
 		padding-bottom: 5.5px;
 	}
 
-	input::after {
-		font-family: "icomoon" !important;
-		font-style: normal;
-		font-weight: normal;
-		font-variant: normal;
-		text-transform: none;
-		line-height: 1;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-		content: "\e9d2";
-	}
-
 	.btn {
 		border-radius: 0.25rem !important;
 		font-family: var(--ff-heading);
@@ -504,6 +512,25 @@ div.wpforms-container-full {
 	.wpforms-datepicker-clear {
 		right: auto !important;
 		left: 11.5px;
+	}
+
+	select::-webkit-scrollbar {
+		width: 20px;
+	}
+
+	select::-webkit-scrollbar-track {
+		background-color: transparent;
+	}
+
+	select::-webkit-scrollbar-thumb {
+		background-color: #d6dee1;
+		border-radius: 20px;
+		border: 6px solid transparent;
+		background-clip: content-box;
+	}
+
+	select::-webkit-scrollbar-thumb:hover {
+		background-color: #d6dee1;
 	}
 
 	.choices[data-type*="select-one"] .choices__button {
@@ -897,6 +924,51 @@ div.wpforms-container-full {
 
 .mfp-container {
 	cursor: default;
+}
+
+.calculator-container {
+	.calculator-form {
+		input,
+		select {
+			border: 1px solid var(--clr-theme-light-blue);
+			box-shadow: var(--box-shadow);
+			font-size: 00.875rem;
+			color: var(--clr-gray);
+			letter-spacing: 0.02em;
+		}
+	}
+
+	.calculator-result {
+		letter-spacing: 0.05em;
+		margin: 0;
+
+		span {
+			font-size: 1.063rem;
+			font-family: var(--ff-heading);
+		}
+	}
+
+	.related-dates {
+		.date-box {
+			width: 148px;
+		}
+
+		.text-wrap {
+			position: relative;
+			margin-bottom: 0.5rem;
+			overflow: hidden;
+		}
+
+		.text {
+			position: absolute;
+			right: 0;
+			padding: 0 0.4rem;
+			font-size: 1.188rem;
+			line-height: 1.5;
+			top: 46px;
+			text-align: center;
+		}
+	}
 }
 
 // Media Query Mixins

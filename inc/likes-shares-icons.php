@@ -10,7 +10,7 @@ defined( 'ABSPATH' ) || exit;
 
 function post_social_sharing_buttons($content) {
 	global $post;
-	if(is_single()){
+	if(is_single() && ! is_singular( 'calculator' )){
 	
 		// Get current page URL 
 		$postURL = urlencode(get_permalink());

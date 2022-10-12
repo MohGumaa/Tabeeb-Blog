@@ -58,6 +58,7 @@ defined( 'ABSPATH' ) || exit;
 			$tabeeb_popular_posts = new WP_Query( $args );
 
 			if ( $tabeeb_popular_posts->have_posts() ) :
+				$special_loop = 1;
 		?>
 			<div class="section-box-header bg-white mt-5">
 				<h2 class="text-info mb-0 section-title"><?php esc_html_e( 'مقالات مقترحة', 'understrap' ); ?></h2>
