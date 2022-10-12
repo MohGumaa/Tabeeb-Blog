@@ -81,4 +81,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		window.addEventListener("scroll", checkScroll);
 	})();
+
+	// AR & EN Logo based on Location
+	fetch("https://app.jubnaadserve.com/api/ipinfo")
+		.then((response) => response.json())
+		.then((jsonResponse) => {
+			const country = jsonResponse.country_name;
+			const logoImg = document.querySelector(".navbar-brand img");
+			const logoFooter = document.querySelector(".footer-logo");
+
+			if (
+				country == "Saudi Arabia" ||
+				country === "Syria" ||
+				country === "United Arab Emirates" ||
+				country === "Bahrain" ||
+				country === "Algeria" ||
+				country === "Egypt" ||
+				country === "Iraq" ||
+				country === "Jordan" ||
+				country === "Kuwait" ||
+				country === "Libya" ||
+				country === "Lebanon" ||
+				country === "Morocco" ||
+				country === "Mauritania" ||
+				country === "Oman" ||
+				country === "Palestinian Territories" ||
+				country === "Qatar" ||
+				country === "Somalia" ||
+				country === "Sudan" ||
+				country === "Yemen" ||
+				country === "Tunisia"
+			) {
+				console.log("same");
+			} else {
+				logoImg.src =
+					"https://tabeeb.com/wp-content/uploads/2022/09/Logo-white-en.svg";
+				logoFooter.src =
+					"https://tabeeb.com/wp-content/uploads/2022/09/Logo-grey-en.svg";
+			}
+		})
+		.catch((err) => {
+			document.querySelector(".navbar-brand img").src =
+				"https://tabeeb.com/wp-content/uploads/2022/06/tabeeb-logo-new.svg";
+		});
 });

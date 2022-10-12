@@ -91,15 +91,20 @@ $tabeeb_specialties_list = array_unique($tabeeb_specialties_list);
 			</span>
 		</div>
 
-        <form action="<?php echo esc_url( home_url( '/طاقم-أطباء-طبيب' ) ); ?>" class="row gx-3 align-items-center mb-4 bg-white shadow py-3 px-2 filter-form">
+        <form action="<?php echo esc_url( home_url( '/طاقم-أطباء-طبيب' ) ); ?>" class="row gx-3 align-items-center mb-4 bg-white py-3 px-2 filter-form">
             <div class="col-lg-3 col-md-6 col-12 mb-3 mb-lg-0">
-                <input 
-                    type="text" 
-                    class="form-control" 
-                    name="اسم" 
-                    placeholder="بحث عن الدكتور"
-                    value="<?php echo isset($_GET['اسم']) ? $_GET['اسم'] : ''; ?>"
-                />
+                <div class="input-group border rounded py-1">
+                    <input 
+                        type="text" 
+                        class="form-control border-0 rounded-0 py-0" 
+                        name="اسم" 
+                        placeholder="بحث عن الدكتور"
+                        value="<?php echo isset($_GET['اسم']) ? $_GET['اسم'] : ''; ?>"
+                        aria-label="بحث عن الدكتور" 
+                        aria-describedby="basic-addon1"
+                    >
+                    <span class="input-group-text bg-white border-0 rounded-0 text-secondary icon-search p-1 ms-1" id="basic-addon1"></span>
+                </div>
             </div>
             <div class="col-lg-3 col-md-6 col-12 mb-3 mb-lg-0">
                 <select class="form-select" name="اﻟﺘﺨﺼﺺ" >

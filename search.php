@@ -27,7 +27,7 @@ get_header();
 				</div>
 
 				<header class="page-header">
-					<h1 class="page-title mb-3">
+					<h1 class="page-title mb-3 pb-1">
 						<?php
 						printf(
 							esc_html__( 'نتائج البحث عن : %s', 'understrap' ),

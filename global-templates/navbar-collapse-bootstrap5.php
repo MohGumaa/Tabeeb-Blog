@@ -8,7 +8,6 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-$container = get_theme_mod( 'understrap_container_type' );
 ?>
 
 <nav id="main-nav" class="navbar navbar-expand-md navbar-dark bg-info py-0" aria-labelledby="main-nav-label">
@@ -17,7 +16,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<?php esc_html_e( 'Main Navigation', 'understrap' ); ?>
 	</h2>
 
-	<div class="<?php echo esc_attr( $container ); ?> position-relative">
+	<div class="container position-relative">
 
 		<button type="button" class="btn slide-menu__control navbar-toggler menu__toggler d-block d-lg-none" data-target="primary-menu" data-action="toggle">
 			<span></span>

@@ -9299,7 +9299,7 @@
 	(function ($) {
 	  const ScrWindow = $(window);
 	  const bodyPage = $("body");
-	  $(".single-post .breadcrumb_last");
+	  $(".page-wrapper");
 	  const searchBtn = $("#search-btn");
 	  const searchForm = $("#search-from");
 	  const menuToggler = $(".menu__toggler");
@@ -9309,13 +9309,24 @@
 	  const numberSource = listSourceItem.find("li").length;
 	  searchBtn.on("click", function () {
 	    if (ScrWindow.width() > 991) {
-	      $("#search-from").toggleClass("active");
+	      searchForm.toggleClass("active");
 	      $(this).toggleClass("active-open");
 	      $("a.mega-menu-link").toggleClass("light-fade");
 	      searchForm.find("input[type=search]").focus().val("").css("cursor", "auto");
 	      searchResult.html("");
 	    }
-	  }); // Toggler Button Menu
+	  }); // Close if Escape click
+
+	  $(document).on("keyup", function (event) {
+	    if (event.key == "Escape") {
+	      searchForm.removeClass("active");
+	      searchBtn.removeClass("active-open");
+	      $("a.mega-menu-link").removeClass("light-fade");
+	      searchForm.find("input[type=search]").val("");
+	      searchResult.html("");
+	    }
+	  }); // Check if Click outside
+	  // Toggler Button Menu
 
 	  menuToggler.on("click", function () {
 	    $(this).toggleClass("active");

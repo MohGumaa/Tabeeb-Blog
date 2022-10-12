@@ -116,9 +116,10 @@ select {
 }
 
 .form-select {
-	background-position: left 0.75rem center;
+	background-position: left 0.5rem center;
+	background-size: 14px 10px;
 	padding-right: 0.75rem;
-	padding-left: 3rem;
+	padding-left: 0.25rem;
 	color: var(--clr-gray);
 }
 
@@ -453,6 +454,8 @@ h6 {
 // Filter Form
 .filter-form {
 	border-radius: 0.75rem;
+	border: 1px solid var(--clr-border);
+	box-shadow: var(--box-shadow);
 
 	input,
 	select {
@@ -461,6 +464,23 @@ h6 {
 		font-size: 00.875rem;
 		color: var(--clr-gray);
 		letter-spacing: 0.02em;
+	}
+
+	select {
+		padding-top: 5.5px;
+		padding-bottom: 5.5px;
+	}
+
+	input::after {
+		font-family: "icomoon" !important;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		line-height: 1;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		content: "\e9d2";
 	}
 
 	.btn {
@@ -656,7 +676,7 @@ div.wpforms-container-full {
 .section-box-header {
 	border: 1px solid var(--clr-border);
 	box-shadow: var(--box-shadow);
-	border-radius: 0.75rem;
+	border-radius: 0.5rem;
 	margin-bottom: 1rem;
 	padding: 0.656rem 0.938rem;
 
