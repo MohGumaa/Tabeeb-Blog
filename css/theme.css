@@ -16164,6 +16164,10 @@ h6,
   letter-spacing: 0.02em;
 }
 
+.lg-header {
+  font-size: 1.875rem;
+}
+
 .fs-17 {
   font-size: 1.063rem;
 }
@@ -16428,8 +16432,8 @@ h6,
 }
 
 div.wpforms-container-full {
-  width: 98%;
-  max-width: 600px;
+  width: 100%;
+  max-width: 450px;
 }
 div.wpforms-container-full .wpforms-field-large {
   border-radius: var(--br-size) !important;
@@ -17623,6 +17627,13 @@ body::before {
   border-radius: 0.5rem;
 }
 
+.thanks-page main {
+  width: 100%;
+  max-width: 626px;
+  height: 304px;
+  margin: auto;
+}
+
 .page-static-wrapper main {
   background-color: var(--clr-white);
   border: 1px solid var(--clr-border);
@@ -18046,6 +18057,21 @@ body::before {
     transform: rotate(-15deg);
   }
 }
+@media screen and (max-width: 1200px) {
+  .header-wrapper .mx-lg-5 {
+    margin-left: 2rem !important;
+    margin-right: 2rem !important;
+  }
+  .header-wrapper #mega-menu-wrap-desktop #mega-menu-desktop > li.mega-menu-item.mega-btn-call-doctor {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .header-wrapper #mega-menu-wrap-desktop #mega-menu-desktop > li.mega-menu-item.mega-btn-call-doctor a.mega-menu-link {
+    font-size: 0.875rem;
+    padding-left: 0.25rem !important;
+    padding-right: 0.25rem !important;
+  }
+}
 @media screen and (max-width: 992px) {
   body::before {
     height: 50px;
@@ -18194,6 +18220,10 @@ body::before {
   .container {
     padding-right: var(--bs-gutter-x, 0.938rem);
     padding-left: var(--bs-gutter-x, 0.938rem);
+  }
+
+  .lg-header {
+    font-size: 1.4rem;
   }
 
   .section-box-header {
@@ -18363,6 +18393,10 @@ body::before {
   .single-post .article-content figcaption {
     font-size: 0.75rem;
     line-height: 25px;
+  }
+
+  .thanks-page main {
+    height: 230px;
   }
 
   .page-static-wrapper main {

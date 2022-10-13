@@ -196,6 +196,10 @@ h6 {
 	letter-spacing: 0.02em;
 }
 
+.lg-header {
+	font-size: 1.875rem;
+}
+
 // Custom Font
 .fs-17 {
 	font-size: 1.063rem;
@@ -500,8 +504,8 @@ h6 {
 
 // WPForm
 div.wpforms-container-full {
-	width: 98%;
-	max-width: 600px;
+	width: 100%;
+	max-width: 450px;
 
 	.wpforms-field-large {
 		border-radius: var(--br-size) !important;

@@ -1,5 +1,24 @@
 // Widescreens
 @include mediaXl {
+	.header-wrapper {
+		.mx-lg-5 {
+			margin-left: 2rem !important;
+			margin-right: 2rem !important;
+		}
+
+		#mega-menu-wrap-desktop
+			#mega-menu-desktop
+			> li.mega-menu-item.mega-btn-call-doctor {
+			margin-left: 0 !important;
+			margin-right: 0 !important;
+
+			a.mega-menu-link {
+				font-size: 0.875rem;
+				padding-left: 0.25rem !important;
+				padding-right: 0.25rem !important;
+			}
+		}
+	}
 }
 
 // Disktops & Laptops
@@ -21,6 +40,7 @@
 		.navbar {
 			height: 50px;
 		}
+
 		.navbar-brand {
 			max-width: 85px;
 		}
@@ -210,6 +230,10 @@
 	.container {
 		padding-right: var(--bs-gutter-x, 0.938rem);
 		padding-left: var(--bs-gutter-x, 0.938rem);
+	}
+
+	.lg-header {
+		font-size: 1.4rem;
 	}
 
 	.section-box-header {
@@ -430,6 +454,10 @@
 				line-height: 25px;
 			}
 		}
+	}
+
+	.thanks-page main {
+		height: 230px;
 	}
 
 	.page-static-wrapper {

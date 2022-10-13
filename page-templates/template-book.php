@@ -30,10 +30,8 @@ if( isset($_GET['doctor-id']) )
 }
 
 ?>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
 <div class="page-wrapper page-static-wrapper booking-page" id="static-page">
-
     <div class="container">
         <div class="page-breadcrumb">
             <?php
@@ -42,32 +40,21 @@ if( isset($_GET['doctor-id']) )
                 }
             ?>
         </div>
-
         <main class="site-main" id="main" role="main">
-        <h1 class="booking-title text-center my-3"><?php the_title(); ?> مع <span class=""><?php echo $doctor_name; ?></span></h1>
-
-<?php
-    the_content();
-?>
+                <h1 class="lg-header text-center my-3">
+                    <?php the_title(); ?> مع <span class=""><?php echo $doctor_name; ?>
+                </h1>
+            <?php   
+                the_content();
+            ?>
         </main>
     </div>
-
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
 <script>
     (function($){
-		const bookingDate = $('.date-booking input');
         $('.email-booking input').attr('value', '<?php echo isset($author_obj) ?  $author_obj->user_email : 's'; ?>');
-
         bookingDate.attr('id', 'pickadate'); 
-		
-        $("#pickadate").flatpickr(
-		{
-			disableMobile: "true"
-		}
-		);
     })(jQuery);
 </script>
 

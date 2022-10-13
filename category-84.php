@@ -113,6 +113,27 @@ get_header();
                         </article>
                     </div>
 
+                    <div class="col-md-3 col-sm-6 col-6 mb-3 card-box card-br">
+                        <article>
+                            <div class="card h-100 bg-light p-1 p-md-2 border-green">
+                                <a href="<?php echo esc_url( home_url( '/calculator' ) ); ?>" class="card-img-top">
+                                    <?php  
+                                        if ( $image2 ) : 
+                                    ?>
+                                        <img width="348" height="214" src="https://tabeeb.test/wp-content/uploads/2022/08/%D8%AD%D8%A7%D9%84%D8%A9-%D8%A7%D9%84%D8%B3%D9%83%D8%B1%D9%8A-350x214.jpg" class="wp-post-image" alt="اﻟﺤﺎﺳﺒﺎت اﻟﻄﺒﻴﺔ">
+                                    <?php else : ?>
+                                        <img width="348" height="214" src="<?php echo get_theme_file_uri( 'images/Empty-image.jpg' ); ?>" class="wp-post-image" alt="tabeeb-image">
+                                    <?php endif; ?>
+                                </a>
+                                <div class="card-body px-1 pb-0">
+                                    <h3 class="card-title text-center mb-1 mb-md-2">
+                                        <a href="<?php echo esc_url( home_url( '/calculator' ) ); ?>" class="article-title">اﻟﺤﺎﺳﺒﺎت اﻟﻄﺒﻴﺔ</a></a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
                 </div>
 
             <?php else :?>
