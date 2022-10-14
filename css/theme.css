@@ -15966,6 +15966,7 @@ body.understrap-no-sidebar .wp-block-cover.alignwide {
   --clr-gray-br: #c9e0de;
   --clr-gray-light: #919191;
   --clr-gray-dark: #444a58;
+  --clr-pink: #d11a88;
   --clr-white: #ffffff;
   --clr-lightgreen: #eefbfa;
   --clr-background: #f7f7f7;
@@ -15986,6 +15987,8 @@ body.understrap-no-sidebar .wp-block-cover.alignwide {
   --fw-regular: 400;
   --fw-bold: 700;
   --br-size: 0.25rem;
+  --circle-max: 95%;
+  --circle-min: 5%;
 }
 
 *,
@@ -16149,6 +16152,14 @@ a:hover, a:focus {
   text-decoration: none;
 }
 
+.bg-pink {
+  background: var(--clr-pink);
+}
+
+.text-pink {
+  color: var(--clr-pink);
+}
+
 h1, .h1,
 h2,
 .h2,
@@ -16170,6 +16181,10 @@ h6,
 
 .fs-17 {
   font-size: 1.063rem;
+}
+
+.fs-small {
+  font-size: 0.75rem;
 }
 
 .col-md.content-area,
@@ -16199,6 +16214,10 @@ h6,
 
 .icon-search:before {
   content: "\e9d2";
+}
+
+.icon-info:before {
+  content: "\e982";
 }
 
 .icon-chevron-left:before {
@@ -16823,9 +16842,24 @@ div.wpforms-container-full .wpforms-form button[type=submit].btn-success:hover {
   color: var(--clr-gray);
   letter-spacing: 0.02em;
 }
+.calculator-container .calculator-info {
+  border: 1px solid var(--clr-border);
+  box-shadow: var(--box-shadow);
+  border-radius: 0.75rem;
+}
+.calculator-container .calculator-info input,
+.calculator-container .calculator-info select {
+  border-color: var(--clr-pink);
+}
+.calculator-container .form-label {
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+}
 .calculator-container .calculator-result {
+  display: none;
+  opacity: 0;
   letter-spacing: 0.05em;
-  margin: 0;
+  transition: opacity 1s ease-in;
 }
 .calculator-container .calculator-result span {
   font-size: 1.063rem;
@@ -16848,7 +16882,215 @@ div.wpforms-container-full .wpforms-form button[type=submit].btn-success:hover {
   top: 46px;
   text-align: center;
 }
+.calculator-container .show {
+  display: block;
+  opacity: 1;
+}
+.calculator-container .result-days .result {
+  background: var(--clr-pink);
+  color: var(--clr-white);
+  border-radius: 0.5rem;
+  padding-top: 2rem;
+}
+.calculator-container .result-days .result span {
+  font-size: 0.813rem;
+  line-height: 1.43;
+  margin-top: 0.625rem;
+  margin-bottom: 0.625rem;
+}
+.calculator-container .result-days .fertile {
+  background: #f491ad;
+}
+.calculator-container .result-days .period {
+  background: #258885;
+}
+.calculator-container .result-days .next-period {
+  background: #56c4c0;
+}
+.calculator-container .result-days .dates {
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin: 0 0 0.75rem 0;
+  padding: 0.875rem 0 0 0;
+}
+.calculator-container .result-days .dates span {
+  line-height: 2;
+}
+.calculator-container .result-days .dates span:nth-child(2) {
+  font-family: var(--ff-heading);
+  font-size: 0.875rem;
+}
+.calculator-container .table-striped {
+  background: #f491ad;
+  letter-spacing: 0.05em;
+}
+.calculator-container .table-striped thead {
+  background: #d11a88;
+  color: var(--clr-white);
+}
+.calculator-container .table-striped tbody tr:nth-child(even) {
+  background: var(--clr-white);
+}
+.calculator-container .table-striped tbody tr:first-child {
+  font-family: var(--ff-body) !important;
+}
+.calculator-container .table-striped tbody tr:first-child td {
+  border-bottom: 1px solid #ddd !important;
+  text-align: inherit !important;
+  padding: 8px 10px 6px;
+}
 
+.loader {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.loader span {
+  display: inline-block;
+  background-color: var(--clr-theme-light-blue);
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  margin: 0 0.5rem;
+  -webkit-transform: translate3d(0);
+  transform: translate3d(0);
+  -webkit-animation: bounce 0.6s infinite alternate;
+  animation: bounce 0.6s infinite alternate;
+}
+.loader span:nth-child(2) {
+  background-color: var(--clr-border-green);
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+.loader span:nth-child(3) {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+@-webkit-keyframes bounce {
+  to {
+    width: 16px;
+    height: 16px;
+    -webkit-transform: translate3d(0, -16px, 0);
+    transform: translate3d(0, -16px, 0);
+  }
+}
+@keyframes bounce {
+  to {
+    width: 16px;
+    height: 16px;
+    -webkit-transform: translate3d(0, -16px, 0);
+    transform: translate3d(0, -16px, 0);
+  }
+}
+
+.spinner-container {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.spinner-container .spinner {
+  height: 100px;
+  width: 100px;
+  background-color: var(--clr-pink);
+  border-radius: 50%;
+  position: relative;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.spinner-container .spinner::after, .spinner-container .spinner::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background-color: var(--clr-white);
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.spinner-container .spinner::before {
+  height: calc(var(--circle-max) + 3px);
+  width: calc(var(--circle-max) + 3px);
+  left: -2px;
+  -webkit-animation: animateBall 1s infinite ease-in-out alternate;
+  animation: animateBall 1s infinite ease-in-out alternate;
+}
+.spinner-container .spinner::after {
+  height: calc(var(--circle-min) + 3px);
+  width: calc(var(--circle-min) + 3px);
+  right: -2px;
+  animation: animateBall 1s infinite ease-in-out alternate-reverse;
+}
+
+.container-calendar {
+  border: 14px solid var(--clr-pink);
+  overflow: auto;
+  /* sunday */
+  /* friday */
+}
+.container-calendar .table-calendar {
+  width: 100% !important;
+  font-size: 1rem !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.container-calendar .table-calendar td,
+.container-calendar .table-calendar th {
+  padding: 5px !important;
+  border: 1px solid #e2e2e2 !important;
+  min-width: -webkit-fit-content !important;
+  min-width: -moz-fit-content !important;
+  min-width: fit-content !important;
+  text-align: center;
+  vertical-align: top;
+}
+.container-calendar .date-picker.selected {
+  background: var(--clr-theme-light-blue);
+  color: var(--clr-white);
+  font-weight: bold;
+}
+.container-calendar .date-picker.selected span {
+  border-bottom: 2px solid currentColor;
+}
+.container-calendar .date-picker:nth-child(1) {
+  color: red;
+}
+.container-calendar .date-picker:nth-child(6) {
+  color: green;
+}
+
+@-webkit-keyframes animateBall {
+  from {
+    height: calc(var(--circle-max) + 3px);
+    width: calc(var(--circle-max) + 3px);
+  }
+  to {
+    height: calc(var(--circle-min) + 3px);
+    width: calc(var(--circle-min) + 3px);
+  }
+}
+
+@keyframes animateBall {
+  from {
+    height: calc(var(--circle-max) + 3px);
+    width: calc(var(--circle-max) + 3px);
+  }
+  to {
+    height: calc(var(--circle-min) + 3px);
+    width: calc(var(--circle-min) + 3px);
+  }
+}
 body {
   direction: rtl;
   background: var(--clr-background);
@@ -18127,6 +18369,22 @@ body::before {
   .thumbnails-img img {
     width: 100%;
   }
+
+  .sidebar-area .sidebar-container {
+    width: 100%;
+    margin-left: auto;
+  }
+
+  .card-box img,
+.card-list img {
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+
+  .loader {
+    height: 2.5rem;
+  }
 }
 @media screen and (max-width: 768px) {
   .card-box img,
@@ -18209,11 +18467,6 @@ body::before {
   }
   .author-page .user-tabs-content iframe {
     height: 350px !important;
-  }
-
-  .sidebar-area .sidebar-container {
-    width: 100%;
-    margin-left: auto;
   }
 }
 @media screen and (max-width: 576px) {
@@ -18508,6 +18761,26 @@ body::before {
     border-width: 1px 0px 1px 0px;
     border-radius: 0;
     font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .calculator-container .img-pregnancy {
+    width: 96px !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .calculator-container .result-days .result {
+    padding-top: 1rem;
+  }
+  .calculator-container .result-days .result span {
+    font-size: 0.688rem;
+  }
+  .calculator-container .result-days .dates span {
+    font-size: 0.813rem;
+    letter-spacing: 0.02em;
+  }
+  .calculator-container .table-striped {
+    font-size: 0.813rem;
     line-height: 1.8;
   }
 }

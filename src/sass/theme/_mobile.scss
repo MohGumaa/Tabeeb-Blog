@@ -99,6 +99,24 @@
 	.thumbnails-img img {
 		width: 100%;
 	}
+
+	.sidebar-area {
+		.sidebar-container {
+			width: 100%;
+			margin-left: auto;
+		}
+	}
+
+	.card-box img,
+	.card-list img {
+		width: 100%;
+		-o-object-fit: cover;
+		object-fit: cover;
+	}
+
+	.loader {
+		height: 2.5rem;
+	}
 }
 
 // Tablets & Small Laptops
@@ -214,13 +232,6 @@
 
 		.user-tabs-content iframe {
 			height: 350px !important;
-		}
-	}
-
-	.sidebar-area {
-		.sidebar-container {
-			width: 100%;
-			margin-left: auto;
 		}
 	}
 }
@@ -589,6 +600,32 @@
 				font-size: 1rem;
 				line-height: 1.8;
 			}
+		}
+	}
+
+	.calculator-container {
+		.img-pregnancy {
+			width: 96px !important;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.result-days {
+			.result {
+				padding-top: 1rem;
+				span {
+					font-size: 0.688rem;
+				}
+			}
+
+			.dates span {
+				font-size: 00.813rem;
+				letter-spacing: 0.02em;
+			}
+		}
+
+		.table-striped {
+			font-size: 00.813rem;
+			line-height: 1.8;
 		}
 	}
 }
