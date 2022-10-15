@@ -82,6 +82,76 @@ document.addEventListener("DOMContentLoaded", () => {
 		window.addEventListener("scroll", checkScroll);
 	})();
 
+	// Trust Link
+	trustLinks.forEach((link) => {
+		const sourceLink = link.getAttribute("href");
+		const url = new URL(sourceLink);
+		const sourceDoamin = url.origin;
+		const sourceName = url.hostname
+			.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "")
+			.split("/")[0];
+		const parentContainer = link.parentElement;
+
+		// Create Icon For Link
+		// const iconElement = document.createElement("i");
+		// iconElement.className = "icon-check-circle";
+		// link.appendChild(iconElement);
+
+		const div = document.createElement("div");
+		div.className = "hoverDetail";
+
+		let output = `
+            <div class="d-flex flex-column justify-content-between align-items-conter">
+                <a href="${sourceDoamin}" target="_blank" class="d-flex align-items-center source-text-sm text-info"><i class='icon-check-circle text-info small ms-1'></i>مصدر موثوق</a> 
+                <span class="text-dark fw-bold">المصدر : <span class="text-secondary fw-normal text-lowercase small">${sourceName}</span></span>
+                <a href="${sourceLink}" target="_blank" class="text-info">التوجه إلى رابط المصدر</a> 
+            </div> 
+        `;
+
+		div.innerHTML = output;
+
+		parentContainer.appendChild(div);
+
+		const screenHeight = window.innerHeight / 2;
+		const screenWidth = window.innerWidth / 2;
+
+		link.addEventListener("mouseover", () => {
+			const parentContainer = link.parentElement;
+			const topPos = link.getBoundingClientRect().top;
+			const leftpost = link.getBoundingClientRect().left;
+
+			if (topPos > 158) {
+				div.classList.remove("top-pos");
+				div.classList.add("bottom-pos");
+			} else {
+				div.classList.remove("bottom-pos");
+				div.classList.add("top-pos");
+			}
+
+			if (leftpost < screenWidth) {
+				div.classList.remove("right-pos");
+				div.classList.add("left-pos");
+			} else {
+				div.classList.remove("left-pos");
+				div.classList.add("right-pos");
+			}
+		});
+
+		if (window.screen.width < 769) {
+			link.classList.add("isDisabled");
+			div.classList.add("d-none");
+
+			parentContainer.dataset.bsToggle = "modal";
+
+			parentContainer.dataset.bsTarget = "#sourceLink";
+
+			parentContainer.addEventListener("click", function () {
+				const modalBody = document.querySelector(".body-source");
+				modalBody.innerHTML = output;
+			});
+		}
+	});
+
 	// AR & EN Logo based on Location
 	fetch("https://app.jubnaadserve.com/api/ipinfo")
 		.then((response) => response.json())

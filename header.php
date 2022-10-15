@@ -56,6 +56,13 @@ $navbar_type       = get_theme_mod( 'understrap_navbar_type', 'collapse' );
 			font-display: swap;
 		}
 
+		.article-content strong > a::after {
+			content: url('<?php echo get_theme_file_uri( 'images/icon-check.svg' ); ?>');
+			padding-right: 2px;
+			position: relative;
+			top: -10px;
+    		left: 0px;
+		}
 
 		.mega-first-link-tabeeb > .mega-menu-link , .mega-first-link-tabeeb > .mega-menu-link:hover {
 			background-image: url('<?php echo get_theme_file_uri( 'images/kit-medical.svg' ); ?>') !important;

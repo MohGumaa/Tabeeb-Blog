@@ -12,7 +12,7 @@ defined( 'ABSPATH' ) || exit;
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
     <?php the_title( '<h1 class="text-primary article-title-main mb-4">', '</h1>' ); ?>
 
-    <div class="article-feature-image">
+    <div class="article-img">
         <?php echo get_the_post_thumbnail( $post->ID, 'full' ); ?>
     </div>
 

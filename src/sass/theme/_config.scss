@@ -11,6 +11,7 @@
 	--clr-white: #ffffff;
 	--clr-lightgreen: #eefbfa;
 	--clr-background: #f7f7f7;
+	--clr-background-light: #f9f9f9;
 	--clr-bg-image: #f4f4f4;
 	--clr-border: rgba(0, 0, 0, 0.125);
 	--clr-border-green: rgba(8, 155, 171, 0.5);
@@ -85,6 +86,12 @@ picture,
 svg {
 	max-width: 100%;
 	display: block;
+}
+
+.isDisabled {
+	color: var(--clr-theme-light-blue);
+	text-decoration: none;
+	pointer-events: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -284,6 +291,10 @@ h6 {
 
 .icon-video:before {
 	content: "\ea0d";
+}
+
+.icon-check-circle:before {
+	content: "\e930";
 }
 
 .fa-google {
@@ -945,8 +956,11 @@ div.wpforms-container-full {
 	display: none;
 }
 
-.mfp-container {
-	cursor: default;
+.mfp-container,
+.mfp-figure,
+.mfp-zoom-out-cur,
+.mfp-zoom-out-cur .mfp-image-holder .mfp-close {
+	cursor: default !important;
 }
 
 .calculator-container {
@@ -1070,7 +1084,7 @@ div.wpforms-container-full {
 
 		tbody {
 			tr:nth-child(even) {
-				background: var(--clr-white);
+				background: var(--clr-white) !important;
 			}
 
 			tr:first-child {
@@ -1201,6 +1215,75 @@ div.wpforms-container-full {
 	}
 }
 
+// Booking Card
+.book-doctor {
+	background: #fafafa;
+	border: 1px solid var(--clr-border);
+	border-radius: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	// padding: 1.25rem 0px 1.125rem;
+
+	.icon-check-circle {
+		margin-top: 0.125rem;
+		&:before {
+			content: "\e930";
+		}
+	}
+
+	.info {
+		box-shadow: var(--box-shadow);
+		border-radius: 0.5rem;
+		font-size: 0.875rem;
+		line-height: 1.6;
+
+		.user-badge {
+			border: 1px solid #e3e3e3;
+			border-radius: 0.25rem;
+			background: var(--clr-white);
+			color: var(--clr-gray-light);
+			font-size: 0.688rem;
+			padding: 0.125rem 0.25rem 0;
+		}
+
+		.doc-name {
+			font-size: 0.938rem;
+		}
+
+		.fs-small {
+			font-size: 0.875rem;
+		}
+
+		img {
+			border-radius: 0.5rem;
+			display: inline-block;
+			width: 95px;
+			height: 95px;
+		}
+
+		.btn {
+			box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04),
+				0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+		}
+	}
+
+	.btn-outline-success:hover {
+		color: var(--clr-white);
+	}
+
+	.doctor-features {
+		background: var(--clr-background-light);
+		border: 1px solid var(--clr-border);
+		border-radius: 0.5rem;
+		font-size: 0.813rem;
+		line-height: 18px;
+		color: var(--clr-gray);
+		padding: 0.5rem 0.625rem;
+	}
+}
+
 @keyframes animateBall {
 	from {
 		height: calc(var(--circle-max) + 3px);
@@ -1209,6 +1292,24 @@ div.wpforms-container-full {
 	to {
 		height: calc(var(--circle-min) + 3px);
 		width: calc(var(--circle-min) + 3px);
+	}
+}
+
+// Modal
+.tabeeb-modal {
+	.modal-content {
+		border-color: var(--clr-border);
+		width: 90%;
+		margin: auto;
+	}
+
+	.modal-body {
+		a,
+		span {
+			font-size: 1.063rem;
+			line-height: 45px;
+			letter-spacing: 0.02em;
+		}
 	}
 }
 

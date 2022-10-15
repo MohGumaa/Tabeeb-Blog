@@ -360,7 +360,7 @@ if ( isset( $attributes['formula'] ) ) {
                 </table>
             </div>
             <p id="table-due" class="text-muted text-center fs-small"></p>
-            <p class="fs-6 mt-4 mt-md-5">الجدول أدناه سوف تعطيك فكرة للأشهر الخمسة المقبلة:</p>
+            <p class="fs-6 mt-4 mt-md-5">الجدول أدناه سوف تعطيك فكرة للأشهر الاربعة المقبلة:</p>
             <div class="table-responsive">
                 <table class="table table-striped table-sm">
                     <thead>

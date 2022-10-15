@@ -21,6 +21,20 @@ defined( 'ABSPATH' ) || exit;
 </footer>
 
 </div>
+
+<!-- Modal -->
+<div class="modal fade tabeeb-modal" id="sourceLink" tabindex="-1" aria-labelledby="sourceLinkLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body body-source">
+			</div>
+		</div>
+	</div>
+</div>
+
 <!-- Exit Ads Jubna -->
 <div class="JC-WIDGET-DMROOT" data-widget-id="4b64dd833c594558f19c7e9005ec308f"></div>
 <script type="text/javascript" async="async" src="https://static.jubnaadserve.com/api/widget.js"></script>
