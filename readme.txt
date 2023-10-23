@@ -1,53 +1,39 @@
-=== Understrap ===
-Contributors: howarddc
-Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-logo, custom-menu, featured-images, footer-widgets, full-width-template, theme-options, translation-ready
-Requires at least: 5.0
-Tested up to: 5.7.2
-Requires PHP: 5.2
-License: GNU General Public License v3 or later
-License URI: https://www.gnu.org/licenses/gpl-3.0.html
+# Tabeeb - Educational Medical Electronic Platform
 
-== Description ==
+![Alt text](https://tabeeb.com/wp-content/uploads/2022/09/Logo-grey-en.svg "Title")
 
-The renowned WordPress starter theme framework that combines Underscores and Bootstrap. Trusted by more than 100,000 developers for building handcrafted, custom WordPress sites.
+Tabeeb is an innovative educational medical electronic platform that aims to enrich Arabic medical content in cooperation with a group of the most important and experienced doctors in the Arab world. This platform provides a comprehensive and user-friendly interface for medical students, professionals, and enthusiasts to access high-quality medical resources, courses, and consultations in the Arabic language.
 
-Website: [https://understrap.com](https://understrap.com)
+## `Features`
 
-Child Theme Project: [https://github.com/understrap/understrap-child](https://github.com/understrap/understrap-child)
+- **Rich Medical Content:** Tabeeb offers an extensive collection of medical articles, research papers, case studies, and educational materials in Arabic, curated by renowned doctors.
 
-== Installation ==
+- **Interactive Courses:** Users can enroll in interactive online courses covering various medical disciplines, complete with video lectures, quizzes, and assignments.
 
-1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
-2. Type in Understrap in the search form and press the 'Enter' key on your keyboard.
-3. Click on the 'Activate' button to use your new theme right away.
-4. Do not edit the theme files directly. We recommend creating a child theme for custom development. Full developer documentation: [https://docs.understrap.com/](https://docs.understrap.com/)
+- **Expert Consultations:** Tabeeb connects users with experienced doctors who can provide online consultations and answer medical queries.
 
-== Privacy ==
+- **User Profiles:** Each user can create a personalized profile to track their learning progress, course enrollments, and consultation history.
 
-Understrap does not collect any user data and does not use cookies.
+- **Search Functionality:** Users can easily search for specific medical topics, doctors, or courses within the platform.
 
-== Changelog ==
+- **User Interaction:** Users can engage in discussions, post comments, and interact with other medical enthusiasts on the platform.
 
-See https://github.com/understrap/understrap/blob/main/.github/CHANGELOG.md
+- **Responsive Design:** Tabeeb is optimized for various devices, including desktops, tablets, and smartphones.
 
-== Copyright ==
+### `Installation`
 
-Understrap WordPress Theme, 2021 Howard Development & Consulting, LLC
-Understrap is distributed under the terms of the GNU GPL.
+_Follow these steps to set up the Tabeeb React app locally:._
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
+1.In your admin panel, go to Appearance > Themes and click the Add New button.
+2.Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
+3. Click Activate to use your new theme right away.
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU General Public License for more details.
 
-This theme bundles the following third-party resources:
+### Technologies Used
 
-* Underscores: https://github.com/Automattic/_s/blob/master/LICENSE (GNU GPLv2)
-* Font Awesome: https://fontawesome.com/v4.7/license/ (Font: SIL OFL 1.1, (S)CSS: MIT)
-* Bootstrap: https://getbootstrap.com | https://github.com/twbs/bootstrap/blob/master/LICENSE (MIT)
-* WP Bootstrap Navwalker by Edward McIntyre & William Patton: https://github.com/wp-bootstrap/wp-bootstrap-navwalker (GNU GPLv3)
+- PHP: Backend runtime environment for server-side logic
+- MySQL: NoSQL database for storing user information, courses, and content
+- HTML5 and CSS3: For structuring and styling the frontend components
+
+Thank you for choosing Tabeeb! We hope our platform helps you on your medical education journey. Happy learning! 🚀
+
