@@ -1,35 +1,28 @@
+<p align="center"><img src="https://tabeeb.com/wp-content/uploads/2022/09/Logo-grey-en.svg " width="140" height="auto" style="margin-bottom: 8px;"></p>
 
-<p align="center"><img src="https://understrap.com/wp-content/uploads/2022/02/Understrap_Logo_Color.svg" width="320" height="auto"></p>
+# Tabeeb - Educational Medical Platform (WordPress Theme)
 
-[![Wordpress Theme Version](https://img.shields.io/wordpress/theme/v/understrap.svg)](https://wordpress.org/themes/understrap)
-[![Wordpress Theme Active Installs](https://img.shields.io/wordpress/theme/installs/understrap.svg)](https://wordpress.org/themes/understrap/)
-[![Github Last Commit](https://img.shields.io/github/last-commit/understrap/understrap/develop)](https://github.com/understrap/understrap/commits/develop)
-[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
-
-#### See: [Official Demo](https://understrap.com) | Read: [Official Docs Page](https://docs.understrap.com/)
-
-# Understrap WordPress Theme Framework
-
-Website: [understrap.com](https://understrap.com)
-
-Child Theme Project: [github.com/understrap/understrap-child](https://github.com/understrap/understrap-child)
-
-Premium Child Themes: [understrap.com/child-themes/](https://understrap.com/child-themes/)
+Website: [tabeeb.com](https://tabeeb.com)
 
 ## About
 
-Understrap is the renowned open-source WordPress starter theme that combines Underscores with Bootstrap. Trusted by more than 100,000 developers.
+Create WordPress Theme for Tabeeb Website using HTML, Css, JS & PHP.
 
-## Documentation
+## `Tabeeb Features`
 
-Full documentation for this theme is available at [docs.understrap.com](https://docs.understrap.com).
+- **Rich Medical Content:** Tabeeb offers an extensive collection of medical articles, research papers, case studies, and educational materials in Arabic, curated by renowned doctors.
 
-## Questions
+- **Interactive Courses:** Users can enroll in interactive online courses covering various medical disciplines, complete with video lectures, quizzes, and assignments.
 
-For support requests and bugs, we recommend browsing our [issues](https://github.com/understrap/understrap/issues) and opening a new issue if necessary. For more broad discussion, like questions about the roadmap, visit our [discussion board](https://github.com/understrap/understrap/discussions).
+- **Expert Consultations:** Tabeeb connects users with experienced doctors who can provide online consultations and answer medical queries.
 
-## Changelog
-See [changelog](CHANGELOG.md)
+- **User Profiles:** Each user can create a personalized profile to track their learning progress, course enrollments, and consultation history.
+
+- **Search Functionality:** Users can easily search for specific medical topics, doctors, or courses within the platform.
+
+- **User Interaction:** Users can engage in discussions, post comments, and interact with other medical enthusiasts on the platform.
+
+- **Responsive Design:** Tabeeb is optimized for various devices, including desktops, tablets, and smartphones.
 
 ## Basic Features
 
@@ -40,21 +33,78 @@ See [changelog](CHANGELOG.md)
 - Jetpack ready
 - WooCommerce support
 - Contact Form 7 support
-- [Child Theme](https://github.com/understrap/understrap-child) ready
 - Translation ready
 
-## Understrap Academy
+## Installation
 
-[Become an Understrap Expert.](https://www.understrapacademy.com) Presented by the team behind the Understrap Theme Framework, Understrap Academy is a collection of online courses that will help you speed up your development process, make your projects more profitable, and become an Understrap expert in record time.
+- Download the tabeeb folder from GitHub or from [https://git.jubna.me/tabeeb/tabeeb-website](https://git.jubna.me/tabeeb/tabeeb-website)
+- IMPORTANT: If you download it from GitHub make sure you rename the "tabeeb-master.zip" file just to "tabeeb.zip" or you might have problems using child themes!
+- Upload it into your WordPress installation theme subfolder: `/wp-content/themes/`
+- Login to your WordPress backend
+- Go to Appearance → Themes
+- Activate the tabeeb theme
 
-## License
+## Developing With npm, postCSS, Rollup, SASS and BrowserSync
 
-Copyright 2022 [Howard Development & Consulting, LLC](https://howarddc.com).
-Understrap is distributed under the terms of the GNU GPL version 3
+This theme uses [sass](https://www.npmjs.com/package/sass) and [postCSS](https://postcss.org) to handle compiling all of the styles into one style sheet. The theme also includes [rollup.js](https://www.rollupjs.org/) to handle javascript compilation and minification. These choices are based on the same libraries and npm commands used in Bootstrap. In addition, it comes with [Browser Sync](http://browsersync.io) to handle live reloading while you develop.
 
-https://www.gnu.org/licenses/gpl-3.0.en.html
+### Confused by All the CSS, SCSS, and SASS Files?
 
-## Credits
-- Font Awesome: https://fontawesome.com/v4.7/license/ (Font: SIL OFL 1.1, (S)CSS: MIT)
-- Bootstrap: https://getbootstrap.com | https://github.com/twbs/bootstrap/blob/main/LICENSE (MIT)
-- WP Bootstrap Navwalker by Edward McIntyre & William Patton: https://github.com/wp-bootstrap/wp-bootstrap-navwalker (GNU GPLv3)
+Some basics about the files that come with Understrap:
+
+- The theme itself uses the `/style.css` file only to identify the theme inside of WordPress. The file is not loaded by the theme and does not include any styles.
+- The `/css/theme.css` and its minified little brother `/css/theme.min.css` file(s) provides all styles. It is composed of different SCSS sets and one variable file, all imported at `/src/sass/theme.scss`
+- Your design goes into: `/src/sass/theme`.
+  - Override Bootstrap by addind your variables to the `/src/sass/theme/_theme_variables.scss`
+  - Add your custom styles to the `/src/sass/theme/_theme.scss` file
+  - Or add other .scss files into it and `@import` it into `/src/sass/theme/_theme.scss`.
+
+The same goes for Javascript. Just add your javascript to `/src/js/custom-javascript.js` and let rollup.js handle the rest.
+
+### Installing Dependencies
+
+- Make sure you have installed Node.js and Browser-Sync (optional) on your computer globally
+- Then open your terminal and browse to the location of your Understrap copy
+- Run: `$ npm install`
+
+### Running
+
+To work with and compile your Sass and Javascript files on the fly start:
+
+```bash
+npm run watch
+```
+
+Or, to run with Browser-Sync:
+
+First change the browser-sync options to reflect your environment in the file `/build/browser-sync.config.js` in the beginning of the file:
+
+```javascript
+module.exports = {
+	proxy: "localhost/", // Change here
+	notify: false,
+	files: ["./css/*.min.css", "./js/*.min.js", "./**/*.php"],
+};
+```
+
+then run:
+
+```bash
+npm run watch-bs
+```
+
+## Bootstrap 4 Legacy Build Process
+
+Some of our build tasks have been duplicated to support both Bootstrap 4 and Boostrap 5 asset generation. The _default_ version of tasks will generate v5 assets.
+
+**CSS Tasks** `npm run css` will generate v5 assets, while `npm run css-bs4` will generate necessary assets for v4.
+
+**JS Tasks** `npm run js` will generate v5 assets, while `npm run js-bs4` will generate necessary assets for v4.
+
+**Watch Tasks** `npm run watch` and `npm run watch-bs` will only generate for v5. Once complete, run `npm run dist` to update v4.
+
+**Dist Task** `npm run dist` will generate both v4 & v5 assets.
+
+**Other Assets** This theme also includes a few additional files directories to support Bootstrap 4 in `/src/build-bootstrap4/`, `/src/sass/assets/bootstrap4/`, and `/src/js/bootstrap4.js`
+
+Thank you for choosing Tabeeb! We hope our platform helps you on your medical education journey. Happy learning! 🚀
